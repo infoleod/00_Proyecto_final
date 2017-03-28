@@ -1,0 +1,230 @@
+/* -- RESETS Y CONFIGURACIONES GLOBALES --------------------------------------*/
+/* -- Reset general --*/
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,blockquote,pre,form,fieldset,table,th,td {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/* -- Para todo el documento aplicamos el Border Box -- */
+* {
+  box-sizing: border-box;
+}
+/* -- Estilos del Body, Fuentes, Fondos, Etc... -- */
+body {
+  font-family: sans-serif;
+}
+ul,ol,li,li a {
+  list-style: none;
+  text-decoration: none;
+}
+/* -- HEADER -----------------------------------------------------------------*/
+.header {
+  background-color: #84acfb;
+  position: relative;
+  top: 0px;
+  height: 45px;
+  width: 100vw;
+}
+
+/* -- INICIO - Logo --*/
+.header-logo {
+  position: absolute;
+  height: 35px;
+  width: 45px;
+  left: 5px;
+  top: 5px;
+}
+.header-logo img {
+  height: 35px;
+}
+/* -- FIN - Logo --*/
+
+/* -- INICIO - Buscar --*/
+.header-buscar {
+  position: absolute;
+  height: 35px;
+  width: calc(100vw - 90px);
+  left: 50px;
+  top: 5px;
+}
+.form-buscar {
+  margin-top: 5px;
+}
+.form-buscar input {
+  border: none;
+  height: 25px;
+  padding: 2px 2px 2px 30px;
+  width: 95%;
+}
+.header-buscar img {
+  width: 20px;
+  position: absolute;
+  left: 3%;
+  top: 7px;
+}
+/* -- FIN - Buscar --*/
+
+/* -- INICIO - Menu --*/
+.header-menu {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  right: 5px;
+  top: 5px;
+}
+.header-menu-icon img {
+  height: 35px;
+}
+.header-menu-icon a {
+  height: 100%;
+  width: 100%;
+}
+.header-menu-lista {
+  position: absolute;
+  width: calc(100vw - 90px);
+  right: -5px;
+  top: -5px;
+  background-color: rgba(0, 42, 31, 0.83);
+}
+.header-menu-lista li{
+  display: none;
+  width: 100%
+}
+.header-menu-icon li:hover > .header-menu-lista li {
+  display: inline-block;
+}
+.header-menu-lista a {
+  padding: 15px;
+  display: inline-block;
+  color: #e5f0ed;
+}
+.header-menu-lista a:hover {
+  background-color: #FF9900;
+  color: black;
+}
+/* -- FIN - Menu --*/
+
+/* -- INICIO - Login --*/
+.header-login {
+  position: absolute;
+  display: none;
+  height: 35px;
+  width: 80px;
+  right: 5px;
+  top: 5px;
+  background-color: blue;
+}
+/* -- FIN - Login --*/
+/* -- BODY -------------------------------------------------------------------*/
+
+/*FRAN - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
+LE DI UN POCO DE MARGEN Y UN POCO DE PADDING A CADA CAJA
+ASI SE VE UN POCO MEJOR*/
+.principal-body {
+  margin: 0px auto;
+}
+.principal-body-banner {
+  padding: 50px 0;
+  background-color: rgb(136, 136, 136);
+  margin-top:
+}
+.principal-body-productos {
+  padding: 50px 0;
+  background-color: rgb(136, 136, 136);
+}
+/* -- FOOTER -----------------------------------------------------------------*/
+.footer {
+  background-color: #064f3b;
+  color: #e5f0ed;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------------*/
+/* -- MEDIA QUERY's ----------------------------------------------------------*/
+/* ---------------------------------------------------------------------------*/
+
+/* -- A PARTIR DE --> 640 px -- */
+@media (min-width:640px) {
+  /* -- INICIO - HEADER ------------------------------------------------------*/
+  .header-logo {
+    position: absolute;
+    height: 90px;
+    width: 150px;
+    left: 5px;
+    top: 5px;
+    background-color: red;
+  }
+  .header-buscar {
+    height: 45px;
+    width: 61%;
+    left: 160px;
+    top: 5px;
+    background-color: green;
+  }
+  .header-menu {
+    height: 45px;
+    width: 74.2%;
+    left: 160px;
+    bottom: 5px;
+    background-color: brown;
+  }
+  .header-login {
+    height: 45px;
+    width: 80px;
+    right: 5px;
+    top: 5px;
+    background-color: blue;
+  }
+  /* -- FIN - HEADER ---------------------------------------------------------*/
+
+
+
+  /* -- INICIO - BODY --------------------------------------------------------*/
+
+  /* -- FIN - BODY -----------------------------------------------------------*/
+
+
+
+  /* -- INICIO - FOOTER ------------------------------------------------------*/
+
+  /* -- FIN - FOOTER ---------------------------------------------------------*/
+
+
+
+@media (min-width:640px) {
+  /* -- FIN - HEADER ---------------------------------------------------------*/
+
+
+
+  /* -- INICIO - BODY --------------------------------------------------------*/
+
+  /* -- FIN - BODY -----------------------------------------------------------*/
+
+
+
+  /* -- INICIO - FOOTER ------------------------------------------------------*/
+
+  /* -- FIN - FOOTER ---------------------------------------------------------*/
+
+
+}
+@media (min-width:960px) {
+  /* -- FIN - HEADER ---------------------------------------------------------*/
+
+
+
+  /* -- INICIO - BODY --------------------------------------------------------*/
+
+  /* -- FIN - BODY -----------------------------------------------------------*/
+
+
+
+  /* -- INICIO - FOOTER ------------------------------------------------------*/
+
+  /* -- FIN - FOOTER ---------------------------------------------------------*/
+
+
+}
