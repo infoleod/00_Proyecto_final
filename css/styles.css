@@ -13,7 +13,7 @@ html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,blockquote,pre,form,fieldset
 body {
   font-family: sans-serif;
 }
-ul,ol,li,li a {
+ul,ol,li,li a , .header-login a {
   list-style: none;
   text-decoration: none;
 }
@@ -34,7 +34,12 @@ ul,ol,li,li a {
   left: 5px;
   top: 5px;
 }
-.header-logo img {
+.header-logo-desktop-logo {
+  display: none;
+  width: 100%;
+  padding: 10px;
+}
+.header-logo-mobile-logo , .header-logo-mobile-menu {
   height: 35px;
 }
 /* -- FIN - Logo --*/
@@ -72,9 +77,6 @@ ul,ol,li,li a {
   right: 5px;
   top: 5px;
 }
-.header-menu-icon img {
-  height: 35px;
-}
 .header-menu-icon a {
   height: 100%;
   width: 100%;
@@ -84,13 +86,11 @@ ul,ol,li,li a {
   width: calc(100vw - 90px);
   right: -5px;
   top: -5px;
+  height: 100vh;
+  display: none;
   background-color: rgba(0, 42, 31, 0.83);
 }
-.header-menu-lista li{
-  display: none;
-  width: 100%
-}
-.header-menu-icon li:hover > .header-menu-lista li {
+.header-menu-icon li:hover > .header-menu-lista {
   display: inline-block;
 }
 .header-menu-lista a {
@@ -102,16 +102,26 @@ ul,ol,li,li a {
   background-color: #FF9900;
   color: black;
 }
+.header-menu-lista-login {
+  background-color: rgba(179, 107, 0, 0.72);
+  color: black;
+}
+.header-menu-lista-login a {
+  padding: 15px;
+}
+
 /* -- FIN - Menu --*/
 
 /* -- INICIO - Login --*/
 .header-login {
   position: absolute;
   display: none;
-  height: 35px;
-  width: 80px;
-  right: 5px;
+  right: 10px;
   top: 5px;
+}
+.header-login a {
+  display: block;
+  padding: 5px;
   background-color: blue;
 }
 /* -- FIN - Login --*/
@@ -149,35 +159,91 @@ ASI SE VE UN POCO MEJOR*/
 /* -- A PARTIR DE --> 640 px -- */
 @media (min-width:640px) {
   /* -- INICIO - HEADER ------------------------------------------------------*/
+  .header {
+    height: 100px;
+  }
+  .header-logo-mobile-logo {
+    display: none;
+  }
+  .header-logo-desktop-logo {
+    display: inline-block;
+  }
   .header-logo {
     position: absolute;
     height: 90px;
     width: 150px;
     left: 5px;
     top: 5px;
-    background-color: red;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.57);
   }
-  .header-buscar {
-    height: 45px;
-    width: 61%;
-    left: 160px;
-    top: 5px;
-    background-color: green;
+  .header-logo-mobile-menu {
+    display: none;
   }
+
+  /*MENU*/
   .header-menu {
-    height: 45px;
-    width: 74.2%;
+    height: 30px;
+    width: calc(100vw - 170px);
     left: 160px;
+    top: initial;
     bottom: 5px;
     background-color: brown;
   }
+  .header-menu-lista {
+    display: inline-block;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 5px;
+    height: 100%;
+  }
+  .header-menu-lista li {
+    float: left;
+    width: 15%;
+  }
+  .header-menu-lista a {
+    padding: 5px 5px;
+  }
+  .header-menu-lista-login {
+    display: none;
+  }
+
+  .header-buscar {
+    height: auto;
+    width: calc(100vw - 269px);
+    left: 160px;
+    top: 35px;
+    background-color: green;
+  }
+  .form-buscar {
+    margin: 0px;
+  }
+  .form-buscar input{
+    width: 100%;
+  }
+  .header-buscar img {
+      left: 1%;
+      top: 3px;
+  }
+
+  /*LOGIN*/
+  .header-login {
+    display: inline-block;
+  }
+  .header-login a {
+    color: #e5ebf0;
+  }
+
+/*
   .header-login {
     height: 45px;
     width: 80px;
     right: 5px;
     top: 5px;
     background-color: blue;
-  }
+  }*/
   /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
