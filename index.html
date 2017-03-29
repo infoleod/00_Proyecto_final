@@ -12,13 +12,14 @@
     <header class="header">
       <!-- INICIO Logo -->
       <div class="header-logo">
-        <img src="images/prueba-logo.png" alt="logo-mini">
+        <img class="header-logo-mobile-logo" src="images/prueba-logo.png" alt="logo-mini">
+        <img class="header-logo-desktop-logo" src="images/logo-zoo2.png" alt="logo-desktop">
       </div>
       <!-- FIN Logo -->
 
       <!-- INICIO Buscar -->
       <div class="header-buscar">
-        <img src="images/search-icono.png" alt="search-icon">
+        <img class="header-logo-mobile-search" src="images/search-icono.png" alt="search-icon">
         <form class="form-buscar" action="index.html" method="post">
           <input type="text" name="buscar" value="Buscar">
         </form>
@@ -32,19 +33,25 @@
             <li>
               <!-- ICONO De menu en Mobile -->
               <a href="#">
-                <img src="images/menu-icon.png" alt="menu-icon">
+                <img class="header-logo-mobile-menu" src="images/menu-icon.png" alt="menu-icon">
               </a>
 
               <!-- SubMenu con Lista desplegable -->
               <ul class="header-menu-lista">
+                <li>
+                  <div class="header-menu-lista-login">
+                    <a href="#">LogIn</a>
+                    <a href="#">Registrarse</a>
+                  </div>
+                </li>
                 <li><a href="#">Menu 1</a></li>
                 <li><a href="#">Menu 2</a></li>
                 <li><a href="#">Menu 3</a></li>
                 <li><a href="#">Menu 4</a></li>
                 <li><a href="#">Menu 5</a></li>
                 <li><a href="#">Menu 6</a></li>
-                <li><a href="#">Menu 7</a></li>
-                <li><a href="#">Menu 8</a></li>
+                <!-- <li><a href="#">Menu 7</a></li>
+                <li><a href="#">Menu 8</a></li> -->
               </ul>
             </li>
           </ul>
@@ -56,7 +63,8 @@
 
       <!-- INICIO Login -->
       <div class="header-login">
-        login
+        <a href="#">LogIn</a>
+        <a href="#">Registrarse</a>
       </div>
       <!-- FIN Login -->
     </header>
