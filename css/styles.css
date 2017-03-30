@@ -88,7 +88,6 @@ ul,ol,li,li a , .header-login a {
   top: -5px;
   height: 100vh;
   display: none;
-  background-color: rgba(0, 42, 31, 0.83);
 }
 .header-menu-icon li:hover > .header-menu-lista {
   display: inline-block;
@@ -122,7 +121,6 @@ ul,ol,li,li a , .header-login a {
 .header-login a {
   display: block;
   padding: 5px;
-  background-color: blue;
 }
 /* -- FIN - Login --*/
 /* -- BODY -------------------------------------------------------------------*/
@@ -174,8 +172,6 @@ ASI SE VE UN POCO MEJOR*/
     width: 150px;
     left: 5px;
     top: 5px;
-    background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.57);
   }
   .header-logo-mobile-menu {
     display: none;
@@ -188,7 +184,40 @@ ASI SE VE UN POCO MEJOR*/
     left: 160px;
     top: initial;
     bottom: 5px;
-    background-color: brown;
+  }
+  .header-menu-lista {
+    display: inline-block;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 5px;
+    height: 100%;
+  }
+  .header-menu-lista li {
+    float: left;
+    width: 15%;
+  }
+  .header-menu-lista a {
+    padding: 5px 5px;
+  }
+  .header-menu-lista a:hover {
+    background-color: #e5ebf0;
+    color: rgb(45, 58, 144);
+  }
+  .header-menu-lista-login {
+    display: none;
+  }
+
+  .header-buscar {
+    height: auto;
+    width: calc(100vw - 269px);
+    left: 160px;
+    top: 35px;
+    background-color: green;
+  }
+  .form-buscar {
+    margin: 0px;
   }
   .header-menu-lista {
     display: inline-block;
@@ -234,6 +263,10 @@ ASI SE VE UN POCO MEJOR*/
   }
   .header-login a {
     color: #e5ebf0;
+  }
+  .header-login a:hover {
+    background-color: #e5ebf0;
+    color: rgb(6, 44, 99);
   }
 
 /*
