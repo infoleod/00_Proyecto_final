@@ -13,43 +13,64 @@ html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,blockquote,pre,form,fieldset
 body {
   font-family: sans-serif;
 }
-ul,ol,li,li a , .header-login a {
+ul,ol,li,li a , .header-div-login a {
   list-style: none;
   text-decoration: none;
 }
 /* -- HEADER -----------------------------------------------------------------*/
 .header {
-  background-color: #84acfb;
+  background: rgba(14,154,230,1);
+  background: linear-gradient(to right, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+    /*background: -moz-linear-gradient(left, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(14,154,230,1)), color-stop(38%, rgba(13,184,231,1)), color-stop(82%, rgba(104,209,195,1)), color-stop(100%, rgba(131,230,174,1)));
+    background: -webkit-linear-gradient(left, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+    background: -o-linear-gradient(left, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+    background: -ms-linear-gradient(left, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e9ae6', endColorstr='#83e6ae', GradientType=1 );*/
+
+
+
+
+
+
+
+
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.header-div {
   position: relative;
   top: 0px;
   height: 45px;
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* -- INICIO - Logo --*/
-.header-logo {
+.header-div-logo {
   position: absolute;
   height: 35px;
-  width: 45px;
+  width: 75px;
   left: 5px;
   top: 5px;
 }
-.header-logo-desktop-logo {
+.header-div-logo-desktop-logo {
   display: none;
   width: 100%;
   padding: 10px;
 }
-.header-logo-mobile-logo , .header-logo-mobile-menu {
+.header-div-logo-mobile-logo , .header-div-logo-mobile-menu {
   height: 35px;
 }
 /* -- FIN - Logo --*/
 
 /* -- INICIO - Buscar --*/
-.header-buscar {
+.header-div-buscar {
   position: absolute;
   height: 35px;
-  width: calc(100vw - 90px);
-  left: 50px;
+  width: calc(100% - 130px);
+  left: 85px;
   top: 5px;
 }
 .form-buscar {
@@ -59,68 +80,71 @@ ul,ol,li,li a , .header-login a {
   border: none;
   height: 25px;
   padding: 2px 2px 2px 30px;
-  width: 95%;
+  width: 100%;
+  border-radius: 2px;
 }
-.header-buscar img {
+.header-div-buscar img {
   width: 20px;
   position: absolute;
-  left: 3%;
+  left: 5px;
   top: 7px;
 }
 /* -- FIN - Buscar --*/
 
 /* -- INICIO - Menu --*/
-.header-menu {
+.header-div-menu {
   position: absolute;
   height: 35px;
   width: 35px;
   right: 5px;
   top: 5px;
 }
-.header-menu-icon a {
+.header-div-menu-icon a {
   height: 100%;
   width: 100%;
 }
-.header-menu-lista {
+.header-div-menu-lista {
   position: absolute;
-  width: calc(100vw - 90px);
+  width: calc(100vw - 140px);
   right: -5px;
   top: -5px;
   height: 100vh;
   display: none;
+  background-color: rgba(0, 42, 31, 0.83);
 }
-.header-menu-icon li:hover > .header-menu-lista {
+.header-div-menu-icon li:hover > .header-div-menu-lista {
   display: inline-block;
 }
-.header-menu-lista a {
+.header-div-menu-lista a {
   padding: 15px;
   display: inline-block;
   color: #e5f0ed;
 }
-.header-menu-lista a:hover {
+.header-div-menu-lista a:hover {
   background-color: #FF9900;
   color: black;
 }
-.header-menu-lista-login {
+.header-div-menu-lista-login {
   background-color: rgba(179, 107, 0, 0.72);
   color: black;
 }
-.header-menu-lista-login a {
+.header-div-menu-lista-login a {
   padding: 15px;
 }
 
 /* -- FIN - Menu --*/
 
 /* -- INICIO - Login --*/
-.header-login {
+.header-div-login {
   position: absolute;
   display: none;
   right: 10px;
   top: 5px;
 }
-.header-login a {
+.header-div-login a {
   display: block;
   padding: 5px;
+  /*background-color: blue;*/
 }
 /* -- FIN - Login --*/
 /* -- BODY -------------------------------------------------------------------*/
@@ -132,17 +156,37 @@ ASI SE VE UN POCO MEJOR*/
   margin: 0px auto;
 }
 .principal-body-banner {
-  padding: 50px 0;
-  background-color: rgb(136, 136, 136);
-  margin-top:
+  display: none;
+  width: 99,16666667%;
+  margin: 5px;
+  overflow: hidden;
 }
-.principal-body-productos {
-  padding: 50px 0;
-  background-color: rgb(136, 136, 136);
+.principal-body-banner img {
+  width: 100%;
 }
+.principal-body-productos_1, .principal-body-productos_2 , .principal-body-productos_3 , .principal-body-productos_4 {
+  padding: 50px 0;
+  margin: 5px;
+}
+.principal-body-productos_1 {
+  background: linear-gradient(to right, rgba(202,230,221,1) 0%, rgba(167,227,208,1) 100%);
+}
+.principal-body-productos_2 {
+  background: linear-gradient(to right, rgba(206,235,215,1) 0%, rgba(185,227,198,1) 100%);
+}
+.principal-body-productos_3 {
+  background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
+}
+.principal-body-productos_4 {
+  background: linear-gradient(to right, rgba(240,236,218,1) 0%, rgba(242,230,176,1) 100%);
+}
+
 /* -- FOOTER -----------------------------------------------------------------*/
+/*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
+LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .footer {
-  background-color: #064f3b;
+  background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
+
   color: #e5f0ed;
 }
 
@@ -158,34 +202,42 @@ ASI SE VE UN POCO MEJOR*/
 @media (min-width:640px) {
   /* -- INICIO - HEADER ------------------------------------------------------*/
   .header {
-    height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    height: 80px;
+    max-height: 100px;
   }
-  .header-logo-mobile-logo {
+  .header-div {
+  }
+
+  .header-div-logo-mobile-logo {
     display: none;
   }
-  .header-logo-desktop-logo {
+  .header-div-logo-desktop-logo {
     display: inline-block;
   }
-  .header-logo {
+  .header-div-logo {
     position: absolute;
     height: 90px;
     width: 150px;
     left: 5px;
     top: 5px;
+    /*background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.57);*/
   }
-  .header-logo-mobile-menu {
+  .header-div-logo-mobile-menu {
     display: none;
   }
 
   /*MENU*/
-  .header-menu {
+  .header-div-menu {
     height: 30px;
-    width: calc(100vw - 170px);
+    width: calc(100% - 170px);
     left: 160px;
     top: initial;
     bottom: 5px;
   }
-  .header-menu-lista {
+  .header-div-menu-lista {
     display: inline-block;
     width: auto;
     top: 0px;
@@ -193,55 +245,26 @@ ASI SE VE UN POCO MEJOR*/
     right: 0;
     bottom: 5px;
     height: 100%;
+        background-color: transparent;
   }
-  .header-menu-lista li {
+  .header-div-menu-lista li {
     float: left;
     width: 15%;
   }
-  .header-menu-lista a {
+  .header-div-menu-lista a {
     padding: 5px 5px;
   }
-  .header-menu-lista a:hover {
+  .header-div-menu-lista a:hover {
     background-color: #e5ebf0;
     color: rgb(45, 58, 144);
   }
-  .header-menu-lista-login {
+  .header-div-menu-lista-login {
     display: none;
   }
 
-  .header-buscar {
+  .header-div-buscar {
     height: auto;
-    width: calc(100vw - 269px);
-    left: 160px;
-    top: 35px;
-    background-color: green;
-  }
-  .form-buscar {
-    margin: 0px;
-  }
-  .header-menu-lista {
-    display: inline-block;
-    width: auto;
-    top: 0px;
-    left: 0px;
-    right: 0;
-    bottom: 5px;
-    height: 100%;
-  }
-  .header-menu-lista li {
-    float: left;
-    width: 15%;
-  }
-  .header-menu-lista a {
-    padding: 5px 5px;
-  }
-  .header-menu-lista-login {
-    display: none;
-  }
-
-  .header-buscar {
-    height: auto;
-    width: calc(100vw - 269px);
+    width: calc(100% - 269px);
     left: 160px;
     top: 35px;
     background-color: green;
@@ -252,53 +275,39 @@ ASI SE VE UN POCO MEJOR*/
   .form-buscar input{
     width: 100%;
   }
-  .header-buscar img {
+  .header-div-buscar img {
       left: 1%;
       top: 3px;
   }
 
   /*LOGIN*/
-  .header-login {
+  .header-div-login {
     display: inline-block;
   }
-  .header-login a {
+  .header-div-login a {
     color: #e5ebf0;
   }
-  .header-login a:hover {
+  .header-div-login a:hover {
     background-color: #e5ebf0;
     color: rgb(6, 44, 99);
   }
-
-/*
-  .header-login {
-    height: 45px;
-    width: 80px;
-    right: 5px;
-    top: 5px;
-    background-color: blue;
-  }*/
   /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
 
   /* -- INICIO - BODY --------------------------------------------------------*/
-
-  /* -- FIN - BODY -----------------------------------------------------------*/
-
-
-
-  /* -- INICIO - FOOTER ------------------------------------------------------*/
-
-  /* -- FIN - FOOTER ---------------------------------------------------------*/
-
-
-
-@media (min-width:640px) {
-  /* -- FIN - HEADER ---------------------------------------------------------*/
+  .principal-body {
+    margin: 0px auto;
+    max-width: 1200px;
+  }
+  .principal-body-banner {
+    display: inline-block;
+    width: 98,33333333%;
+    margin: 0,833333333%;
+  }
 
 
 
-  /* -- INICIO - BODY --------------------------------------------------------*/
 
   /* -- FIN - BODY -----------------------------------------------------------*/
 
@@ -311,8 +320,95 @@ ASI SE VE UN POCO MEJOR*/
 
 }
 @media (min-width:960px) {
-  /* -- FIN - HEADER ---------------------------------------------------------*/
+  /* -- INICIO - HEADER ---------------------------------------------------------*/
+  .header-div-bg {
+    height: 100px;
+  }
+  .header-div-logo-mobile-logo {
+    display: none;
+  }
+  .header-div-logo-desktop-logo {
+    display: inline-block;
+  }
+  .header-div-logo {
+    position: absolute;
+    height: 90px;
+    width: 150px;
+    left: 5px;
+    top: 5px;
+  }
+  .header-div-logo-mobile-menu {
+    display: none;
+  }
 
+  /*MENU*/
+  .header-div-menu {
+    height: 30px;
+    width: calc(100% - 170px);
+    left: 160px;
+    top: initial;
+    bottom: 5px;
+  }
+  .header-div-menu-lista {
+    display: inline-block;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 5px;
+    height: 100%;
+    background-color: transparent;
+  }
+  .header-div-menu-lista li {
+    float: left;
+    width: 15%;
+  }
+  .header-div-menu-lista a {
+    padding: 5px 5px;
+  }
+  .header-div-menu-lista a:hover {
+    background-color: #e5ebf0;
+    color: rgb(45, 58, 144);
+  }
+  .header-div-menu-lista-login {
+    display: none;
+  }
+
+  .header-div-buscar {
+    height: auto;
+    width: calc(100% - 269px);
+    left: 160px;
+    top: 35px;
+    background-color: green;
+  }
+  .form-buscar {
+    margin: 0px;
+  }
+  .form-buscar input{
+    width: 100%;
+  }
+  .header-div-buscar img {
+      left: 1%;
+      top: 3px;
+  }
+
+  /*LOGIN*/
+  .header-div-login {
+    display: inline-block;
+  }
+  .header-div-login a {
+    color: #e5ebf0;
+  }
+  .header-div-login a:hover {
+    background-color: #e5ebf0;
+    color: rgb(6, 44, 99);
+  }
+
+
+
+
+
+  /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
   /* -- INICIO - BODY --------------------------------------------------------*/
