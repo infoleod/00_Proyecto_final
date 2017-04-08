@@ -250,13 +250,32 @@ ul,ol,li,li a , .header-div-login a {
   background: linear-gradient(to right, rgba(240,236,218,1) 0%, rgba(242,230,176,1) 100%);
 }
 */
+
+
+
+
 /* -- FOOTER -----------------------------------------------------------------*/
 /*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
 LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .footer {
+  clear: both;
   background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
-  clear: both;/*limpio flotaciòn para el contenedor principal*/
   color: #e5f0ed;
+}
+/*** logo ***/
+.logo_2{
+    display: none;
+}
+/*** MENU ***/
+.menu_2 .conten h5{
+    display: none;
+}
+.menu_2 .conten li{
+    font-size:1.5em;
+}
+/***Redes Sociales**/
+.redes_sociales{
+    border:1px solid yellow;
 }
 
 
@@ -312,7 +331,60 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 }
 /*********************************Fin Formulario regist********************************************/
 
-
+/*LEO PAGINA DE LOGIN*/
+/* INICIAR SESION -------------------------*/
+.body_login {
+  background-image: url(../images/formularioperro.jpg);
+  background-size: 100%;
+  z-index: 10;
+  background-position-y: 45%;
+  min-height: 525px;
+}
+.body_login_princ_titulo {
+  padding: 10px 0;
+  color: rgb(50, 50, 50);
+}
+.body_login_princ_form {
+  padding: 5px 0 25px;
+}
+/*.body_login_princ_form_fondo {
+  height: 100vh;
+}*/
+.body_login_princ_form_fondo img {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  opacity: 0.6;
+  top: calc((20vh) - 150px);
+}
+.body_login_princ_form_renglones {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 10px 0 10px;
+}
+.body_login_princ_form_renglones input {
+  float: left;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  text-align: left;
+  font-size: 1.2em;
+  color: rgb(80, 80, 80);
+  border-radius: 2px;
+}
+.body_login_princ_form_renglones button {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.4em;
+}
+.body_login_princ-registrate {
+  font-size: 0.8em;
+  color: rgb(50, 50, 50);
+}
+/* INICIAR SESION -------------------------*/
 
 
 /* ---------------------------------------------------------------------------*/
@@ -494,15 +566,54 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 
 
 
-/* -- FOOTER -----------------------------------------------------------------*/
-/*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
-LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
-.footer {
-  clear: both;
-  background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
-  color: #e5f0ed;
+/* -- INICIO - FOOTER ------------------------------------------------------*/
+
+.footer_1{
+  border-color:solid crimson;
+  width:100%;
+  background-color:rgba(32, 80, 136, 0.81);
+  display: block;
+  overflow: hidden;
+}
+.footer_2{
+  background-color: darkgoldenrod;
+  width: 100%;
+  height:40%;
+  display: block;
 }
 
+.logo_2{
+  float:left;
+  height:72.5px;
+  overflow:hidden;
+  width:auto;
+  width: 33.33% ;
+  border: 1px solid yellow;
+}
+.logo_2 img{
+  border:none;
+  padding: 0;
+  margin: 0;
+  width:15vw;
+  height: auto;
+}
+
+.menu_2{
+  border: 2px solid red ;
+  float: left;
+  width: 33.33%;
+}
+.copyright{
+
+}
+.redes_sociales{
+  border: 1px solid orange;
+  float: left;
+  width:33.30%;
+
+}
+
+/* -- FIN - FOOTER ---------------------------------------------------------*/
 
 
 
