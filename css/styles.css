@@ -13,7 +13,7 @@ html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,blockquote,pre,form,fieldset
 body {
   font-family: sans-serif;
 }
-ul,ol,li,li a , .header-div-login a {
+ul,ol,li,li a , .header-div-login a , .body_login_princ-registrate a {
   list-style: none;
   text-decoration: none;
 }
@@ -63,16 +63,16 @@ ul,ol,li,li a , .header-div-login a {
 .header-div-buscar {
   position: absolute;
   height: 35px;
-  width: calc(100% - 130px);
-  left: 85px;
+  width: calc(100% - 135px);
+  left: 90px;
   top: 5px;
 }
 .form-buscar {
-  margin-top: 5px;
+  margin-top: 0px;
 }
 .form-buscar input {
   border: none;
-  height: 25px;
+  height: 30px;
   padding: 2px 2px 2px 30px;
   width: 100%;
   border-radius: 2px;
@@ -82,7 +82,7 @@ ul,ol,li,li a , .header-div-login a {
   width: 20px;
   position: absolute;
   left: 5px;
-  top: 7px;
+  top: 5px;
 }
 /* -- FIN - Buscar --*/
 
@@ -92,7 +92,7 @@ ul,ol,li,li a , .header-div-login a {
   height: 35px;
   width: 35px;
   right: 5px;
-  top: 5px;
+  top: 2px;
 }
 .header-div-menu-icon a {
   height: 100%;
@@ -157,6 +157,9 @@ ul,ol,li,li a , .header-div-login a {
 /* -- FIN - Login --*/
 /* -- BODY -------------------------------------------------------------------*/
 
+/*FRAN - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
+LE DI UN POCO DE MARGEN Y UN POCO DE PADDING A CADA CAJA
+ASI SE VE UN POCO MEJOR*/
 .banner_body{
   display: none;
   margin: 0;
@@ -174,22 +177,22 @@ ul,ol,li,li a , .header-div-login a {
   margin-left: 0.83%;
   margin-right: 0.83%;
   opacity: 0.7;
-  border-radius: 30px;
+  border-radius: 0.7;
   Box-shadow: inset 0 0 50px rgba(9, 112, 84, 0.83),inset 0 0 80px rgba(9, 112, 84, 0.63),inset 0 0 175px rgba(9, 112, 84, 0.33);
+
 }
 .banner_body a{
   position: absolute;
-  bottom: 10%;
-  left: 10%;
-  width: 40%;
+  top: 50%;
+  right: 0%;
+  width: 100%;
   display: inline-block;
   background-color: rgba(9, 112, 84, 0.43);
   color: white;
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
   border-radius: 35px;
   text-decoration: none;
-  padding:10%;
 }
 
 .body_products_grilla {
@@ -219,237 +222,23 @@ ul,ol,li,li a , .header-div-login a {
     right: 0%;
     width: 100%;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
   }
 
-  .body_home img:hover{
+  body img:hover{
     opacity: 1;
     color: rgba(9, 112, 84);
     background-color:rgba(9, 112, 84, 0.63) ;
   }
 
-  .body_home a:hover{
+  body a:hover{
     color: rgba(9, 112, 84);
     background-color:rgba(9, 112, 84, 0.63) ;
   }
 
-/*-------Para mas adelante-----
-.principal-body-productos_1 {
-  background: linear-gradient(to right, rgba(202,230,221,1) 0%, rgba(167,227,208,1) 100%);
-}
-.principal-body-productos_2 {
-  background: linear-gradient(to right, rgba(206,235,215,1) 0%, rgba(185,227,198,1) 100%);
-}
-.principal-body-productos_3 {
-  background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
-}
-.principal-body-productos_4 {
-  background: linear-gradient(to right, rgba(240,236,218,1) 0%, rgba(242,230,176,1) 100%);
-}
-*/
-/* -- FOOTER -----------------------------------------------------------------*/
-/*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
-LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
-.footer {
-  background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
-  clear: both;/*limpio flotaciòn para el contenedor principal*/
-  color: #e5f0ed;
-}
-
-
-
-
-/*********************************Formulario de registraci�n************************************/
-/*.partesFormularioACompletar {
-    background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
-    padding-bottom: 30px;
-    padding-top: 15px;
-    border-radius: 20px;
-    box-shadow: 0px 2px 22px 3px;
-
-    width: 80%;
-    margin:auto;
-}*/
-
-/*.partesFormularioACompletar input{
-  width: 95%;
-  font-size: 0.5em;
-  padding: 1%;
-  color:rgb(60, 59, 59);
-}
-.registrateTitulo h2{
-  padding: 1.5%;
-}
-.partesFormularioACompletar label, div{
-  padding: 1.5%;
-  font-size: 1.2em;
-
-}
-.terminosYregistrame p{
-  font-size: 0.5em;
-  color: white;
-  margin-left: 3%;
-  margin-right: 3%;
-  padding: 1%;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 1);
-}
-.terminosYregistrame a{
-  color:rgb(142, 138, 138);
-}
-.botonRegistrame button{
-  width: 90%;
-}
-.partesFormularioACompletar label{
-  display: none;
-}
-.body_formulario {
-  background-image: url(../images/formularioperro.jpg);
-  background-size: 100%;
-  background-position-y:45%;
-}
-/*********************************Fin Formulario regist********************************************/
-
-
-
-
-/* ---------------------------------------------------------------------------*/
-/* -- MEDIA QUERY's ----------------------------------------------------------*/
-/* ---------------------------------------------------------------------------*/
-
-/* -- A PARTIR DE --> 640 px -- */
-@media (min-width:640px) {
-  /* -- INICIO - HEADER ------------------------------------------------------*/
-  .header {
-    margin: 0 auto;
-    /*coloco posici�n relativa para que el body no flote sobre el nav*/
-    position: relative;
-
-    height: 80px;
-    max-height: 100px;
-}
-  .header-div {
-  }
-
-  .header-div-logo-mobile-logo {
-    display: none;
-  }
-  .header-div-logo-desktop-logo {
-    display: inline-block;
-  }
-  .header-div-logo {
-    position: absolute;
-    height: 90px;
-    width: 150px;
-    left: 5px;
-    top: 5px;
-    /*background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.57);*/
-  }
-  .header-div-logo-mobile-menu {
-    display: none;
-  }
-
-  /*MENU*/
-  .header-div-menu {
-    height: 30px;
-    width: calc(100% - 170px);
-    left: 160px;
-    top: initial;
-    bottom: 5px;
-  }
-  .header-div-menu-lista {
-    display: inline-block;
-    width: auto;
-    top: 0px;
-    left: 0px;
-    right: 0;
-    bottom: 5px;
-    height: 100%;
-    background-color: transparent;
-  }
-  .header-div-menu-lista li {
-    float: left;
-    width: 15%;
-  }
-  .header-div-menu-lista a {
-    padding: 5px 5px;
-  }
-  .header-div-menu-lista a:hover {
-    background-color: #e5ebf0;
-    color: rgb(45, 58, 144);
-  }
-  .header-div-menu-lista-login {
-    display: none;
-  }
-
-  .header-div-buscar {
-    height: auto;
-    width: calc(100% - 269px);
-    left: 160px;
-    top: 35px;
-    background-color: green;
-  }
-  .form-buscar {
-    margin: 0px;
-  }
-  .form-buscar input{
-    width: 100%;
-  }
-  .header-div-buscar img {
-      left: 1%;
-      top: 3px;
-  }
-
-  /*LOGIN*/
-  .header-div-login {
-    display: inline-block;
-  }
-  .header-div-login a {
-    color: #e5ebf0;
-  }
-  .header-div-login a:hover {
-    background-color: #e5ebf0;
-    color: rgb(6, 44, 99);
-  }
-  /* -- FIN - HEADER ---------------------------------------------------------*/
-
-
-
-  /* -- INICIO - BODY --------------------------------------------------------*/
-  .banner_body {
-  display: block;
-  margin-bottom: 20px;
-  }
-  .products_body{
-    float: left;
-    width: 40%;
-    margin: 5%;
-  }
-  .products_body a{
-    font-size: 1.5em;
-    }
-    .products_body img:hover{
-      color: rgba(9, 112, 84);
-      background-color:rgba(9, 112, 84, 0.63) ;
-      -webkit-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      transform: scale(1.3);
-    }
-    .products_body a:hover{
-      color: rgba(9, 112, 84);
-      background-color:rgba(9, 112, 84, 0.63) ;
-      -webkit-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      transform: scale(1.3);
-    }
-    .banner_body a:hover{
-      -webkit-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      transform: scale(1.3);
-    }
 /*-------Para mas adelante-----*/
 /*.principal-body-productos_1 {
   background: linear-gradient(to right, rgba(202,230,221,1) 0%, rgba(167,227,208,1) 100%);
@@ -465,30 +254,56 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 }*/
 
 /*LEO PAGINA DE LOGIN*/
-.body_home_login {
-  background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
+.body_login {
+  background-image: url(../images/login-bkg.jpg);
+  background-size: 100%;
+  z-index: 10;
+  background-position-y: 45%;
+  min-height: 525px;
 }
-
-.body_home_login_form {
+.body_login_princ_titulo {
+  padding: 10px 0;
+  color: rgb(50, 50, 50);
 }
-
-.body_home_login_form_renglones {
+.body_login_princ_form {
+  padding: 5px 0 25px;
+}
+/*.body_login_princ_form_fondo {
+  height: 100vh;
+}*/
+.body_login_princ_form_fondo img {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  opacity: 0.6;
+  top: calc((20vh) - 150px);
+}
+.body_login_princ_form_renglones {
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0 10px;
 }
-.body_home_login_form_renglones label , .body_home_login_form_renglones input {
+.body_login_princ_form_renglones input {
   float: left;
   width: 100%;
-  text-align: left;
-}
-.body_home_login_form_renglones input {
+  padding: 5px;
   border: none;
-  height: 30px;
+  text-align: left;
+  font-size: 1.2em;
+  color: rgb(80, 80, 80);
   border-radius: 2px;
-  color: rgb(150, 150, 150);
+}
+.body_login_princ_form_renglones button {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.4em;
+}
+.body_login_princ-registrate {
+  font-size: 0.8em;
+  color: rgb(50, 50, 50);
 }
 
 
@@ -502,6 +317,30 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
   color: #e5f0ed;
 }
+/*** logo ***/
+.logo_2{
+    display: none;
+}
+/*** MENU ***/
+.menu_2 .conten h5{
+    display: none;
+}
+.menu_2 .conten li{
+    font-size:1.5em;
+}
+/***Redes Sociales**/
+.redes_sociales{
+    border:1px solid yellow;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -661,18 +500,58 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
       -webkit-transform: scale(1.3);
       -ms-transform: scale(1.3);
       transform: scale(1.3);
+
     }
-    .banner_body a:hover{
-      -webkit-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      transform: scale(1.3);
-    }
+
   /* -- FIN - BODY -----------------------------------------------------------*/
 
 
 
   /* -- INICIO - FOOTER ------------------------------------------------------*/
+  .footer_1{
+      border-color:solid crimson;
+      width:100%;
+      background-color:rgba(32, 80, 136, 0.81);
+      display: block;
+      overflow: hidden;
+  }
+  .footer_2{
+      background-color: darkgoldenrod;
+      width: 100%;
+      height:40%;
+      display: block;
+  }
 
+  .logo_2{
+      float:left;
+      height:72.5px;
+      overflow:hidden;
+      width:auto;
+      width: 33.33% ;
+      border: 1px solid yellow;
+  }
+  .logo_2 img{
+      border:none;
+      padding: 0;
+      margin: 0;
+      width:15vw;
+      height: auto;
+  }
+
+  .menu_2{
+      border: 2px solid red ;
+      float: left;
+      width: 33.33%;
+  }
+  .copyright{
+
+  }
+  .redes_sociales{
+      border: 1px solid orange;
+      float: left;
+      width:33.30%;
+
+  }
   /* -- FIN - FOOTER ---------------------------------------------------------*/
 }
 
@@ -758,15 +637,84 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 
 
   /* -- INICIO - BODY --------------------------------------------------------*/
-  .products_body{
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    width: 20%;
-    }
-    .products_body a{
-      font-size: 0.9em;
+  .banner_body{
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+    border-radius: 30px;
+    margin-left: 10%;
+    margin-right:10%;
+    position: relative;
+    border-radius: 0.7;
+    Box-shadow: inset 0 0 50px rgba(9, 112, 84, 0.83),inset 0 0 80px rgba(9, 112, 84, 0.63),inset 0 0 175px rgba(9, 112, 84, 0.33);
     }
 
+  .banner_body img{
+    width: 98.33%;
+    margin-left: 0.83%;
+    margin-right: 0.83%;
+    opacity: 0.7;
+    border-radius: 0.7;
+    Box-shadow: inset 0 0 50px rgba(9, 112, 84, 0.83),inset 0 0 80px rgba(9, 112, 84, 0.63),inset 0 0 175px rgba(9, 112, 84, 0.33);
+
+  }
+  .banner_body a{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    width: 100%;
+    display: inline-block;
+    background-color: rgba(9, 112, 84, 0.43);
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    border-radius: 35px;
+    text-decoration: none;
+  }
+
+  .body_products_grilla {
+    background-color: white;
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .products_body{
+    background-color: white;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    }
+  .products_body img{
+    width: 100%;
+    border-radius: 35px;
+    opacity: 0.7;
+    margin: 0;
+    }
+    .products_body a{
+      background-color: rgba(9, 112, 84, 0.43);
+      color: white;
+      position: absolute;
+      top:45%;
+      right: 0%;
+      width: 100%;
+      display: inline-block;
+      font-size: 2em;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    body img:hover{
+      opacity: 1;
+      color: rgba(9, 112, 84);
+      background-color:rgba(9, 112, 84, 0.63) ;
+    }
+
+    body a:hover{
+      color: rgba(9, 112, 84);
+      background-color:rgba(9, 112, 84, 0.63) ;
+    }
 
 
 
@@ -777,3 +725,6 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   /* -- INICIO - FOOTER ------------------------------------------------------*/
 
   /* -- FIN - FOOTER ---------------------------------------------------------*/
+
+
+}
