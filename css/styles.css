@@ -63,16 +63,14 @@ ul,ol,li,li a , .header-div-login a {
 .header-div-buscar {
   position: absolute;
   height: 35px;
-  width: calc(100% - 130px);
-  left: 85px;
+  width: calc(100% - 135px);
+  left: 90px;
   top: 5px;
 }
-.form-buscar {
-  margin-top: 5px;
-}
 .form-buscar input {
+  margin-top: 1px;
   border: none;
-  height: 25px;
+  height: 30px;
   padding: 2px 2px 2px 30px;
   width: 100%;
   border-radius: 2px;
@@ -82,7 +80,7 @@ ul,ol,li,li a , .header-div-login a {
   width: 20px;
   position: absolute;
   left: 5px;
-  top: 7px;
+  top: 5px;
 }
 /* -- FIN - Buscar --*/
 
@@ -92,7 +90,7 @@ ul,ol,li,li a , .header-div-login a {
   height: 35px;
   width: 35px;
   right: 5px;
-  top: 5px;
+  top: 3px;
 }
 .header-div-menu-icon a {
   height: 100%;
@@ -116,9 +114,6 @@ ul,ol,li,li a , .header-div-login a {
 .header-div-menu-icon li:hover > .header-div-menu-lista {
   display: inline-block;
 }
-/*.header-div-menu-lista li:hover > .header-div-menu-lista-principal {
-  display: inline-block;
-}*/
 .header-div-menu-lista-principal li:hover > .header-div-menu-lista-secundario {
   display: inline-block;
 }
@@ -147,7 +142,7 @@ ul,ol,li,li a , .header-div-login a {
   position: absolute;
   display: none;
   right: 10px;
-  top: 5px;
+  top: 7px;
 }
 .header-div-login a {
   display: block;
@@ -353,7 +348,7 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   min-height: 525px;
 }
 .body_login_princ_titulo {
-  padding: 10px 0;
+  padding: 20px 0;
   color: rgb(50, 50, 50);
 }
 .body_login_princ_form {
@@ -372,20 +367,26 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   top: calc((20vh) - 150px);
 }
 .body_login_princ_form_renglones {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   overflow: hidden;
-  padding: 10px 0 10px;
+}
+.body_login_princ_form_renglones button {
+  margin: 20px 0;
 }
 .body_login_princ_form_renglones input {
   float: left;
-  width: 100%;
-  padding: 5px;
-  border: none;
   text-align: left;
   font-size: 1.2em;
   color: rgb(80, 80, 80);
-  border-radius: 2px;
+
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: white;
 }
 .body_login_princ_form_renglones button {
   width: 100%;
@@ -395,6 +396,17 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .body_login_princ-registrate {
   font-size: 0.8em;
   color: rgb(50, 50, 50);
+  padding: 20px 0;
+}
+.body_login_princ-registrate a {
+  color: white;
+  text-shadow: 1px 0px 5px rgb(38, 38, 38);
+}
+.body_login_princ-registrate h2 {
+  background-color: rgba(80,80,80,0.4);
+  padding: 10px 0;
+  width: 95%;
+  margin: 0 auto;
 }
 /* INICIAR SESION -------------------------*/
 
@@ -406,99 +418,144 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 /* -- A PARTIR DE --> 640 px -- */
 @media (min-width:640px) {
   /* -- INICIO - HEADER ------------------------------------------------------*/
-  .header {
-    margin: 0 auto;
-    /*coloco posici�n relativa para que el body no flote sobre el nav*/
-    position: relative;
+   .header {
+     margin: 0 auto;
+     position: relative;
+     height: 80px;
+     top: 0;
+     max-height: 100px;
+   }
+   .header-div {
+     height: inherit;
+   }
+   .header-barra img{
+     height: 5px;
+   }
 
-    height: 80px;
-    max-height: 100px;
-}
-  .header-div {
-  }
+   /* -- INICIO Logo -- */
+   .header-div-logo {
+     width: 130px;
+     height: initial;
+   }
+   .header-div-logo-mobile-logo {
+     display: none;
+     width: 130px;
+   }
+   .header-div-logo-desktop-logo {
+     display: inline-block;
+     width: 100%;
+   }
+   .header-div-logo-mobile-menu {
+     display: none;
+   }
+   /* -- FIN Logo -- */
 
-  .header-div-logo-mobile-logo {
-    display: none;
-  }
-  .header-div-logo-desktop-logo {
-    display: inline-block;
-  }
-  .header-div-logo {
-    position: absolute;
-    height: 90px;
-    width: 150px;
-    left: 5px;
-    top: 5px;
-    /*background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.57);*/
-  }
-  .header-div-logo-mobile-menu {
-    display: none;
-  }
 
-  /*MENU*/
-  .header-div-menu {
-    height: 30px;
-    width: calc(100% - 170px);
-    left: 160px;
-    top: initial;
-    bottom: 5px;
-  }
-  .header-div-menu-lista {
-    display: inline-block;
-    width: auto;
-    top: 0px;
-    left: 0px;
-    right: 0;
-    bottom: 5px;
-    height: 100%;
-    background-color: transparent;
-  }
-  .header-div-menu-lista li {
-    float: left;
-    width: 15%;
-  }
-  .header-div-menu-lista a {
-    padding: 5px 5px;
-  }
-  .header-div-menu-lista a:hover {
-    background-color: #e5ebf0;
-    color: rgb(45, 58, 144);
-  }
-  .header-div-menu-lista-login {
-    display: none;
-  }
+   /* -- INICIO - Barra de busqueda -- */
+   .header-div-buscar {
+     height: auto;
+     width: calc(100% - 280px);
+     left: 145px;
+     top: 10px;
+   }
+   .form-buscar {
+     margin: 0px;
+   }
+   .form-buscar input{
+     width: 100%;
+   }
+   .header-div-buscar img {
+     top: 3px;
+   }
+   /* -- FIN - Barra de busqueda -- */
 
-  .header-div-buscar {
-    height: auto;
-    width: calc(100% - 269px);
-    left: 160px;
-    top: 35px;
-    background-color: green;
-  }
-  .form-buscar {
-    margin: 0px;
-  }
-  .form-buscar input{
-    width: 100%;
-  }
-  .header-div-buscar img {
-      left: 1%;
-      top: 3px;
-  }
 
-  /*LOGIN*/
-  .header-div-login {
-    display: inline-block;
-  }
-  .header-div-login a {
-    color: #e5ebf0;
-  }
-  .header-div-login a:hover {
-    background-color: #e5ebf0;
-    color: rgb(6, 44, 99);
-  }
-  /* -- FIN - HEADER ---------------------------------------------------------*/
+   /* -- INICIO - Menu -- */
+   .header-div-menu {
+     height: 30px;
+     width: calc(100% - 170px);
+     left: 145px;
+     top: initial;
+     bottom: 5px;
+   }
+   .header-div-menu-lista {
+     display: inline-block;
+     width: auto;
+     top: 0px;
+     left: 0px;
+     right: 0;
+     bottom: 5px;
+     height: 100%;
+     background-color: transparent;
+   }
+   .header-div-menu-lista li {
+     float: left;
+     width: 19%;
+     text-shadow: 0 1px 5px rgba(0, 50, 110, 0.5);
+     border-radius: 2px;
+     overflow: hidden;
+   }
+   .header-div-menu-lista li:hover > .header-div-menu-lista-principal {
+     display: inline-block;
+     width: 150px;
+     position: absolute;
+     left: 0;
+   }
+   .header-div-menu-lista-principal li , .header-div-menu-lista-secundario li {
+     float: left;
+     width: 100%;
+     overflow: hidden;
+   }
+   .header-div-menu-lista-principal li:hover > .header-div-menu-lista-secundario {
+     top: 0;
+     left: 148px;
+     width: 150px;
+   }
+   .header-div-menu-lista-principal li , .header-div-menu-lista-secundario li {
+     border-top: 1px solid rgba(0, 91, 66, 0.7);
+     border-bottom: 1px solid rgba(0, 42, 31, 0.85);
+   }
+   .header-div-menu-lista-secundario {
+     position: absolute;
+     top: 92%;
+     left: 18.6%;
+   }
+   .header-div-menu-lista a {
+     padding: 5px 5px;
+   }
+   .header-div-menu-lista li:hover {
+     background-color: rgb(182, 85, 5);
+     color: rgb(55, 55, 55);
+   }
+   .header-div-menu-lista li:hover > .header-div-menu-lista a {
+     color: red;
+   }
+   .header-div-menu-lista-login {
+     display: none;
+   }
+   .header-div-menu-lista a:hover {
+     background-color: rgba(235, 255, 255, 1);
+     color: rgb(9, 36, 82);
+   }
+
+
+   /*LOGIN*/
+   .header-div-login {
+     display: inline-block;
+     font-size: 0.8em;
+   }
+   .header-div-login a {
+     float: left;
+     text-shadow: 0 1px 5px rgba(0, 50, 110, 0.5);
+     color: rgba(235, 255, 255, 1);
+   }
+   .header-div-login a:hover {
+     background-color: rgba(235, 255, 255, 0.8);
+     color: rgb(6, 44, 99);
+     border-radius: 3px;
+     overflow: hidden;
+   }
+   /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
 
@@ -655,69 +712,36 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
     width: 150px;
     margin-left: 10px;
   }
+  .header-div-buscar img {
+    top: 5px;
+  }
   /* -- FIN Logo -- */
 
 
   /* -- INICIO - Barra de busqueda -- */
   .header-div-buscar {
-    width: calc(100% - 315px);
+    width: calc(100% - 330px);
     max-width: 800px;
-    left: 180px;
-    top: 20px;
+    left: 190px;
+    top: 15px;
   }
   /* -- FIN - Barra de busqueda -- */
 
 
   /* -- INICIO - Menu -- */
   .header-div-menu {
-    width: calc(100% - 170px);
+    width: calc(100% - 180px);
     max-width: 800px;
-    left: 170px;
+    left: 190px;
+    bottom: 7px;
   }
-  /*
-  .header-div-menu-lista {
-    display: inline-block;
-    width: auto;
-    top: 0px;
-    left: 0px;
-    right: 0;
-    bottom: 5px;
-    height: 100%;
-    background-color: transparent;
+  .header-div-menu-lista li:hover > .header-div-menu-lista-principal {
+    width: 180px;
   }
-  .header-div-menu-lista li {
-    float: left;
-    width: 16.5%;
-    text-shadow: 0 1px 5px rgba(0, 50, 110, 0.5);
+  .header-div-menu-lista-principal li:hover > .header-div-menu-lista-secundario {
+    left: 178px;
+    width: 180px;
   }
-  .header-div-menu-lista a {
-    padding: 5px 5px;
-  }
-  .header-div-menu-lista a:hover {
-    background-color: rgba(235, 255, 255, 1);
-    color: rgb(45, 58, 144);
-  }
-  .header-div-menu-lista-login {
-    display: none;
-  }*/
-
-
-  /*LOGIN*/
-  /*.header-div-login {
-    display: inline-block;
-    font-size: 0.8em;
-  }
-  .header-div-login a {
-    float: left;
-    text-shadow: 0 1px 5px rgba(0, 50, 110, 0.5);
-    color: rgba(235, 255, 255, 1);
-  }
-  .header-div-login a:hover {
-    background-color: rgba(235, 255, 255, 1);
-    color: rgb(6, 44, 99);
-  }*/
-
-
 
 
 

@@ -10,11 +10,18 @@
   <body>
     <!-- INICIO HEADER -->
     <header class="header">
+      <div class="header-barra">
+        <img src="images/barra-horizontal.png" alt="barra">
+      </div>
       <div class="header-div">
         <!-- INICIO Logo -->
         <div class="header-div-logo">
-          <img class="header-div-logo-mobile-logo" src="images/prueba-logo.png" alt="logo-mini">
-          <img class="header-div-logo-desktop-logo" src="images/logo-zoo.png" alt="logo-desktop">
+          <a href="index.html">
+            <img class="header-div-logo-mobile-logo" src="images/prueba-logo.png" alt="logo-mini">
+          </a>
+          <a href="index.html">
+            <img class="header-div-logo-desktop-logo" src="images/logo-zoo.png" alt="logo-desktop">
+          </a>
         </div>
         <!-- FIN Logo -->
 
@@ -39,20 +46,37 @@
 
                 <!-- SubMenu con Lista desplegable -->
                 <ul class="header-div-menu-lista">
+                  <!-- Login/Registrate - Solo Mobile -->
                   <li>
                     <div class="header-div-menu-lista-login">
-                      <a href="#">LogIn</a>
-                      <a href="#">Registrarse</a>
+                      <a href="login.html">LogIn</a>
+                      <a href="formulario.html">Registrarse</a>
                     </div>
                   </li>
-                  <li><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 5</a></li>
-                  <li><a href="#">Menu 6</a></li>
-                  <!-- <li><a href="#">Menu 7</a></li>
-                  <li><a href="#">Menu 8</a></li> -->
+                  <!-- Productos -->
+                  <li>
+                    <a href="#">Productos</a>
+                    <ul class="header-div-menu-lista-principal">
+                      <li>
+                        <a href="#">Perros</a>
+                        <ul class="header-div-menu-lista-secundario">
+                          <li><a href="#">Cuchas</a></li>
+                          <li><a href="#">Juguetes</a></li>
+                          <li><a href="#">Comida</a></li>
+                          <li><a href="#">Peluqueria</a></li>
+                          <li><a href="#">Otros</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Gatos</a></li>
+                      <li><a href="#">Aves</a></li>
+                      <li><a href="#">Exoticos</a></li>
+                      <li><a href="#">Otros</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Ofertas</a></li>
+                  <li><a href="#">Top 10</a></li>
+                  <li><a href="#">Comprar</a></li>
+                  <li><a href="#">Vender</a></li>
                 </ul>
               </li>
             </ul>
@@ -64,8 +88,8 @@
 
         <!-- INICIO Login -->
         <div class="header-div-login">
-          <a href="#">LogIn</a>
-          <a href="#">Registrarse</a>
+          <a href="login.html">LogIn</a>
+          <a href="formulario.html">Registrarse</a>
         </div>
         <!-- FIN Login -->
       </div>
