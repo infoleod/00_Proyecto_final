@@ -19,7 +19,8 @@ ul,ol,li,li a , .header-div-login a {
 }
 /* -- HEADER -----------------------------------------------------------------*/
 .header {
-  background: linear-gradient(to right, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);
+  /*background: linear-gradient(to right, rgba(14,154,230,1) 0%, rgba(13,184,231,1) 38%, rgba(104,209,195,1) 82%, rgba(131,230,174,1) 100%);*/
+  background: rgb(14,154,230);
   width: 100vw;
   position: relative;
 }
