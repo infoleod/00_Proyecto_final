@@ -253,25 +253,74 @@ ul,ol,li,li a , .header-div-login a {
 /* -- FOOTER -----------------------------------------------------------------*/
 /*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
 LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
+
 .footer {
-  clear: both;
-  background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
-  color: #e5f0ed;
+    clear: both;
+    background: linear-gradient(to right, rgba(3,73,75,1) 0%, rgba(0,48,56,1) 100%);
+    color: #e5f0ed;
+    overflow: hidden;
+    margin:0%;
+
+}
+.footer-barra{
+    width:100%;
+    height:auto;
+    bottom:0px;
+    left:0px;
+    padding:0% 0%;
+    margin:0%;
 }
 /*** logo ***/
 .logo_2{
     display: none;
+
 }
 /*** MENU ***/
 .menu_2 .conten h5{
     display: none;
 }
+.menu_2 .conten{
+    display: block;
+    overflow: hidden;
+}
 .menu_2 .conten li{
+    display:inline-block;
+    width:100%;
     font-size:1.5em;
+    margin:;
+    padding:0;
+    border: 1px solid red;
+    overflow: hidden;
+}
+.menu_2 .conten li a{
+    font-size:10px;
 }
 /***Redes Sociales**/
 .redes_sociales{
     border:1px solid yellow;
+    display: block;
+    overflow: hidden;
+}
+
+.redes_sociales ul li{
+    width:33.33%;
+    float:left;
+}
+/*** preguntas frecuentes ***/
+.preguntas_frecuentes{
+    width: 100%;
+
+}
+/****Fondo de preguntas frecuentes *****/
+.container-preguntas{
+    background-image: url(../images/21.jpg);
+}
+.preguntas_frecuentes a{
+    margin: 1%;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid orange;
 }
 
 
@@ -641,29 +690,31 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .footer_1{
   border-color:solid crimson;
   width:100%;
-  background-color:rgba(32, 80, 136, 0.81);
+  background-color:#0d88a8;
   display: block;
   overflow: hidden;
 }
 .footer_2{
-  background-color: darkgoldenrod;
+  background-color:#60c19f;
   width: 100%;
   height:40%;
   display: block;
 }
 
 .logo_2{
+  display: block;
   float:left;
-  height:72.5px;
+  height:100%;
   overflow:hidden;
   width:auto;
-  width: 33.33% ;
-  border: 1px solid yellow;
+  width:20% ;
+ /* border: 1px solid yellow;*/
 }
 .logo_2 img{
+  padding: 3% 0%;
   border:none;
   padding: 0;
-  margin: 0;
+  margin:15% 0 0 0;
   width:15vw;
   height: auto;
 }
@@ -671,15 +722,20 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .menu_2{
   border: 2px solid red ;
   float: left;
-  width: 33.33%;
-}
-.copyright{
-
+  width: 40%;
 }
 .redes_sociales{
-  border: 1px solid orange;
-  float: left;
-  width:33.30%;
+  width:40%;
+  display: block;
+  font-family: 1em;
+  }
+.preguntas_frecuentees{
+  width: 50%;
+  margin: 0;
+  padding: 0;
+
+  }
+.copyright{
 
 }
 
