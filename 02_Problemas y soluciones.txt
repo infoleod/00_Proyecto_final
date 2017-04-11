@@ -1,0 +1,12 @@
+Ir dejando acentado los problemas ysoluciones que fuimos teniendo durante los distintos sprints...
+
+
+
+1° Sprint (HTML + CSS)
+	Leonardo: 
+		-Se presentaron problemas con el posicionamiento absoluto y relativo.
+		+Se soluciono probando desde el inspector del navegador y alterando los valores hasta comprender la falla
+
+		-Se encontraron problemas con los contenidos de un contenedor padre y su hijo, muchas veces el contenedor padre se plegaba dado que no encontraba contenido en su hijo.
+		+Se soluciono verificando las propiedades que contenia el hijo y si el mismo estaba flotado asignar lo necesario para que el padre lo vea como contenido y el mismo no se repliegue.
+

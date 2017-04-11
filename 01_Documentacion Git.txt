@@ -1,0 +1,36 @@
+Documentacion Git
+Proyecto: e-Commerce
+Nombre:	ZooMarket
+Integrantes: D'Orto Leonardo, Girona Francisco, Rincon Andres
+
+
+Diseño:
+	Header:	
+		El header esta compuesto por:
+		Un logo principal, el cual contiene un link a la pagina principal.
+		Una barra de busqueda.
+		un menu de botones dinamicos los cuales permiten la navegacion por el sitio.
+		Acceso a la pagina de Logueo y Registracion.
+
+	Body:
+
+	Footer:
+
+
+Mapa del Sitio:
+	Pagina principal y de presentacion
+	Pagina de registracion
+	Pagina de Login
+	Pagina de Preguntas frecuentes
+
+
+
+
+
+
+
+
+
+
+
+
