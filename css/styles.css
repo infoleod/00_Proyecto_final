@@ -327,6 +327,9 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 
 
 /*********************************Formulario de registraci�n************************************/
+.header-div-login-form-registracion a{
+  display: none;
+}
 .partesFormularioACompletar {
     margin:auto;
     width: 95%;
@@ -385,6 +388,34 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   background-image: url(../images/formularioperro.jpg);
   background-size: 100%;
   background-position-y:45%;
+}
+.logueateEnRegistracion h2{
+  background-color: rgba(80,80,80,0.4);
+  padding: 10px 0;
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+  font-size: 1em;
+}
+.logueateEnRegistracion a{
+  color: rgb(200, 200, 200)
+}
+.logueateEnRegistracion a:hover{
+  color:rgb(255, 255, 255);
+}
+.terminos a{
+  color: rgb(85, 85, 85);
+}
+.terminos a:hover{
+  color: rgb(255, 255, 255);
+}
+
+.terminos h3{
+  display: block;
+  font-size: 0.8em;
+  background-color: rgba(80,80,80,0.4);
+  padding-bottom: 1.5%;
+  color: rgb(218, 218, 218);
 }
 /*********************************Fin Formulario regist********************************************/
 
@@ -753,7 +784,12 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .botonRegistrame button{
   width: 50%;
 }
-
+.partesFormularioACompletar label{
+  font-size: 1.2em;
+}
+.partesFormularioACompletar input, textarea {
+  font-size: 1em;
+}
 
 /*********************************Fin Formulario regist-640********************************************/
 
@@ -829,6 +865,15 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   /*********************************Formulario de registraci�n************************************/
 .partesFormularioACompletar label{
   display: block;
+}
+.parametros {
+  padding: 0.5%;
+}
+.partesFormularioACompletar label{
+  font-size: 1em;
+}
+.partesFormularioACompletar input, textarea {
+  font-size: 0.8em;
 }
 
   /*********************************Fin Formulario regist********************************************/
