@@ -452,6 +452,9 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   margin: 0 auto;
   overflow: hidden;
 }
+.body_login_princ_form_renglones label{
+  display: none;
+}
 .body_login_princ_form_renglones button {
   margin: 20px 0;
 }
@@ -691,8 +694,6 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
 }
 
-.body_home_login_form {
-}
 
 .body_home_login_form_renglones {
   width: 90%;
@@ -701,19 +702,35 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.body_home_login_form_renglones label , .body_home_login_form_renglones input {
-  float: left;
-  width: 100%;
-  text-align: left;
-}
 .body_home_login_form_renglones input {
   border: none;
   height: 30px;
+  width: 70%;
   border-radius: 2px;
   color: rgb(150, 150, 150);
+  text-align: left;
+  float: right;
 }
-
-
+.body_login_princ_form_renglones {
+  width: 80%;
+  max-width: 800px;
+}
+.body_login_princ_form_renglones label{
+  display: inline-block;
+  float: left;
+  width: 15%;
+  padding: 10px;
+  text-align: right;
+  font-size: 1.2em;
+}
+.body_login_princ_form_renglones input {
+  float: left;
+  width: 70%;
+}
+.body_login_princ_form_renglones button {
+  max-width: 70%;
+  float: left;
+}
 
 
 /* -- INICIO - FOOTER ------------------------------------------------------*/
