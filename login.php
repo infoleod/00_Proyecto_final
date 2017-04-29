@@ -51,7 +51,7 @@
             <button type="submit" name="enviar">Ingresar</button>
           </div>
           <div class="body_login_princ-registrate">
-            <a href="formulario.html">
+            <a href="formulario.php">
               <h2>¡ Registrate !</h2>
             </a>
           </div>
