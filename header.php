@@ -26,10 +26,10 @@
       <div class="header-div">
         <!-- INICIO Logo -->
         <div class="header-div-logo">
-          <a href="index.html">
+          <a href="index.php">
             <img class="header-div-logo-mobile-logo" src="images/prueba-logo.png" alt="logo-mini">
           </a>
-          <a href="index.html">
+          <a href="index.php">
             <img class="header-div-logo-desktop-logo" src="images/logo-zoo.png" alt="logo-desktop">
           </a>
         </div>
@@ -38,7 +38,7 @@
         <!-- INICIO Buscar -->
         <div class="header-div-buscar">
           <img class="header-div-logo-mobile-search" src="images/search-icono.png" alt="search-icon">
-          <form class="form-buscar" action="index.html" method="post">
+          <form class="form-buscar" action="index.php" method="post">
             <input type="text" name="buscar" placeholder="Buscar">
           </form>
         </div>
@@ -57,7 +57,7 @@
                 <!-- SubMenu con Lista desplegable -->
                 <ul class="header-div-menu-lista">
                   <li><a class="header-div-menu-lista-login" href="login.php">LogIn</a></li>
-                  <li><a class="header-div-menu-lista-login" href="formulario.html">Registrarse</a></li>
+                  <li><a class="header-div-menu-lista-login" href="formulario.php">Registrarse</a></li>
 
                   <!-- Productos -->
                   <li>
@@ -95,7 +95,7 @@
         <!-- INICIO Login -->
         <div class="header-div-login">
           <a href="login.php">LogIn</a>
-          <a href="formulario.html">Registrarse</a>
+          <a href="formulario.php">Registrarse</a>
         </div>
         <!-- FIN Login -->
       </div>
