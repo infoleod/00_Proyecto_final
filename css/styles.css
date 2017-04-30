@@ -172,15 +172,7 @@ ul,ol,li,li a , .header-div-login a {
 }
 /* -- FIN - Login --*/
 /* -- BODY -------------------------------------------------------------------*/
-.mySlides {
-  display:none}
-.principalContenedorBanner{
-  margin: 3%;
-}
-.w3-left, .w3-right, .w3-badge {
-  cursor:pointer}
-.w3-badge {
-  height:13px;width:13px;padding:0}
+
 .banner_body{
   display: none;
   margin: 0;
@@ -229,7 +221,6 @@ ul,ol,li,li a , .header-div-login a {
   margin-bottom: 5%;
 
   }
-
 .products_body img{
   width: 100%;
   border-radius: 35px;
