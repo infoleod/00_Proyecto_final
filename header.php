@@ -1,5 +1,5 @@
 <?php
-
+  $variableTodoOk = 1;
 
 
 
