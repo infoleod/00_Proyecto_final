@@ -410,8 +410,8 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .terminosYregistrame a{
   color:rgb(65, 65, 65);
 }
-.botonRegistrame button{
-  width: 95%;
+.botonRegistrame input{
+  width: 45%;
   font-size: 1.4em;
   }
 .botonRegistrame{
@@ -867,6 +867,9 @@ display: none;
 }
 .botonRegistrame button{
   width: 50%;
+}
+.parametrosFotoPerfil div{
+  width: 95%;
 }
 .partesFormularioACompletar label{
   font-size: 1.2em;
