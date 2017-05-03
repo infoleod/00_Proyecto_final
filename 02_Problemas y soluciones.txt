@@ -1,4 +1,4 @@
-Ir dejando acentado los problemas y soluciones que fuimos teniendo durante los distintos sprints...
+﻿Ir dejando acentado los problemas y soluciones que fuimos teniendo durante los distintos sprints...
 
 
 
@@ -16,3 +16,6 @@ Ir dejando acentado los problemas y soluciones que fuimos teniendo durante los d
 
 		####	-Al realizar una modificación sobre el body de un html diferente al home, esto hizo estallar el nav.
 		####	+Esto se corrigió utilizando el inspector para detectar que era el padding del nav el que se veia impactado.
+
+
+#prueba
