@@ -426,6 +426,10 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
   background-size: 100%;
   background-position-y:45%;
 }
+.erroresFormulario{
+  font-size: 0.7em;
+  color:red;
+}
 .logueateEnRegistracion h2{
   background-color: rgba(80,80,80,0.4);
   padding: 10px 0;

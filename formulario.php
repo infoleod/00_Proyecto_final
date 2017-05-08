@@ -1,5 +1,5 @@
 <?php
-
+/*llamo funciones.php para utilizarlas dentro del codigo del formulario*/
 require_once("funciones.php");
 
 $nombre="";
@@ -12,11 +12,11 @@ $errores=[];
 if($_POST){
   $errores= validarInformacion($_POST);
   if (count($errores) == 0) {
-    $errores = guardarImagen("imgPerfil", $errores);
+    $errores = guardarImagen($imagenPerfil, $errores);
     if (count($errores)== 0) {
       $usuario = crearUsuario($_POST);
       guardarUsuario($usuario);
-      header("Location:resgistrado.php");exit;
+      header("Location:registrado.php");exit;
     }
   }
   if(!isset($errores["nombre"])){
@@ -55,63 +55,72 @@ if($_POST){
         <div class= "registrateTitulo"><h2>Regístrate</h2>
         </div>
           <section class="partesFormulario">
-          <form class="script.php"  method="post">
+          <form action="formulario.php" class="script.php"  method="post" enctype="multipart/form-data">
 
             <div class="partesFormularioACompletar">
               <div class="parametros"><label>Nombres</label>
               <div class="nombreCuadro">
-              <input type="text" name="nombre" value="<?=$nombre?>" placeholder="Nombres"required>
+              <input type="text" name="nombre" value="<?=$nombre?>" placeholder="Nombres">
               <?php if(isset($errores["nombre"])) {?>
-                <span style="color:red">Error</span>
+                <span class="erroresFormulario">Debe completar su nombre</span>
                 <?php } ?>
               </div>
               </div>
                 <div class="parametros"><label>Apellido</label>
                 <div class="apellidoCuadro">
-                <input type="text" name="apellido" value="<?=$apellido?>" placeholder="Apellido" required>
+                <input type="text" name="apellido" value="<?=$apellido?>" placeholder="Apellido" >
                 <?php if(isset($errores["apellido"])) {?>
-                  <span style="color:red">Error</span>
+                  <span class="erroresFormulario">Debe completar el apellido</span>
                   <?php } ?>
                 </div>
                 </div>
                 <div class="parametros"><label>Usuario</label>
-                  <?php if (isset($errores["usuario"])){
-                    $errorEnUsuario = "error";
-                  }
-                  else {
-                    $errorEnUsuario ="";
-                  }?>
-                <div class="usuarioCuadro">
-                <input class="<?=$errorEnUsuario?>" type="text" name="usuario" value="<?=$usuario?>" required>
+                <div class="cuadroUsuario">
+                <input type="text" name="usuario" value="<?=$usuario?>" placeholder="Usuario" >
+                <?php if(isset($errores["usuario"])) {?>
+                  <span class="erroresFormulario">Usuario Invalido</span>
+                  <?php } ?>
                 </div>
                 </div>
                 <div class="parametros"><label>Foto de Perfil</label>
                 <div class="fotoPerfilCuadro">
-                <input type="file" name="imgPerfil" value=""  required>
+                <input type="file" name="imgPerfil" value=""  >
+                <?php if(isset($errores["imgPerfil"])){ ?>
+                  <span class="erroresFormulario">Sube una imagen valida</span>
+                  <?php } ?>
                 </div>
                 </div>
                 <div class="parametros">
                   <label>Teléfono (fijo o móvil)</label>
                   <div class="telefonoCuadro">
-                  <input type="text" name="telefono" value="<?=$telefono?>" placeholder="Telefono (Fijo o móvil)"required >
+                  <input type="text" name="telefono" value="<?=$telefono?>" placeholder="Telefono (Fijo o móvil)">
                   <?php if(isset($errores["telefono"])) {?>
-                    <span style="color:red">Error</span>
+                    <span class="erroresFormulario">Telefono incorrecto</span>
                     <?php } ?>
                   </div>
                   </div>
                 <div class="parametros"><label>E-mail</label>
                 <div class="emailCuadro">
-                  <input type="text" name="mail" value="<?=$mail?>" placeholder="Email"required >
+                  <input type="text" name="mail" value="<?=$mail?>" placeholder="Email" >
+                  <?php if (isset($errores["mail"])) {?>
+                    <span class="erroresFormulario">Mail incorrecto</span>
+                  <?php } ?>
                 </div>
                 </div>
                 <div class="parametros"><label>Contraseña</label>
                 <div class="claveCuadro">
-                  <input type="password" name="password" value="" placeholder="Contraseña" required >
+                  <input type="password" name="password" value="" placeholder="Contraseña" >
+                  <?php if (isset($errores["password"])) {?>
+                    <span class="erroresFormulario">Contraseña invalida</span>
+                  <?php } ?>
                 </div>
                 </div>
               <div class="parametros"><label>Confirma contraseña</label>
                 <div class="claveCuadro">
-                <input type="password" name="cpassword" value="" placeholder="Confirma contraseña" required>
+                <input type="password" name="cpassword" value="" placeholder="Confirma contraseña" >
+                <?php if (isset($errores["password"])) {?>
+                  <span class="erroresFormulario">Confirmación erronea</span>
+                <?php } ?>
               </div>
               </div>
 
