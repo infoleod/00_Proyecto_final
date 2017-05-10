@@ -285,6 +285,10 @@ ul,ol,li,li a , .header-div-login a {
 /*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
 LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 
+/* -- FOOTER -----------------------------------------------------------------*/
+/*ANDRES - ESTABLECI ALGUNOS VALORES PARA PROBAR COMO IBA QUEDANDO
+LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
+
 .footer {
     clear: both;
     background:black;
@@ -302,9 +306,10 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
     margin:0%;
 }
 /*** logo ***/
-.logo_2{
-    display: none;
-
+.logo_2 img{
+    overflow: hidden;
+    height:10vh;
+   
 }
 /*** MENU ***/
 .menu_2 .conten h5{
@@ -331,34 +336,41 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 .redes_sociales{
     display: block;
     overflow: hidden;
+   
+  }
+.redes_sociales img{
+    height:4vh;
   }
 
-.redes_sociales ul li{
-    width:33.33%;
+.redes{
+    width:33%;
     float:left;
+    height:100%;
+    overflow: hidden;
 }
-/*** preguntas frecuentes ***/
-.preguntas_frecuentes{
-    width: 100%;
-}
-/****Fondo de preguntas frecuentes *****/
-.container-preguntas{
-    background-color: rgba(128, 224, 224, 0.28);
-}
-.preguntas_frecuentes a{
-    margin: 1%;
-    font-size:0.73em;
+    /***ayuda ***/
+.ayuda a{
+    margin:0;
+    font-size:100%;
     text-decoration: none;
     color: #fff;color: #e5f0ed;
     display: block;
 
 }
-
-.preguntas_frecuentes p{
-  font-size: 2em;
-  border-bottom: 1px solid #fff;
+    /*** frase ***/
+.frase  {
+    display: none;
 }
 
+
+/********* FIN DEL FOOTER*********/
+
+/******** INICIO  preguntas frecuentes ******/
+.container-preguntas{
+    
+   background-image:url();
+}
+/******** FIN preguntas frecuentes ******/
 
 
 /*********************************Formulario de registraci�n************************************/
@@ -841,20 +853,26 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
 }
 .footer_2{
     background-color:#60c19f;
-    width: 100%;
-    height:40%;
-    display: block;
+    width:100%;
+    display:block;
+    overflow: hidden;
 }
-
+.copyright{
+    margin:0;
+    padding: 0;
+    text-align: center;
+    background-color: #fff;
+    color: black;
+}
 .logo_2{
-    display: block;
+    display:inline-block;
     float:left;
     height:100%;
-    overflow:hidden;
     width:auto;
-    width:20% ;
-
+    width:20%;
+ 
 }
+    
 .logo_2 img{
     padding: 3% 0%;
     border:none;
@@ -869,26 +887,38 @@ LE ASIGNE UN COLOR DE FONDO ASI SE VE UN POCO MEJOR*/
     width: 40%;
 }
 .redes_sociales{
-    width:100%;
-   clear: both;
-    font-family: 1em;
-    }
-.redes_sociales h2{
-display: none;
-    }
-.preguntas_frecuentes{
-    width:20%;
-    margin:0 10%;
-    bottom:50%;
-    padding:0;
-    display:inline-block;
+    display: inline-block;
+    font-family:1em;
+    
+    width:30%;
     float:right;
-    height:auto;
     }
-.copyright{
+.redes_sociales ul li{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    }
+.redes{
+    display:inline-block;
+    width:100%;
+    float: left;
+    }
+.ayuda{
+        display:inline-block;
+        width:30%;
+        float:left;
+    }
+.frase{
+    clear: both;
+    display:inline-block;
+    float: left;
+    width:33%;
+    }
 
-}
-
+.frase p{
+    float: left;
+    margin-left: 1%;
+    }
 /* -- FIN - FOOTER ---------------------------------------------------------*/
 
 
