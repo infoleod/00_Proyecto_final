@@ -399,8 +399,8 @@ ul,ol,li,li a , .header-div-login a {
   display: none;
 }
 .partesFormularioACompletar {
-  margin:auto;
-  width: 95%;
+    margin:auto;
+    width: 95%;
 }
 
 .partesFormularioACompletar input{
@@ -423,17 +423,21 @@ ul,ol,li,li a , .header-div-login a {
   transition: all 0.15s ease-in-out;
   border-radius:3px;
   border:1px solid rgba(0,0,0,0.2);
-}
+  }
+
 .terminosYregistrame{
   width: 95%;
   margin: auto;
+
 }
+
 .terminosYregistrame p{
   font-size: 1em;
   color: rgb(85, 79, 81);
   margin-left: 3%;
   margin-right: 3%;
   padding: 1%;
+
 }
 .terminosYregistrame a{
   color:rgb(65, 65, 65);
@@ -441,7 +445,7 @@ ul,ol,li,li a , .header-div-login a {
 .botonRegistrame input{
   width: 45%;
   font-size: 1.4em;
-}
+  }
 .botonRegistrame{
   padding: 1.5%;
 }
@@ -452,6 +456,10 @@ ul,ol,li,li a , .header-div-login a {
   background-image: url(../images/formularioperro.jpg);
   background-size: 100%;
   background-position-y:45%;
+}
+.erroresFormulario{
+  font-size: 0.7em;
+  color:red;
 }
 .logueateEnRegistracion h2{
   background-color: rgba(80,80,80,0.4);
@@ -473,6 +481,7 @@ ul,ol,li,li a , .header-div-login a {
 .terminos a:hover{
   color: rgb(255, 255, 255);
 }
+
 .terminos h3{
   display: block;
   font-size: 0.8em;
