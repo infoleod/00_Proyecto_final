@@ -1,0 +1,38 @@
+# Documentacion Git
+	+ Proyecto: e-Commerce
+	+	Nombre:	ZooMarket
+	+	Integrantes: D'Orto Leonardo, Girona Francisco, Rincon Andres
+
+
+## Dise�o:
+	### Header:
+		 El header esta compuesto por:
+		 + Un logo principal, el cual contiene un link a la pagina principal.
+		 + Una barra de busqueda.
+		 + un menú de botones dinamicos los cuales permiten la navegacion por el sitio.
+		 + Acceso a la pagina de Logueo y Registración.
+
+	### Body:
+		El body esta compuesto:
+		+ Un banner, con imagenes que se trasladaran.
+		+ En version mobile:
+				+ 4 Contenedores con los accesos a las secciones mas importantes del sitio.
+		+ Version 640
+				+ El banner trasladable, mas 2 pisos de dos contenedores(4 en total).
+		+ Versión 960
+				+ Se trasladaran los contenedores de forma horizontal al banner
+
+	### Footer:
+
+
+##Mapa del Sitio:
+	+ Pagina principal y de presentación
+	+ Pagina de registración:Formulario registración, terminós y condiciones y link a login.
+		+Versión mobile
+				+ Formulario, con textarea nombrado para que figure. Los label permanecerán ocultos. Se listaran de forma vertical.
+		+ Versión 640.
+				+ Formulario se reestructura para ocupar el centro de la pantalla.
+		+ Versión 960.
+		 		+ Aparecerán los label, representando los títulos de los input
+	+ Pagina de Login
+	+ Pagina de Preguntas frecuentes
