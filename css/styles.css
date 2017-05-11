@@ -142,6 +142,51 @@ ul,ol,li,li a , .header-div-login a {
   padding: 15px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -- FIN - Menu --*/
 
 /* -- INICIO - Login --*/
@@ -155,6 +200,39 @@ ul,ol,li,li a , .header-div-login a {
   display: block;
   padding: 5px 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -- FIN - Login --*/
 
 
@@ -280,6 +358,33 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* - FOOTER - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -375,6 +480,28 @@ ul,ol,li,li a , .header-div-login a {
 .preg-freq li:hover > .respuesta-oculta {
   display: block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -508,6 +635,29 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* - PAGINA DE LOGIN - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -598,6 +748,34 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* - MEDIA QUERY's - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -636,6 +814,44 @@ ul,ol,li,li a , .header-div-login a {
    .header-div-logo-mobile-menu {
      display: none;
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /* -- FIN Logo -- */
 
 
@@ -655,6 +871,33 @@ ul,ol,li,li a , .header-div-login a {
    .header-div-buscar img {
      top: 3px;
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /* -- FIN - Barra de busqueda -- */
 
 
@@ -733,6 +976,29 @@ ul,ol,li,li a , .header-div-login a {
      padding: 5px;
    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /*LOGIN*/
    .header-div-login {
      display: block;
@@ -777,6 +1043,32 @@ ul,ol,li,li a , .header-div-login a {
    .borrar-solo-pruebas {
      float: left;
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
@@ -859,6 +1151,33 @@ ul,ol,li,li a , .header-div-login a {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* -- INICIO - FOOTER ------------------------------------------------------*/
 
   .footer_1{
@@ -912,6 +1231,43 @@ ul,ol,li,li a , .header-div-login a {
     float:right;
     height:auto;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* -- FIN - FOOTER ---------------------------------------------------------*/
 
 
@@ -935,6 +1291,39 @@ ul,ol,li,li a , .header-div-login a {
   .partesFormularioACompletar input, textarea {
     font-size: 1em;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /*********************************Fin Formulario regist-640********************************************/
 
 
@@ -993,6 +1382,36 @@ ul,ol,li,li a , .header-div-login a {
     left: 149px;
     width: 180px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* -- FIN - HEADER ---------------------------------------------------------*/
 
 
@@ -1005,11 +1424,95 @@ ul,ol,li,li a , .header-div-login a {
   .products_body a{
     font-size: 0.9em;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* -- FIN - BODY -----------------------------------------------------------*/
 
 
 
   /* -- INICIO - FOOTER ------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* -- FIN - FOOTER ---------------------------------------------------------*/
 
