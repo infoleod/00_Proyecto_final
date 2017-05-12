@@ -22,13 +22,13 @@
     $errores["telefono"]= "Debe completar su telefono";
   }
   /*Valido usuario, minimo de datos 6*/
-  /*$usuario=trim($informacion["usuario"]);
-  if (strlen($usuario) >= 6) {
-    $errores["usuario"] = "Minimo de datos de usuario 6 caracteres";
+  $usuario=trim($informacion["usuario"]);
+  if (strlen($usuario) == 6) {
+  $errores["usuario"] = "Complete un usuario";
   }
   if(buscarPorUsuario($usuario) != false){
     $errores["usuario"] = "Ya existe el usuario";
-  }*/
+  }
   /*valido el mail, que sea mayor a uno el contenido, filtro con que sea un mail valido, luego busco el mail en la base para que ya no exista*/
   $mail = trim($informacion["mail"]);
   if (strlen($mail) == 0 ) {
@@ -54,36 +54,30 @@
   return $errores;
   }
   /*funcion para guardar imagen, ingreso lo que viene en la funcion imagen y los errores encontrados previamente.
-  */
+  */if (isset($_FILES["imgPerfil"])) {
 
-  function guardarImagen($imagenPefil, $errores){
-    if ($_FILES[$imagenPefil]["error"] == UPLOAD_ERR_OK) {
-      $nombre=$_FILES[$imagenPefil]["name"];
-      $archivo=$_FILES[$imagenPefil]["tmp_name"];
-      $ext = pathinfo("nombre", PATHINFO_EXTENSION);
+    $imagenPerfil=$_FILES["imgPerfil"];
+  }
+  function guardarImagen($imagenPerfil, $errores){
 
-      if ($ext === "jpg" || $ext === "jpeg" || $ext === "png") {
-        $miArchivo = dirname(__FILE__);
-        $miArchivo = $miArchivo . "/img/";
+    if ($imagenPerfil["error"] == UPLOAD_ERR_OK) {
+      $nombre=$imagenPerfil["name"];
+      $archivo=$imagenPerfil["tmp_name"];
+      $ext = pathinfo($nombre, PATHINFO_EXTENSION);
+
+      if ($ext === "jpg" || $ext === "jpeg" || $ext === "png"){
+        $miArchivo = "./img/";
         $miArchivo = $miArchivo . $_POST["usuario"] . "." . $ext;
         move_uploaded_file($archivo, $miArchivo);
-      }
-      else {
+      } else {
         $errores["imgPerfil"] = "Sube tu foto de perfil";
       }
-    }else {
+    } else {
       $errores["imgPerfil"] = "No se pudo subir la foto";
     }
     return $errores;
   }
 
-  /*funcion para guardar el usuario en el json, con lo que viene en usuario*/
-  function guardarUsuario($usuario){
-    $json= json_encode($usuario);
-    $json=$json . PHP_EOL;
-
-    file_put_contents("usuarios.json", $json, FILE_APPEND);
-  }
 
   /*funcion para crear el usuario con los datos que vinieron por post y hasheamos la la clave previamente. Traigo nuevo ID*/
   function crearUsuario($datos) {
@@ -98,6 +92,13 @@
     $usuario["id"] = traerNuevoId();
 
     return $usuario;
+  }
+  /*funcion para guardar el usuario en el json, con lo que viene en usuario*/
+  function guardarUsuario($usuario){
+    $json= json_encode($usuario);
+    $json=$json . PHP_EOL;
+
+    file_put_contents("usuarios.json", $json, FILE_APPEND);
   }
   /*traigo datos del json*/
   function traerTodos() {
@@ -131,9 +132,9 @@
 
   function buscarPorUsuario($usuario){
     $todos = traerTodos();
-    foreach ($todos as $usuario) {
-      if($usuario["usuario"] == $usuario){
-        return $usuario;
+    foreach ($todos as $usuarioIndividual) {
+        if($usuarioIndividual["usuario"] == $usuario){
+        return true;
       }
     }
     return false;
@@ -145,7 +146,7 @@
 
     foreach ($todos as $usuario) {
       if ($usuario["mail"] == $mail) {
-        return $usuario;
+        return true;
       }
     }
 

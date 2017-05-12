@@ -1,12 +1,12 @@
 <?php
 /*llamo funciones.php para utilizarlas dentro del codigo del formulario*/
 require_once("funciones.php");
-
 $nombre="";
 $apellido="";
 $usuario="";
 $mail="";
 $telefono="";
+
 
 $errores=[];
 if($_POST){
@@ -31,6 +31,11 @@ if($_POST){
   if (!isset($errores["usuario"])) {
     $usuario = $_POST["usuario"];
   }
+  if (!isset($errores["telefono"])) {
+    $telefono = $_POST["telefono"];
+  }
+
+
 }
 
  ?>
@@ -56,7 +61,6 @@ if($_POST){
         </div>
           <section class="partesFormulario">
           <form action="formulario.php" class="script.php"  method="post" enctype="multipart/form-data">
-
             <div class="partesFormularioACompletar">
               <div class="parametros"><label>Nombres</label>
               <div class="nombreCuadro">
@@ -83,12 +87,12 @@ if($_POST){
                 </div>
                 </div>
                 <div class="parametros"><label>Foto de Perfil</label>
-                <div class="fotoPerfilCuadro">
-                <input type="file" name="imgPerfil" value=""  >
-                <?php if(isset($errores["imgPerfil"])){ ?>
-                  <span class="erroresFormulario">Sube una imagen valida</span>
-                  <?php } ?>
-                </div>
+                    <div class="fotoPerfilCuadro">
+                         <input type="file" name="imgPerfil" value=""  >
+                            <?php if(isset($errores["imgPerfil"])){ ?>
+                              <span class="erroresFormulario">Subí una imagen valida</span>
+                            <?php } ?>
+                    </div>
                 </div>
                 <div class="parametros">
                   <label>Teléfono (fijo o móvil)</label>
