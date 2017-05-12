@@ -107,6 +107,7 @@ ul,ol,li,li a , .header-div-login a {
   height: 100vh;
   display: none;
   z-index: 100;
+  background-color: rgb(80, 80, 80);
 }
 .header-div-menu-lista-principal , .header-div-menu-lista-secundario {
   display: none;
@@ -115,7 +116,6 @@ ul,ol,li,li a , .header-div-login a {
 }
 .header-div-menu-icon-li:hover > .header-div-menu-lista {
   display: block;
-  background-color: rgb(80, 80, 80);
 }
 .header-div-menu-lista-principal li:hover > .header-div-menu-lista-secundario {
   display: block;
@@ -975,9 +975,9 @@ ul,ol,li,li a , .header-div-login a {
      border-bottom: none;
      padding: 5px;
    }
-
-
-
+   .header-div-menu-icon-li:hover , .header-div-menu-lista:hover  {
+    background-color: transparent;
+   }
 
 
 

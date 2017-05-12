@@ -2,9 +2,6 @@
   // Pagina de funciones
   require_once("funciones.php");
 
-  // iniciamos la session
-  session_start();
-
   if ($_POST) {
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
@@ -14,8 +11,11 @@
     };
 
     if (isset($_POST["logIn"])) {
-      $usuarioForzado = "infoleod";
-      $arrayUsuario = buscarPorIdUser($usuarioForzado);
+      $usuarioForzado = "framlopez";
+      $arrayUsuario = buscarYdevolverUsuario($usuarioForzado);
+
+      // var_dump($arrayUsuario);exit;
+
       if ($arrayUsuario) {
         // Si el usuario quieren que lo recuerden guardamos las cookies
         $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
@@ -42,13 +42,13 @@
 
   // Variable que define el estado de los links de login
   $usuarioLogueado = false;
-  // Llamamos a la funcion que valida si existe alguna cookie con nombre idUser
-  // Si lo encuentra devuelve el idUser, sino devuelve False
-  $idUser = chequeaCookieUsuario();
+  // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
+  // Si lo encuentra devuelve el usuario, sino devuelve False
+  $usuario = chequeaCookieUsuario();
 
-  if ($idUser) {
+  if ($usuario) {
     //Buscamos que exista en la base de datos
-    $arrayUsuario = buscarPorIdUser($idUser);
+    $arrayUsuario = buscarYdevolverUsuario($usuario);
 
     if ($arrayUsuario) {
       // La funcion loguearUsuarioCookie dentro valida si existe ese valor en la base de datos
