@@ -5,24 +5,24 @@
   if ($_POST) {
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
-    $recordarme = false;
-    if (isset($_POST["recordarme"])) {
-      $recordarme = true;
-    };
-
-    if (isset($_POST["logIn"])) {
-      $usuarioForzado = "framlopez";
-      $arrayUsuario = buscarYdevolverUsuario($usuarioForzado);
-
-      // var_dump($arrayUsuario);exit;
-
-      if ($arrayUsuario) {
-        // Si el usuario quieren que lo recuerden guardamos las cookies
-        $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
-
-        header("Location:index.php");exit;
-      };
-    };
+    // $recordarme = false;
+    // if (isset($_POST["recordarme"])) {
+    //   $recordarme = true;
+    // };
+    //
+    // if (isset($_POST["logIn"])) {
+    //   $usuarioForzado = "framlopez";
+    //   $arrayUsuario = buscarYdevolverUsuario($usuarioForzado);
+    //
+    //   // var_dump($arrayUsuario);exit;
+    //
+    //   if ($arrayUsuario) {
+    //     // Si el usuario quieren que lo recuerden guardamos las cookies
+    //     $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
+    //
+    //     header("Location:index.php");exit;
+    //   };
+    // };
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
     // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
 
@@ -104,10 +104,10 @@
               <a href="#"><?=$usuarioLogueado?></a>
             </div>
           <?PHP } else { ?>
-            <form class="borrar-solo-pruebas" action="index.php" method="post">
+            <!-- <form class="borrar-solo-pruebas" action="index.php" method="post">
               <input type="submit" name="logIn" value="Loguear usuario">
               <input type="checkbox" name="recordarme" value="true">Recordarme
-            </form>
+            </form> -->
             <div class="header-div-login-links">
               <a href="formulario.php">Registrarse</a>
               <a href="login.php">LogIn</a>

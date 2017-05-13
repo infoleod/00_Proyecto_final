@@ -107,12 +107,12 @@ ul,ol,li,li a , .header-div-login a {
   height: 100vh;
   display: none;
   z-index: 100;
-  background-color: rgb(80, 80, 80);
+  /*background-color: rgb(80, 80, 80);*/
 }
 .header-div-menu-lista-principal , .header-div-menu-lista-secundario {
   display: none;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(10, 10, 10, 1);
 }
 .header-div-menu-icon-li:hover > .header-div-menu-lista {
   display: block;
@@ -798,8 +798,8 @@ ul,ol,li,li a , .header-div-login a {
    /* -- INICIO Logo -- */
    .header-div-logo {
      width: 130px;
-     left: 35px;
-     top: 21px;
+     left: 30px;
+     top: 10px;
      z-index: 40;
      height: auto;
    }
@@ -903,11 +903,11 @@ ul,ol,li,li a , .header-div-login a {
 
    /* -- INICIO - Menu -- */
    .header-div-menu {
-     height: 30px;
+     height: 32px;
      width: 100%;
      left: 0;
      top: auto;
-     background-color: rgb(7, 59, 73);
+     background-color: rgb(80, 80, 80);
      bottom: 0;
    }
    .header-div-menu-lista {
@@ -975,9 +975,7 @@ ul,ol,li,li a , .header-div-login a {
      border-bottom: none;
      padding: 5px;
    }
-   .header-div-menu-icon-li:hover , .header-div-menu-lista:hover  {
-    background-color: transparent;
-   }
+
 
 
 
@@ -1005,7 +1003,7 @@ ul,ol,li,li a , .header-div-login a {
      width: 100%;
      font-size: 0.8em;
      right: 0;
-     background-color: rgb(38, 38, 38);
+     /*background-color: rgb(38, 38, 38);*/
      top: 0;
      z-index: 100;
    }
@@ -1019,6 +1017,7 @@ ul,ol,li,li a , .header-div-login a {
      color: rgba(240, 240, 240,1);
      border-radius: 3px;
      overflow: hidden;
+     border-radius: 0 0 10px 10px;
    }
    .header-div-login-links-logoff input{
      border: none;
@@ -1043,13 +1042,12 @@ ul,ol,li,li a , .header-div-login a {
    .borrar-solo-pruebas {
      float: left;
    }
-
-
-
-
-
-
-
+   .header-div-login-links {
+     background-color: rgb(80,80,80);
+     position: absolute;
+     right: 0;
+     border-radius: 0 0 10px 10px;
+   }
 
 
 
@@ -1369,7 +1367,7 @@ ul,ol,li,li a , .header-div-login a {
     width: calc(100% - 350px);
     max-width: 800px;
     left: 230px;
-    top: 45px;
+    top: 40px;
   }
   /* -- FIN - Barra de busqueda -- */
 
