@@ -23,7 +23,7 @@
   }
   /*Valido usuario, minimo de datos 6*/
   $usuario=trim($informacion["usuario"]);
-  if (strlen($usuario) == 6) {
+  if (strlen($usuario) == 0) {
   $errores["usuario"] = "Complete un usuario";
   }
   if(buscarYdevolverUsuario($usuario) != false){
@@ -41,8 +41,8 @@
       $errores["mail"]="El mail ya existe";
     }
     /*Valido que el lo que entre entra en password y confirmacion de contraseña no sea vacio*/
-    if ($informacion["password"]=="") {
-      $errores["password"] = "Llena la contraseña";
+    if ($informacion["password"]< 99999) {
+      $errores["password"] = "Minimo 6 caracteres";
     }
     if($informacion["cpassword"]==""){
     $errores["cpassword"] = "Debe confirmar su contraseña";
