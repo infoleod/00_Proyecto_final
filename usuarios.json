@@ -2,3 +2,5 @@
 {"nombre":"Francisco","apellido":"Lopez","usuario":"framlopez","telefono":"44444444","mail":"frammlopez@gmail.com","password":"$2y$10$GuNNByt0jXdLcWcf01DJsuV4khT1DyqYYXBI8G0D1rZI0XvPsqmWm","id":2}
 {"nombre":"leonardo","apellido":"Rodriguez","usuario":"leorodri","telefono":"011458795","mail":"leo@hotmail.com","password":"$2y$10$nGxMULaoAKHrIiJ4V.0aje42ymY0YdfxEsbVrYv9Lg9W1g0iule3K","id":3}
 {"nombre":"Leonardo","apellido":"D'Orto","usuario":"infoleod","telefono":"123456789","mail":"infoleod@gmail.com","password":"$2y$10$9xc.U.D55MkcKSKkKVRRDOkDRRhBx.pBLxCnOeupEclOXa9Us.ZxG","id":4}
+{"nombre":"Alejandro","apellido":"Girona","usuario":"ale123456","telefono":"01144048082","mail":"alegirona@hotmail.com.ar","password":"$2y$10$VOW4pCBAbN\/5MemkvP6I2e2chHTkPrVxHYmSuRZ0kGMvZmTDpTtm2","id":5}
+{"nombre":"Marina","apellido":"Aramburo","usuario":"mararamburo","telefono":"1544048082","mail":"mararamuro@hotmail.com.ar","password":"$2y$10$zZQkJFLVaTfpe35EZkrhZ.tRIvzEyrZ8XFCFkT7fRV.J02o0SBjRS","id":6}

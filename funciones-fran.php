@@ -26,7 +26,7 @@
   if (strlen($usuario) == 6) {
   $errores["usuario"] = "Complete un usuario";
   }
-  if(buscarPorUsuario($usuario) != false){
+  if(buscarYdevolverUsuario($usuario) != false){
     $errores["usuario"] = "Ya existe el usuario";
   }
   /*valido el mail, que sea mayor a uno el contenido, filtro con que sea un mail valido, luego busco el mail en la base para que ya no exista*/
@@ -134,11 +134,12 @@
     $todos = traerTodos();
     foreach ($todos as $usuarioIndividual) {
         if($usuarioIndividual["usuario"] == $usuario){
-        return true;
+        return $usuarioIndividual;
       }
     }
     return false;
   };
+
 
   /*Funcion buscar por mail, esta nos sirve para verificar si el mail ingresado no se repite en nuestra base*/
   function buscarPorMail($mail) {

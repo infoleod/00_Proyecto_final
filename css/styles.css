@@ -538,6 +538,7 @@ ul,ol,li,li a , .header-div-login a {
 }
 .registrateTitulo h2{
   padding: 1.5%;
+  margin-top: 0;
 }
 .partesFormularioACompletar label{
   padding: 1.5%;
@@ -760,22 +761,30 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Registrado.php*/
+.contenedorPrincipalRegistrado {
+  background-image: url(../images/formularioperro.jpg);
+  background-size: 100%;
+  background-position-y:54%;
+}
+.bienvenidoRegistracionOk h2{
+  font-size: 2.5em;
+}
+.bienvenidoRegistracionOk p{
+  font-size: 2em;
+}
+.bienvenidoRegistracionOk{
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 90%;
+    margin: 5%;
+    background-color: rgba(0,0,0,.2);
+    margin-top: 10%;
+    margin-bottom: 10%;
+      }
+.textoBienvenido a:hover{
+  color:#64C864;
+}
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* - MEDIA QUERY's - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -1322,25 +1331,24 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
-  /*********************************Fin Formulario regist-640********************************************/
 
 
 
+/*registrado.php en 640*/
+.bienvenidoRegistracionOk{
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10%;
+  }
+.bienvenidoRegistracionOk h2{
+  font-size: 1.5em;
+}
+.bienvenidoRegistracionOk p{
+  font-size: 1em;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*********************************Fin Formulario regist-640********************************************/
 
   /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
   /* - MEDIA QUERY's - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
