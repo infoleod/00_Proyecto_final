@@ -23,7 +23,12 @@
 				+ Se trasladaran los contenedores de forma horizontal al banner
 
 	### Footer:
-
+	El footer esta compuesto:
+		+ Una frase, valor de la organización.
+		+ Se colocan logos con acceso a las redes sociales.
+		+ Acceso a las preguntas frecuentes del sitio.
+		+ copyright de la web.
+		
 
 ##Mapa del Sitio:
 	+ Pagina principal y de presentación

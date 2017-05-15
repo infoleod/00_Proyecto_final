@@ -18,4 +18,12 @@
 		####	+Esto se corrigió utilizando el inspector para detectar que era el padding del nav el que se veia impactado.
 
 
-#prueba
+##Sprint (PHP)
+###Francisco
+  #### - Dificultad a la hora de cargar la imagen en la carpeta
+  #### + El problema sucedio a que la carpeta que recibia las imagenes estaba bloqueada
+
+  #### - Problema a la hora de cargar los datos en el json
+  #### + La funcion traer usuarios, donde chequeaba que el mismo no este en nuestra base de datos. Existia una reutilizacion de la variable usuario, la cual generaba un error al utilizar la validacion de la existencia del mismo.
+
+  
