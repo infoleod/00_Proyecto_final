@@ -1283,7 +1283,7 @@ display: none;
     padding: 1.5%;
     margin:auto;
     width: 50%;
-    float: left;
+
   }
   .botonRegistrame button{
     width: 50%;
@@ -1298,10 +1298,10 @@ display: none;
     font-size: 1em;
   }
 
+  .partesFormularioACompletar div{
+    background-color: rgba(103, 103, 103, 0.34);
 
-
-
-
+  }
 
 
 
