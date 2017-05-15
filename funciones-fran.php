@@ -27,7 +27,7 @@
   $errores["usuario"] = "Complete un usuario";
   }
   if(buscarYdevolverUsuario($usuario) != false){
-    $errores["usuario"] = "Ya existe el usuario";
+    $errores["usuario"] = "Este Usuario ya se encuentra en uso";
   }
   /*valido el mail, que sea mayor a uno el contenido, filtro con que sea un mail valido, luego busco el mail en la base para que ya no exista*/
   $mail = trim($informacion["mail"]);
@@ -38,7 +38,7 @@
       $errores["mail"]="Debe completar con un mail valido";
     }
     elseif (buscarPorMail($mail) != false) {
-      $errores["mail"]="El mail ya existe";
+      $errores["mail"]="Este E-Mail ya está registrado";
     }
     /*Valido que el lo que entre entra en password y confirmacion de contraseña no sea vacio*/
     if ($informacion["password"] < 99999) {

@@ -68,24 +68,35 @@
     return $return;
   };
 
-    // Busca el usuario pasado por parametro en el Archivo Json.
-    // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
-    function buscarYdevolverUsuario($usuario) {
-      $todos = traerTodos();
+  // Busca el usuario pasado por parametro en el Archivo Json.
+  // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
+  function buscarYdevolverUsuario($usuario) {
+    $todos = traerTodos();
 
-      foreach ($todos as $arrayUsuario) {
-        if ($arrayUsuario["usuario"] == $usuario) {
-          // Quitamos el valor de la contraseña
-          unset($arrayUsuario["contraseña"]);
-          // Quitamos el valor del id
-          unset($arrayUsuario["id"]);
+    foreach ($todos as $arrayUsuario) {
+      if ($arrayUsuario["usuario"] == $usuario) {
 
-          // Devolvemos el array completo del usuario
-          return $arrayUsuario;
-        }
+        // Devolvemos el array completo del usuario
+        return $arrayUsuario;
       }
-      return false;
-    };
+    }
+    return false;
+  };
+
+  // Busca el email pasado por parametro en el Archivo Json.
+  // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
+  function buscarYdevolverEmail($email) {
+    $todos = traerTodos();
+
+    foreach ($todos as $arrayUsuario) {
+      if ($arrayUsuario["mail"] == $email) {
+
+        // Devolvemos el array completo del usuario
+        return $arrayUsuario;
+      }
+    }
+    return false;
+  };
 
   //Funcion que guarda las cookies del usuario en la pc
   function guardarCookiesUsuario($arrayUsuario,$recordarme) {

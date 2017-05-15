@@ -1,6 +1,19 @@
 <?php
 /*llamo funciones.php para utilizarlas dentro del codigo del formulario*/
 require_once("funciones.php");
+
+// Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
+// Si lo encuentra devuelve el usuario, sino devuelve False
+$usuarioHeader = chequeaCookieUsuario();
+
+if ($usuarioHeader) {
+  header("Location:index.php");exit;
+} else {
+  if (isset($_SESSION["usuario"])) {
+    header("Location:index.php");exit;
+  }
+};
+
 $nombre="";
 $apellido="";
 $usuario="";
@@ -82,7 +95,7 @@ if($_POST){
                 <div class="cuadroUsuario">
                 <input type="text" name="usuario" value="<?=$usuario?>" placeholder="Usuario" >
                 <?php if(isset($errores["usuario"])) {?>
-                  <span class="erroresFormulario">Usuario Invalido</span>
+                  <span class="erroresFormulario"><?=$errores["usuario"]?></span>
                   <?php } ?>
                 </div>
                 </div>
@@ -107,7 +120,7 @@ if($_POST){
                 <div class="emailCuadro">
                   <input type="text" name="mail" value="<?=$mail?>" placeholder="Email" >
                   <?php if (isset($errores["mail"])) {?>
-                    <span class="erroresFormulario">Mail incorrecto</span>
+                    <span class="erroresFormulario"><?=$errores["mail"]?></span>
                   <?php } ?>
                 </div>
                 </div>

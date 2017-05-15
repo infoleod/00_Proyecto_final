@@ -3,30 +3,6 @@
   require_once("funciones.php");
 
   if ($_POST) {
-    // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
-    // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
-    // $recordarme = false;
-    // if (isset($_POST["recordarme"])) {
-    //   $recordarme = true;
-    // };
-    //
-    // if (isset($_POST["logIn"])) {
-    //   $usuarioForzado = "framlopez";
-    //   $arrayUsuario = buscarYdevolverUsuario($usuarioForzado);
-    //
-    //   // var_dump($arrayUsuario);exit;
-    //
-    //   if ($arrayUsuario) {
-    //     // Si el usuario quieren que lo recuerden guardamos las cookies
-    //     $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
-    //
-    //     header("Location:index.php");exit;
-    //   };
-    // };
-    // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
-    // - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR - BORRAR
-
-
     if (isset($_POST["logoff"])) {
 
       borrarCookies();
@@ -44,11 +20,11 @@
   $usuarioLogueado = false;
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False
-  $usuario = chequeaCookieUsuario();
+  $usuarioHeader = chequeaCookieUsuario();
 
-  if ($usuario) {
+  if ($usuarioHeader) {
     //Buscamos que exista en la base de datos
-    $arrayUsuario = buscarYdevolverUsuario($usuario);
+    $arrayUsuario = buscarYdevolverUsuario($usuarioHeader);
 
     if ($arrayUsuario) {
       // La funcion loguearUsuarioCookie dentro valida si existe ese valor en la base de datos
@@ -97,13 +73,13 @@
           if ($usuarioLogueado) { ?>
             <div class="header-div-login-links">
               <form class="header-div-login-links-logoff" action="index.php" method="post">
-                <input type="submit" name="logoff" value="desloguearse">
+                <input type="submit" name="logoff" value="Cerrar sesión">
                 <input class="header-div-login-icons" type="image" name="carrito" src="images/header-carrito.png" border="0" alt="Submit">
                 <input class="header-div-login-icons" type="image" name="miCuenta" src="images/header-avatar.png" border="0" alt="Submit">
+                <a href="#"><?=$usuarioLogueado?></a>
               </form>
-              <a href="#"><?=$usuarioLogueado?></a>
             </div>
-          <?PHP } else { ?>
+          <?php } else { ?>
             <!-- <form class="borrar-solo-pruebas" action="index.php" method="post">
               <input type="submit" name="logIn" value="Loguear usuario">
               <input type="checkbox" name="recordarme" value="true">Recordarme
@@ -112,7 +88,7 @@
               <a href="formulario.php">Registrarse</a>
               <a href="login.php">LogIn</a>
             </div>
-          <?PHP }; ?>
+          <?php }; ?>
 
 
         </div>
@@ -138,7 +114,6 @@
           </form>
         </div>
         <!-- FIN Buscar -->
-
       </div>
 
       <!-- INICIO Menu -->
@@ -151,12 +126,22 @@
               <a href="#">
                 <img class="header-div-logo-mobile-menu" src="images/menu-icon.png" alt="menu-icon">
               </a>
-
               <!-- SubMenu con Lista desplegable -->
               <ul class="header-div-menu-lista">
-                <li><a class="header-div-menu-lista-login" href="login.php">LogIn</a></li>
-                <li><a class="header-div-menu-lista-login" href="formulario.php">Registrarse</a></li>
-
+                <?php
+                // Si el usuario esta logueado lo saludamos
+                // Si no le mostramos los datos del logi n
+                if ($usuarioLogueado) { ?>
+                  <li><a class="header-div-menu-lista-login" href="#"><?=$usuarioLogueado?></a></li>
+                  <li><a class="header-div-menu-lista-login" href="#">Mi cuenta</a></li>
+                <?php } else { ?>
+                  <!-- <form class="borrar-solo-pruebas" action="index.php" method="post">
+                    <input type="submit" name="logIn" value="Loguear usuario">
+                    <input type="checkbox" name="recordarme" value="true">Recordarme
+                  </form> -->
+                  <li><a class="header-div-menu-lista-login" href="login.php">LogIn</a></li>
+                  <li><a class="header-div-menu-lista-login" href="formulario.php">Registrarse</a></li>
+                <?php }; ?>
                 <!-- Productos -->
                 <li>
                   <a href="#">Productos</a>
@@ -181,6 +166,15 @@
                 <li><a href="#">Top 10</a></li>
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Vender</a></li>
+
+                <?php
+                // Si el usuario esta logueado le mostramos el Logoff
+                if ($usuarioLogueado) { ?>
+                  <form class="header-div-menu-lista-login" action="index.php" method="post">
+                    <input class="header-div-menu-lista-logoff" type="submit" name="logoff" value="Cerrar sesión">
+                  </form>
+                <?php }; ?>
+
               </ul>
             </li>
           </ul>

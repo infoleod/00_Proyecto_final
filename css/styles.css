@@ -107,7 +107,7 @@ ul,ol,li,li a , .header-div-login a {
   height: 100vh;
   display: none;
   z-index: 100;
-  /*background-color: rgb(80, 80, 80);*/
+  background-color: rgb(80, 80, 80);
 }
 .header-div-menu-lista-principal , .header-div-menu-lista-secundario {
   display: none;
@@ -141,6 +141,17 @@ ul,ol,li,li a , .header-div-login a {
 .header-div-menu-lista-login a {
   padding: 15px;
 }
+.header-div-menu-lista-logoff {
+  background-color: rgba(161, 9, 9, 0.7);
+  border: 0;
+  padding: 14px 15px;
+  display: block;
+  color: rgb(222, 222, 222);
+  border-top: transparent 1px solid;
+  border-bottom: rgb(26, 26, 26) 1px solid;
+  margin: 0 auto;
+  width: 100%;
+}
 
 
 
@@ -171,23 +182,7 @@ ul,ol,li,li a , .header-div-login a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -- FIN - Menu --*/
+/* -- FIN - Menu 190 --*/
 
 /* -- INICIO - Login --*/
 .header-div-login {
@@ -328,11 +323,10 @@ display: none;
   text-align: center;
   text-decoration: none;
 }
-/*.body_home img:hover{
-  opacity: 1;
-  color: rgba(9, 112, 84);
-  background-color:rgba(108, 108, 108, 0.63) ;
+.body_home {
+  max-width: 1200;
 }
+/*
 .body_home a:hover{
   color: rgb(112, 112, 112);
   background-color:rgba(121, 121, 121, 0.63) ;
@@ -742,6 +736,7 @@ display: none;
   padding: 5px;
   font-size: 1.4em;
 }
+
 .body_login_princ-registrate {
   font-size: 0.8em;
   color: rgb(50, 50, 50);
@@ -1082,7 +1077,7 @@ display: none;
    .header-div-login-links {
      background-color: rgb(80,80,80);
      position: absolute;
-     right: 0;
+     right: 25px;
      border-radius: 0 0 10px 10px;
    }
 
@@ -1185,7 +1180,6 @@ display: none;
     max-width: 70%;
     float: left;
   }
-
 
 
 

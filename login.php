@@ -1,6 +1,69 @@
 <?php
+  require_once("funciones.php");
 
+  // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
+  // Si lo encuentra devuelve el usuario, sino devuelve False
+  $usuarioHeader = chequeaCookieUsuario();
 
+  if ($usuarioHeader) {
+    header("Location:index.php");exit;
+  } else {
+    if (isset($_SESSION["usuario"])) {
+      header("Location:index.php");exit;
+    }
+  };
+
+  $usuario = "";
+  $errores=[];
+
+  if ($_POST) {
+    if (isset($_POST["usuario"])) {
+      $usuario      = $_POST["usuario"];
+      $usuarioEmail = $usuario;
+
+      // Sacamos los caracteres ilegales
+      $usuarioEmail = filter_var($usuarioEmail, FILTER_SANITIZE_EMAIL);
+
+      // Validamos el email
+      if (!filter_var($usuarioEmail, FILTER_VALIDATE_EMAIL) === false) {
+          // si es un email valido lo buscamos por email
+          // Traemos el array del usuario
+          $arrayUsuario = buscarYdevolverEmail($_POST["usuario"]);
+      } else {
+          // si no es un email lo buscamos por el usuario
+          // Traemos el array del usuario
+          $arrayUsuario = buscarYdevolverUsuario($_POST["usuario"]);
+      };
+
+      // Si lo encontramos verificamos el password
+      if ($arrayUsuario) {
+        $password = $arrayUsuario["password"];
+        $passwordIngresado = $_POST["password"];
+
+        // Verificamos el password
+        if (password_verify($passwordIngresado , $password ) == true) {
+
+          // Verificamos si el usuario quiere o no ser recordado
+          $recordarme = false;
+          if (isset($_POST["recordarme"])) {
+            $recordarme = true;
+          };
+
+          // Si Existe el usuario y el Password es correcto.
+          // logueamos al usuario y lo redirigimos al index pero logueado
+          $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
+
+          header("Location:index.php");exit;
+
+        } else {
+          $errores["password"] = "El Password ingresado es incorrecto.";
+        };
+      } else {
+        // Si no lo encuentra como usuario y el
+        $errores["usuario"] = "El usuario ingresado no existe.";
+      };
+    };
+  };
 
 
 ?>
@@ -20,7 +83,6 @@
       require_once("header.php");
     ?>
 
-
     <!-- INICIO BODY -->
     <div class="body_login">
       <!-- <div class="body_login_princ_form_fondo">
@@ -31,18 +93,40 @@
         <div class="body_login_princ_titulo">
           <h2>Iniciar sesión</h2>
         </div>
-        <form class="body_login_princ_form"action="" method="post">
+        <form class="body_login_princ_form" action="login.php" method="post" enctype="multipart/form-data">
           <!-- imagen de fondo -->
           <!-- Usuario -->
           <div class="body_login_princ_form_renglones">
+            <!-- Mensaje por si se equivoca al ingresar los datos -->
+            <?php
+            if (isset($errores["usuario"])) {
+              echo "<span>" . $errores["usuario"] . "</span>";
+            };
+            ?>
+          </div>
+          <div class="body_login_princ_form_renglones">
             <label>Usuario</label>
-            <input type="text" name="user" required class="class-sobre" placeholder="Usuario/e-mail">
+            <input type="text" name="usuario" required class="class-sobre" placeholder="Usuario/e-mail" value=<?=$usuario?>>
             <br>
           </div>
           <!-- PassWord -->
           <div class="body_login_princ_form_renglones">
+            <!-- Mensaje por si se equivoca al ingresar los datos -->
+            <?php
+            if (isset($errores["password"])) {
+              echo "<span>" . $errores["password"] . "</span>";
+            };
+            ?>
+          </div>
+          <div class="body_login_princ_form_renglones">
             <label>Password</label>
-            <input type="password" name="pass" required class="class-sobre" placeholder="Password">
+            <input type="password" name="password" required class="class-sobre" placeholder="Password">
+            <br>
+          </div>
+          <!-- Recordame -->
+          <div class="body_login_princ_form_renglones_recordame">
+            <label></label>
+            <input type="checkbox" name="recordarme"value="true"><span>Recordarme</span>
             <br>
           </div>
 
@@ -62,12 +146,9 @@
     </div>
     <!-- FIN BODY -->
 
-
     <!-- INCLUDE DEL FOOTER ---------------------------------------------------->
     <?php
       require_once("footer.php");
     ?>
-
-
   </body>
 </html>
