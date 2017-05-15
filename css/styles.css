@@ -384,9 +384,9 @@ display: none;
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
-/* - FOOTER - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
-.footer {
+/*.footer {
   clear: both;
   background:black;
   color: #e5f0ed;
@@ -403,8 +403,9 @@ display: none;
   margin:0%;
 }
 /*** logo ***/
-.logo_2{
-  /*display: none;*/
+/*
+.footer{
+  /*display: none;
   background-color: rgb(100,200,100);
   float: left;
   width: 100%;
@@ -419,7 +420,7 @@ display: none;
   display: inline-block;
 }
 /*** MENU ***/
-.menu_2 .conten h5{
+/*.menu_2 .conten h5{
   display: none;
 }
 .menu_2 .conten{
@@ -439,7 +440,7 @@ display: none;
   border-bottom: 1px solid #fff;
 }
 /***Redes Sociales**/
-.redes_sociales{
+/*.redes_sociales{
   display: block;
   overflow: hidden;
   clear: both;
@@ -448,14 +449,19 @@ display: none;
 .redes_sociales ul li{
   width:33.33%;
   float:left;
-}
+}*/
 /*** preguntas frecuentes ***/
 .preguntas_frecuentes{
   width: 100%;
 }
 /****Fondo de preguntas frecuentes *****/
 .container-preguntas{
-  background-color: rgba(128, 224, 224, 0.28);
+  background-image: url(../images/formularioperro.jpg);
+  background-size: 100%;
+  background-position-y:45%;
+}
+.container-preguntas li{
+    margin: 1%;
 }
 .preguntas_frecuentes a{
   margin: 1%;
@@ -478,8 +484,31 @@ display: none;
 .preg-freq li:hover > .respuesta-oculta {
   display: block;
 }
+.respuesta-oculta{
+  background-color: rgba(165, 176, 174, 0.58);
+  margin: 1%;
+}
+/*FOOTER*/
+.logoFooter img{
+  display: none;
+}
+.footerArticle{
+  background-color: black;
+  color:white;
+  text-decoration: none;
+}
+.copyright {
+  background-color: black;
+  color:white;
+  font-size: 0.8em;
+}
+.redes{
+  float: left;
+  width: 33.3%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
-
+}
 
 
 
@@ -761,9 +790,9 @@ display: none;
 
 /*Registrado.php*/
 .contenedorPrincipalRegistrado {
-  background-image: url(../images/formularioperro.jpg);
-  background-size: 100%;
-  background-position-y:54%;
+  /*background-image: url(../images/formularioperro.jpg);*/
+  /*background-size: 100%;
+  background-position-y:54%;*/
 }
 .bienvenidoRegistracionOk h2{
   font-size: 2.5em;
@@ -779,6 +808,7 @@ display: none;
     background-color: rgba(0,0,0,.2);
     margin-top: 10%;
     margin-bottom: 10%;
+    background-color: rgb(153, 153, 153);
       }
 .textoBienvenido a:hover{
   color:#64C864;
@@ -1186,12 +1216,22 @@ display: none;
 
   /* -- INICIO - FOOTER ------------------------------------------------------*/
 
-  .footer_1{
+  .footerArticle{
     width:100%;
     background-color:black;
     display:block;
-    overflow:hidden;
+    float: left;
+    color:white;
+    font-size: 0.8em;
   }
+  .logoFooter img{
+    display: none;
+  }
+  footer{
+    clear: both;
+    font-size: 1em;
+  }
+  /*
   .footer_2{
     background-color:#60c19f;
     width: 100%;
@@ -1236,7 +1276,7 @@ display: none;
     display:inline-block;
     float:right;
     height:auto;
-    }
+    }*/
 
 
 

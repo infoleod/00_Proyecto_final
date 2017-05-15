@@ -41,7 +41,7 @@
       $errores["mail"]="El mail ya existe";
     }
     /*Valido que el lo que entre entra en password y confirmacion de contraseña no sea vacio*/
-    if ($informacion["password"]< 99999) {
+    if ($informacion["password"] < 99999) {
       $errores["password"] = "Minimo 6 caracteres";
     }
     if($informacion["cpassword"]==""){

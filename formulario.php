@@ -115,7 +115,7 @@ if($_POST){
                 <div class="claveCuadro">
                   <input type="password" name="password" value="" placeholder="Contraseña" >
                   <?php if (isset($errores["password"])) {?>
-                    <span class="erroresFormulario">Contraseña invalida</span>
+                    <span class="erroresFormulario"><?php echo $errores["password"]; ?></span>
                   <?php } ?>
                 </div>
                 </div>

@@ -10,37 +10,32 @@
   <body>
     <!-- INICIO FOOTER -->
     <footer class="footer">
-      <article class="footer_1">
-
-        <div class="logo_2">
+      <article class="footerArticle">
+          <div class="logoFooter">
           <img src="images/logo-zoo.png" alt="">
-          <article class="frase">
-            <h5>una mejor vida para tu mascota</h5>
-          </article>
-        </div>
-
-
+          </div>
+          <div class="">
+          <span> Una mejor vida para tu mascota</span>
+          </div>
+      </article>
+      <article class="footerArticle">
         <div class="redes_sociales">
           <ul>
-            <li><a class="redes" href="#"><img src="images/facebook-logo-button.png"alt=""></a></li>
-            <li><a class="redes" href="#"><img src="images/sharing-interface.png"alt=""></a></li>
-            <li><a class="redes"     href="#"><img src="images/instagram-logo.png"alt=""></a></li>
+            <li><a class="redes" href="https://www.facebook.com/" target="_blank"><img width="35px" src="images/facebook-logo-button.png"alt=""></a></li>
+            <li><a class="redes" href="https://twitter.com/?lang=es" target="_blank"><img width ="35px" src="images/logo-twitter.png"alt=""></a></li>
+            <li><a class="redes" href="https://www.instagram.com/?hl=es" target="_blank"><img width="35px" src="images/instagram-logo.png"alt=""></a></li>
           </ul>
         </div>
-        <div class="ayuda">
-          <a href="preguntas_frecuentes.php">
-            <p>ayuda</p>
-          </a>
-        </div>
-
-        <article class="footer_2">
-          <div class="copyright">
-
-            <p>conten@fdsfsd.com</p>
-          </div>
-        </article>
-
       </article>
+        <article class="footerArticle">
+            <div class="ayuda">
+                <a href="preguntas_frecuentes.php">Preguntas Frecuentes</a>
+              </div>
+        </article class="footerArticle">
+          <div class="copyright">
+            Copyright: Todos los derechos perteneces a ZooMarket SA.
+          </div>
+
 
 
 
