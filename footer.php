@@ -33,7 +33,7 @@
               </div>
         </article class="footerArticle">
           <div class="copyright">
-            Copyright: Todos los derechos perteneces a ZooMarket SA.
+            Copyright: Todos los derechos pertenecen a ZooMarket SA.
           </div>
 
 
