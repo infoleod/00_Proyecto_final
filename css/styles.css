@@ -984,7 +984,7 @@ display: none;
    }
    .header-div-menu-lista a {
      padding: 5px;
-     display: inline-block;
+     display: block;
      color: rgba(235, 255, 255, 1);
      text-shadow: 0 1px 5px rgba(0, 50, 110, 0.5);
      border-top: none;
@@ -1381,6 +1381,8 @@ display: none;
   font-size: 1em;
 }
 
+
+}
 /*********************************Fin Formulario regist-640********************************************/
 
   /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -1574,3 +1576,4 @@ display: none;
   }
 
   /*********************************Fin Formulario regist********************************************/
+}
