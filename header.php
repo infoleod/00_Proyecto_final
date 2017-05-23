@@ -53,9 +53,8 @@
     <meta name="viewport" content="width=device-width">
     <title>ZOOMarket</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
   </head>
   <body>
     <!-- INICIO HEADER -->
@@ -187,5 +186,4 @@
     </header>
     <!-- FIN HEADER -->
 
-  </body>
-</html>
+<!--                    Continua en el Body de la pagina                         -->

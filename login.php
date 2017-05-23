@@ -68,20 +68,10 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>ZOOMarket</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <!-- INCLUDE DEL HEADER ---------------------------------------------------->
-    <?php
-      require_once("header.php");
-    ?>
+<?php
+  require_once("header.php");
+?>
+<!--                   El Header abre con todo el encabezado del HTML                     -->
 
     <!-- INICIO BODY -->
     <div class="body_login">
@@ -139,16 +129,12 @@
               <h2>¡ Registrate !</h2>
             </a>
           </div>
-
-
         </form>
       </div>
     </div>
     <!-- FIN BODY -->
 
-    <!-- INCLUDE DEL FOOTER ---------------------------------------------------->
-    <?php
-      require_once("footer.php");
-    ?>
-  </body>
-</html>
+<!--                   El Footer cierra con todo el encabezado del HTML                     -->
+<?php
+  require_once("footer.php");
+?>

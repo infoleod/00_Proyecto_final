@@ -1,0 +1,114 @@
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- BODY -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.principalContenedorBanner{
+display: none;
+}
+.w3-left, .w3-right, .w3-badge {
+  cursor:pointer}
+.w3-badge {
+  height:13px;width:13px;padding:0}
+
+.banner_body{
+  display: none;
+  margin: 0;
+  margin-top: 20px;
+  border-radius: 30px;
+  margin-left: 10%;
+  margin-right:10%;
+  position: relative;
+  border-radius: 0.7;
+  Box-shadow: inset 0 0 50px rgba(111, 111, 111, 0.83),inset 0 0 80px rgba(106, 106, 106, 0.63),inset 0 0 175px rgba(108, 108, 108, 0.33);
+  }
+
+.banner_body img{
+  width: 98.33%;
+  margin-left: 0.83%;
+  margin-right: 0.83%;
+  /*opacity: 0.7;*/
+  border-radius: 30px;
+  Box-shadow: inset 0 0 50px rgba(66, 66, 66, 0.83),inset 0 0 80px rgba(112, 112, 112, 0.63),inset 0 0 175px rgba(93, 93, 93, 0.33);
+}
+.banner_body a{
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 40%;
+  display: inline-block;
+  background-color: rgba(104, 107, 106, 0.43);
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 35px;
+  text-decoration: none;
+  padding:10%;
+}
+.body_products_grilla {
+  background-color: white;
+  }
+.products_body{
+  background-color: white;
+  position: relative;
+}
+.products_body img{
+  width: 90%;
+  /*border-radius: 35px;
+  opacity: 0.7;*/
+  margin-top: 1.25%;
+  margin-left: 2.5%;
+  margin-bottom: 1.25%;
+  margin-right: 2.5%;
+}
+.products_body a{
+  background-color: rgba(111, 112, 112, 0.43);
+  color: white;
+  position: absolute;
+  top:75%;
+  left: 5%;
+  width: 90%;
+  display: inline-block;
+  font-size: 2.5em;
+  text-align: center;
+  text-decoration: none;
+}
+.body_home {
+  max-width: 1200;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 640 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:640px) {
+  /* -- INICIO - BODY --------------------------------------------------------*/
+  .principalContenedorBanner{
+    display: block;
+    margin-top: 1%;
+  }
+  .products_body{
+    float: left;
+    width: 45%;
+    margin: 2.5%;
+  }
+  .products_body a{
+    font-size: 1.5em;
+  }
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 960 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:960px) {
+  /* -- INICIO - BODY --------------------------------------------------------*/
+  .products_body{
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 20%;
+    }
+    .body_products_grilla{
+    margin-left: 5%;
+    margin-right: -7%;
+    }
+  .products_body a{
+    font-size: 0.9em;
+  }
+}

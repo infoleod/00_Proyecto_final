@@ -1,33 +1,13 @@
 <?php
-
+  require_once("header.php");
 ?>
-
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial scale=1">
-    <title>ZOOMarket</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  </head>
-
-
-  <body>
-
-    <?php
-    require_once("header.php");
-
-     ?>
+<!--                   El Header abre con todo el encabezado del HTML                     -->
 
     <!-- INICIO BODY -->
     <div class="body_home">
       <div class="principalContenedorBanner">
 
-      
+
         <div class="w3-content w3-display-container" style="">
                 <img class="mySlides" src="images/gatoBanner.jpg" style="width:100%">
                 <img class="mySlides" src="images/perroBanner.jpg" style="width:100%">
@@ -99,10 +79,7 @@
     </div>
     <!-- FIN BODY -->
 
-
+<!--                   El Footer cierra con todo el encabezado del HTML                     -->
 <?php
-require_once("footer.php");
- ?>
-
-  </body>
-</html>
+  require_once("footer.php");
+?>

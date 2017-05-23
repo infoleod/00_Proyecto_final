@@ -1,0 +1,168 @@
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- BODY Formulario de registracion -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.header-div-login-form-registracion a{
+  display: none;
+}
+.partesFormularioACompletar {
+  margin:auto;
+  width: 95%;
+}
+.partesFormularioACompletar input{
+  width: 95%;
+  font-size: 1.2em;
+  padding: 1%;
+  color:rgb(60, 59, 59);
+}
+.registrateTitulo h2 {
+  padding: 1.5%;
+  margin-top: 0;
+}
+.partesFormularioACompletar label{
+  padding: 1.5%;
+  font-size: 1.4em;
+}
+.partesFormularioACompletar input,textarea{
+  padding:10px;
+  width:100%;
+  outline:none;
+  transition: all 0.15s ease-in-out;
+  border-radius:3px;
+  border:1px solid rgba(0,0,0,0.2);
+}
+.terminosYregistrame{
+  width: 95%;
+  margin: auto;
+}
+.terminosYregistrame p{
+  font-size: 1em;
+  color: rgb(85, 79, 81);
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 1%;
+}
+.terminosYregistrame a{
+  color:rgb(65, 65, 65);
+}
+.botonRegistrame input{
+  width: 45%;
+  font-size: 1.4em;
+  }
+.botonRegistrame{
+  padding: 1.5%;
+}
+.partesFormularioACompletar label{
+  display: none;
+}
+.body_formulario {
+  background-image: url(../images/formularioperro.jpg);
+  background-size: 100%;
+  background-position-y:45%;
+}
+.erroresFormulario{
+  font-size: 0.7em;
+  color:red;
+}
+.logueateEnRegistracion h2{
+  background-color: rgba(80,80,80,0.4);
+  padding: 10px 0;
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+  font-size: 1em;
+}
+.logueateEnRegistracion a{
+  color: rgb(200, 200, 200)
+}
+.logueateEnRegistracion a:hover{
+  color:rgb(255, 255, 255);
+}
+.terminos a{
+  color: rgb(85, 85, 85);
+}
+.terminos a:hover{
+  color: rgb(255, 255, 255);
+}
+.terminos h3{
+  display: block;
+  font-size: 0.8em;
+  background-color: rgba(80,80,80,0.4);
+  padding-bottom: 1.5%;
+  color: rgb(218, 218, 218);
+}
+
+.bienvenidoRegistracionOk h2{
+  font-size: 2.5em;
+}
+.bienvenidoRegistracionOk p{
+  font-size: 2em;
+}
+.bienvenidoRegistracionOk{
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 90%;
+    margin: 5%;
+    background-color: rgba(0,0,0,.2);
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: rgb(153, 153, 153);
+      }
+.textoBienvenido a:hover{
+  color:#64C864;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 640 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:640px) {
+  .parametros {
+    padding: 1.5%;
+    margin:auto;
+    width: 50%;
+  }
+  .botonRegistrame button{
+    width: 50%;
+  }
+  .parametrosFotoPerfil div{
+    width: 95%;
+  }
+  .partesFormularioACompletar label{
+    font-size: 1.2em;
+  }
+  .partesFormularioACompletar input, textarea {
+    font-size: 1em;
+  }
+  .partesFormularioACompletar div{
+    background-color: rgba(103, 103, 103, 0.34);
+  }
+  .bienvenidoRegistracionOk{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+    }
+  .bienvenidoRegistracionOk h2{
+    font-size: 1.5em;
+  }
+  .bienvenidoRegistracionOk p{
+    font-size: 1em;
+  }
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 960 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:960px) {
+  .partesFormularioACompletar label{
+    display: block;
+  }
+  .parametros {
+    padding: 0.5%;
+  }
+  .partesFormularioACompletar label{
+    font-size: 1em;
+  }
+  .partesFormularioACompletar input, textarea {
+    font-size: 0.8em;
+  }
+}

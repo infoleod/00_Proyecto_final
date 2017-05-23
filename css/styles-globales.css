@@ -1,0 +1,24 @@
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- RESETS Y CONFIGURACIONES GLOBALES -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/* -- Reset general --*/
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,blockquote,pre,form,fieldset,table,th,td {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* -- Para todo el documento aplicamos el Border Box -- */
+* {
+  box-sizing: border-box;
+}
+
+/* -- Estilos del Body, Fuentes, Fondos, Etc... -- */
+body {
+  font-family: sans-serif;
+}
+ul,ol,li,li a , .header-div-login a {
+  list-style: none;
+  text-decoration: none;
+}

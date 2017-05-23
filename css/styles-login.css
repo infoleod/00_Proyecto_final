@@ -1,0 +1,123 @@
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- PAGINA DE LOGIN -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.body_login {
+  background-image: url(../images/formularioperro.jpg);
+  background-size: 100%;
+  z-index: 10;
+  background-position-y: 45%;
+  min-height: 525px;
+}
+.body_login_princ_titulo {
+  padding: 20px 0;
+  color: rgb(50, 50, 50);
+}
+.body_login_princ_form {
+  padding: 5px 0 25px;
+}
+.body_login_princ_form_fondo img {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  opacity: 0.6;
+  top: calc((20vh) - 150px);
+}
+.body_login_princ_form_renglones {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.body_login_princ_form_renglones label{
+  display: none;
+}
+.body_login_princ_form_renglones button {
+  margin: 20px 0;
+}
+.body_login_princ_form_renglones input {
+  float: left;
+  text-align: left;
+  font-size: 1.2em;
+  color: rgb(80, 80, 80);
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: white;
+}
+.body_login_princ_form_renglones button {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.4em;
+}
+
+.body_login_princ-registrate {
+  font-size: 0.8em;
+  color: rgb(50, 50, 50);
+  padding: 20px 0;
+}
+.body_login_princ-registrate a {
+  color: white;
+  text-shadow: 1px 0px 5px rgb(38, 38, 38);
+}
+.body_login_princ-registrate h2 {
+  background-color: rgba(80,80,80,0.4);
+  padding: 10px 0;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 640 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:640px) {
+  .body_home_login {
+    background: linear-gradient(to right, rgba(235,242,225,1) 0%, rgba(212,228,189,1) 100%);
+  }
+  .body_home_login_form_renglones {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .body_home_login_form_renglones input {
+    border: none;
+    height: 30px;
+    width: 70%;
+    border-radius: 2px;
+    color: rgb(150, 150, 150);
+    text-align: left;
+    float: right;
+  }
+  .body_login_princ_form_renglones {
+    width: 80%;
+    max-width: 800px;
+  }
+  .body_login_princ_form_renglones label{
+    display: inline-block;
+    float: left;
+    width: 20%;
+    padding: 10px;
+    text-align: right;
+    font-size: 1.2em;
+  }
+  .body_login_princ_form_renglones input {
+    float: left;
+    width: 70%;
+  }
+  .body_login_princ_form_renglones button {
+    max-width: 70%;
+    float: left;
+  }
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* -- MEDIA QUERY's -- 960 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width:960px) {
+
+}
