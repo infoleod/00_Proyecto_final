@@ -23,7 +23,7 @@
   $usuarioLogueado = false;
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False
-  $usuarioHeader = chequeaCookieUsuario();
+  $usuarioHeader = Auth::chequeaCookieUsuario();
 
   if ($usuarioHeader) {
     //Buscamos que exista en la base de datos
@@ -40,7 +40,7 @@
     };
   } else {
     // Verificamos si tiene session activa, si es asi lo logueamos
-    $usuarioLogueado = chequeaSessionUsuario();
+    $usuarioLogueado = Auth::chequeaSessionUsuario();
 
     if ($usuarioLogueado) {
       $usuarioLogueado = "Hola " . $usuarioLogueado;

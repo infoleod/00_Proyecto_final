@@ -1,11 +1,10 @@
 <?php
   class Auth {
-
     public static $auth;
 
     // Funcion que verifica segun las Cookies si el usuario esta logueado.
     // devuelve IDUSER o FALSE
-    function chequeaCookieUsuario() {
+    public function chequeaCookieUsuario() {
       // Verificamos si existe una cookie con el usuario creada anteriormente.
       // Si existe, la utilizamos para loguear al usuario
       $return = false;
@@ -16,6 +15,21 @@
       // Devolvemos el estado
       return $return;
     }
+
+    // Funcion que verifica segun las Cookies si el usuario esta logueado.
+    // devuelve IDUSER o FALSE
+    public function chequeaSessionUsuario() {
+      // Verificamos si existe una cookie con el usuario creada anteriormente.
+      // Si existe, la utilizamos para loguear al usuario
+      $return = false;
+      if (isset($_SESSION["usuario"])) {
+        // Cambiamos la variable a True si la subfuncion loguear usuario funciono sin problemas
+        $return = $_SESSION["usuario"];
+      }
+      // Devolvemos el estado
+      return $return;
+    }
+
 
     // // Funcion que borra todas las Cookies
     // // Devuelve la variable $_COOKIE
@@ -31,19 +45,7 @@
     //   return $_COOKIE;
     // };
     //
-    // // Funcion que verifica segun las Cookies si el usuario esta logueado.
-    // // devuelve IDUSER o FALSE
-    // function chequeaSessionUsuario() {
-    //   // Verificamos si existe una cookie con el usuario creada anteriormente.
-    //   // Si existe, la utilizamos para loguear al usuario
-    //   $return = false;
-    //   if (isset($_SESSION["usuario"])) {
-    //     // Cambiamos la variable a True si la subfuncion loguear usuario funciono sin problemas
-    //     $return = $_SESSION["usuario"];
-    //   }
-    //   // Devolvemos el estado
-    //   return $return;
-    // };
+
     //
     // // Funcion que LOGUEA al usuario que se pase por parametro
     // // Para esto crea una cookie con el valor del usuario, asi como tambien lo carga en la variable session

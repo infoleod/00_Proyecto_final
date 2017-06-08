@@ -100,17 +100,17 @@ function guardarUsuario($usuario){
   file_put_contents("usuarios.json", $json, FILE_APPEND);
 }
 
-/*traigo datos del json*/
-function traerTodos() {
-  $archivo = file_get_contents("usuarios.json");
-  $usuariosJSON = explode(PHP_EOL, $archivo);
-  array_pop($usuariosJSON);
-  $usuariosFinal = [];
-  foreach($usuariosJSON as $json) {
-    $usuariosFinal[] = json_decode($json, true);
-  }
-  return $usuariosFinal;
-}
+// /*traigo datos del json*/
+// function traerTodos() {
+//   $archivo = file_get_contents("usuarios.json");
+//   $usuariosJSON = explode(PHP_EOL, $archivo);
+//   array_pop($usuariosJSON);
+//   $usuariosFinal = [];
+//   foreach($usuariosJSON as $json) {
+//     $usuariosFinal[] = json_decode($json, true);
+//   }
+//   return $usuariosFinal;
+// }
 
 /*Con esta funcion asigno nuevo ID, el cual se utiliza a la hora de la creacion del usuario*/
 function traerNuevoId() {

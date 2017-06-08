@@ -2,6 +2,8 @@
 
   class Validador {
 
+
+
     // DARIO -------------------------------------------------------------------
     // public function validarInformacion($informacion, RepositorioUsuarios $repo) {
     //   $errores = [];
