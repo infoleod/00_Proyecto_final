@@ -2,13 +2,10 @@
   // Pagina de soporte de Objetos
   require_once("soporte.php");
 
-  // Pagina de funciones
-  require_once("funciones.php");
-
   if ($_POST) {
     if (isset($_POST["logoff"])) {
 
-      borrarCookies();
+      $auth->borrarCookies();
       unset($_POST);
       unset($_SESSION);
       unset($_COOKIE);
@@ -27,12 +24,12 @@
 
   if ($usuarioHeader) {
     //Buscamos que exista en la base de datos
-    $arrayUsuario = buscarYdevolverUsuario($usuarioHeader);
+    $arrayUsuario = $db->getRepositorioUsuarios()->buscarYdevolverUsuario($usuarioHeader);
 
     if ($arrayUsuario) {
       // La funcion loguearUsuarioCookie dentro valida si existe ese valor en la base de datos
       $recordarme = true;
-      $usuarioLogueado = loguearUsuarioCookies($arrayUsuario,$recordarme);
+      $usuarioLogueado = $auth->loguearUsuarioCookies($arrayUsuario,$recordarme);
 
       if ($usuarioLogueado) {
         $usuarioLogueado = "Hola " . $usuarioLogueado;

@@ -18,27 +18,21 @@
       $this->telefono = $telefono;
     }
 
-    // public static function hashPassword($password) {
-    //   return password_hash($password, PASSWORD_DEFAULT);
-    // }
-    //
-    // public static function crearDesdeArray(Array $datos) {
-    //   if (!isset($datos["id"])) {
-    //     $datos["id"] = NULL;
-    //   }
-    //   if (!isset($datos["usuario"])) {
-    //     $datos["usuario"] = $datos["username"];
-    //   }
-    //   return new Usuario(
-    //     $datos["nombre"],
-    //     $datos["mail"],
-    //     $datos["edad"],
-    //     $datos["pais"],
-    //     $datos["password"],
-    //     $datos["usuario"],
-    //     $datos["id"]
-    //   );
-    // }
+    // Funcion que crea un nuevo Usuario de tipo Objeto desde un array de usuario
+    public static function crearDesdeArray(Array $datos) {
+      if (!isset($datos["id"])) {
+        $datos["id"] = NULL;
+      }
+      return new Usuario(
+        $datos["id"],
+        $datos["nombre"],
+        $datos["apellido"],
+        $datos["usuario"],
+        $datos["mail"],
+        $datos["password"],
+        $datos["telefono"]
+      );
+    }
 
     public static function crearDesdeArrays(Array $usuarios) {
       $usuariosFinal = [];
@@ -48,106 +42,66 @@
       return $usuariosFinal;
     }
 
-    // public function setNombre($nombre) {
-    //   $this->nombre = $nombre;
-    // }
-    //
-    // public function getNombre() {
-    //   return $this->nombre;
-    // }
-    //
-    // public function setMail($mail) {
-    //   $this->mail = $mail;
-    // }
-    //
-    // public function getMail() {
-    //   return $this->mail;
-    // }
-    //
-    // public function setPais($pais) {
-    //   $this->pais = $pais;
-    // }
-    //
-    // public function getPais() {
-    //   return $this->pais;
-    // }
-    //
-    // public function getEdad() {
-    //   return $this->edad;
-    // }
-    //
-    // public function setEdad($edad){
-    //   $this->edad = $edad;
-    // }
-    //
-    // public function setUsuario($username) {
-    //   $this->username = $username;
-    // }
+    // Funcion que convierte un Objeto de usuario en un Array
+    // EX - toArray
+    public function crearArrayDesdeObjeto() {
+      return [
+        "id"       => $this->getId(),
+        "nombre"   => $this->getNombre(),
+        "apellido" => $this->getApellido(),
+        "usuario"  => $this->getUsuario(),
+        "mail"     => $this->getMail(),
+        "password" => $this->getPassword(),
+        "telefono" => $this->getTelefono()
+      ];
+    }
 
+    public function getId() {
+      return $this->id;
+    }
+    public function setId($id){
+      $this->id = $id;
+    }
+
+    public function setNombre($nombre) {
+      $this->nombre = $nombre;
+    }
+    public function getNombre() {
+      return $this->nombre;
+    }
+
+    public function setApellido($apellido) {
+      $this->apellido = $apellido;
+    }
+    public function getApellido() {
+      return $this->apellido;
+    }
+
+    public function setUsuario($usuario) {
+      $this->usuario = $usuario;
+    }
     public function getUsuario() {
       return $this->usuario;
     }
 
-    // public function getId() {
-    //   return $this->id;
-    // }
-    //
-    // public function setId($id) {
-    //   $this->id = $id;
-    // }
-    //
-    // public function getFoto() {
-    //   $file = glob('img/'. $usuario->getUsername() .'.*');
-    //
-    //   $file = $file[0];
-    //
-    //   return $file;
-    // }
-    //
-    // public function guardarImagen($unaImagen, $errores) {
-  	// 	if ($_FILES[$unaImagen]["error"] == UPLOAD_ERR_OK)
-  	// 	{
-    //
-  	// 		$nombre=$_FILES[$unaImagen]["name"];
-  	// 		$archivo=$_FILES[$unaImagen]["tmp_name"];
-    //
-  	// 		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
-    //     if ($ext == "jpg" || $ext == "jpeg" || $ext == "png") {
-    // 			$miArchivo = dirname(__FILE__);
-    // 			$miArchivo = $miArchivo . "/../img/";
-    // 			$miArchivo = $miArchivo . $this->username . "." . $ext;
-    // 			move_uploaded_file($archivo, $miArchivo);
-    //     }
-    //     else {
-    //       $errores["imgPerfil"] = "Ey, subi una foto. No cualquier cosa";
-    //     }
-  	// 	} else {
-    //     //Acá hay error
-    //     $errores["imgPerfil"] = "No se pudo subir la foto :(";
-    //   }
-    //   return $errores;
-  	// }
-    //
-    // public function guardar(RepositorioUsuarios $repo) {
-    //   $repo->guardarUsuario($this);
-    // }
-    //
-    // public function toArray() {
-    //   return [
-    //     "id" => $this->getId(),
-    //     "nombre" => $this->getNombre(),
-    //     "mail" => $this->getMail(),
-    //     "password" => $this->getPassword(),
-    //     "pais" => $this->getPais(),
-    //     "edad" => $this->getEdad(),
-    //     "username" => $this->getUsername()
-    //   ];
-    // }
-    //
-    // public function getPassword() {
-    //   return $this->password;
-    // }
-    // DARIO --------------------------------------------------------------------
+    public function setMail($mail) {
+      $this->mail = $mail;
+    }
+    public function getMail() {
+      return $this->mail;
+    }
+
+    public function setTelefono($telefono) {
+      $this->telefono = $telefono;
+    }
+    public function getTelefono() {
+      return $this->telefono;
+    }
+
+    public function getPassword() {
+      return $this->password;
+    }
+
   }
 
 ?>

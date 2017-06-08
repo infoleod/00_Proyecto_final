@@ -15,14 +15,4 @@
     // buscarPorUsuario($usuario)
     // buscarPorMail($mail)
 
-  require_once("funciones-leo.php");
-    // borrarCookies()
-    // chequeaCookieUsuario()
-    // chequeaSessionUsuario()
-    // loguearUsuarioCookies($arrayUsuario,$recordarme)
-    // buscarPorIdUser($idUser)
-    // guardarCookiesUsuario($arrayUsuario,$recordarme)
-    // loguearUsuario($idUser)
-    // desloguearUsuario($idUser)
-
 ?>

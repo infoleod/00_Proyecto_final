@@ -4,10 +4,10 @@
   require_once("clases/repositorioBdJSON.php");
   require_once("clases/validador.php");
 
-  //$auth = Auth::crearAuth();
+  $auth = Auth::crearAutenticacion();
   $validador = new Validador();
 
-  $soporte = "sql";
+  $soporte = "json";
 
   switch ($soporte) {
     case 'sql':

@@ -28,16 +28,16 @@
     // Busca el usuario pasado por parametro en el Archivo Json.
     // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
     function buscarYdevolverUsuario($usuario) {
-      $todos = traerTodos();
-
-      foreach ($todos as $arrayUsuario) {
-        if ($arrayUsuario["usuario"] == $usuario) {
-
-          // Devolvemos el array completo del usuario
-          return $arrayUsuario;
-        }
-      }
-      return false;
+      // $todos = traerTodos();
+      //
+      // foreach ($todos as $arrayUsuario) {
+      //   if ($arrayUsuario["usuario"] == $usuario) {
+      //
+      //     // Devolvemos el array completo del usuario
+      //     return $arrayUsuario;
+      //   }
+      // }
+      // return false;
     }
 
     // Busca el email pasado por parametro en el Archivo Json.

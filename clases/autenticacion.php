@@ -2,6 +2,21 @@
   class Auth {
     public static $auth;
 
+    public static function crearAutenticacion() {
+      if (self::$auth == null) {
+        self::$auth = new Auth();
+      }
+      return self::$auth;
+    }
+
+    private function __construct() {
+        session_start();
+
+        // if (isset($_COOKIE["idUser"])) {
+        //   $this->loguear($_COOKIE["idUser"]);
+        // }
+    }
+
     // Funcion que verifica segun las Cookies si el usuario esta logueado.
     // devuelve IDUSER o FALSE
     public function chequeaCookieUsuario() {
@@ -30,63 +45,79 @@
       return $return;
     }
 
+    public function estaLogueado() {
+      $return = false;
+      // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
+      // Si lo encuentra devuelve el usuario, sino devuelve False
+      $usuario = Auth::chequeaCookieUsuario();
+      if ($usuario) {
+        $return = $usuario;
+      } else {
+        if (isset($_SESSION["usuario"])) {
+          $return = $_SESSION["usuario"];
+        }
+        return $return;
+      }
+     return isset($_SESSION["idUser"]);
+    }
 
-    // // Funcion que borra todas las Cookies
-    // // Devuelve la variable $_COOKIE
-    // function borrarCookies() {
-    //   if ($_COOKIE) {
-    //     $expira = time() - 3600;
-    //
-    //     foreach($_COOKIE as $id => $cookie) {
-    //       // unset($_COOKIE[$key]);
-    //       setcookie($id, '', $expira);
-    //     };
-    //   };
-    //   return $_COOKIE;
-    // };
-    //
+    // Funcion que LOGUEA al usuario que se pase por parametro
+    // Para esto crea una cookie con el valor del usuario, asi como tambien lo carga en la variable session
+    public function loguearUsuarioCookies($arrayUsuario,$recordarme) {
+      $return = false;
+      // Si devuelve algun valor es por que encontro al usuario guardado en la Cookie
+      if ($arrayUsuario) {
+        // Si la informacion del usuario es correcta,
 
-    //
-    // // Funcion que LOGUEA al usuario que se pase por parametro
-    // // Para esto crea una cookie con el valor del usuario, asi como tambien lo carga en la variable session
-    // function loguearUsuarioCookies($arrayUsuario,$recordarme) {
-    //   $return = false;
-    //   // Si devuelve algun valor es por que encontro al usuario guardado en la Cookie
-    //   if ($arrayUsuario) {
-    //     // Si la informacion del usuario es correcta,
-    //
-    //     // Lo logueamos a travez de la variable SESSION
-    //     foreach ($arrayUsuario as $id => $valor) {
-    //       $_SESSION[$id] = $valor;
-    //     };
-    //     if ($recordarme) {
-    //       // Guardamos el array con la informacion del usuario en las cookies
-    //       guardarCookiesUsuario($arrayUsuario,$recordarme);
-    //       // cambiamos la variable a True por que logueamos al usuario
-    //     };
-    //     $return = $arrayUsuario["usuario"];
-    //   };
-    //   // Devolvemos el estado
-    //   return $return;
-    // };
-    //
-    // //Funcion que guarda las cookies del usuario en la pc
-    // function guardarCookiesUsuario($arrayUsuario,$recordarme) {
-    //   // Si la variable $recordame es True guarda la cookie 1 Mes
-    //   // sino cuando cierra el navegador la pierde.
-    //   if ($recordarme) {
-    //     $expira       = time() + (3600 *  24  * 30); // 1 Mes
-    //     //Guardamos el array del usuario en las cookies
-    //     foreach ($arrayUsuario as $id => $valor) {
-    //       setcookie($id, $valor, $expira);
-    //     };
-    //     // } else {
-    //     // //Guardamos el array del usuario en las cookies
-    //     // foreach ($arrayUsuario as $id => $valor) {
-    //     //   setcookie($id, $valor);
-    //     // };
-    //   };
-    // };
+        // Lo logueamos a travez de la variable SESSION
+        foreach ($arrayUsuario as $id => $valor) {
+          $_SESSION[$id] = $valor;
+        };
+        if ($recordarme) {
+
+          // Guardamos el array con la informacion del usuario en las cookies
+          $this->guardarCookiesUsuario($arrayUsuario,$recordarme);
+          // cambiamos la variable a True por que logueamos al usuario
+        };
+        $return = $arrayUsuario["usuario"];
+      };
+      // Devolvemos el estado
+      return $return;
+    }
+
+    // Funcion que borra todas las Cookies
+    // Devuelve la variable $_COOKIE
+    function borrarCookies() {
+      if ($_COOKIE) {
+        $expira = time() - 3600;
+
+        foreach($_COOKIE as $id => $cookie) {
+          // unset($_COOKIE[$key]);
+          setcookie($id, '', $expira);
+        };
+      };
+      return $_COOKIE;
+    }
+
+    //Funcion que guarda las cookies del usuario en la pc
+    function guardarCookiesUsuario($arrayUsuario,$recordarme) {
+      // Si la variable $recordame es True guarda la cookie 1 Mes
+      // sino cuando cierra el navegador la pierde.
+      if ($recordarme) {
+        $expira       = time() + (3600 *  24  * 30); // 1 Mes
+        //Guardamos el array del usuario en las cookies
+        foreach ($arrayUsuario as $id => $valor) {
+          setcookie($id, $valor, $expira);
+        };
+        // } else {
+        // //Guardamos el array del usuario en las cookies
+        // foreach ($arrayUsuario as $id => $valor) {
+        //   setcookie($id, $valor);
+        // };
+      };
+    }
+
+
     //
     // //Funcion que LOGUEA al usuario que se pase por parametro
     // //Para esto crea una cookie con el valor del usuario, asi como tambien lo carga en la variable session

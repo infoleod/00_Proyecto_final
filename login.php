@@ -1,17 +1,14 @@
 <?php
-  require_once("funciones.php");
+// Pagina de soporte de Objetos
+require_once("soporte.php");
 
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False
-  $usuarioHeader = chequeaCookieUsuario();
+  $estaLogueado = $auth->estaLogueado();
 
-  if ($usuarioHeader) {
+  if ($estaLogueado) {
     header("Location:index.php");exit;
-  } else {
-    if (isset($_SESSION["usuario"])) {
-      header("Location:index.php");exit;
-    }
-  };
+  }
 
   $usuario = "";
   $errores=[];
@@ -28,12 +25,15 @@
       if (!filter_var($usuarioEmail, FILTER_VALIDATE_EMAIL) === false) {
           // si es un email valido lo buscamos por email
           // Traemos el array del usuario
-          $arrayUsuario = buscarYdevolverEmail($_POST["usuario"]);
+          $arrayUsuario = $db->getRepositorioUsuarios()->buscarYdevolverEmail($_POST["usuario"]);
       } else {
           // si no es un email lo buscamos por el usuario
           // Traemos el array del usuario
-          $arrayUsuario = buscarYdevolverUsuario($_POST["usuario"]);
+          $arrayUsuario = $db->getRepositorioUsuarios()->buscarYdevolverUsuario($_POST["usuario"]);
       };
+
+      // echo "<pre>";
+      // var_dump($arrayUsuario);exit;
 
       // Si lo encontramos verificamos el password
       if ($arrayUsuario) {
@@ -51,7 +51,7 @@
 
           // Si Existe el usuario y el Password es correcto.
           // logueamos al usuario y lo redirigimos al index pero logueado
-          $usuario = loguearUsuarioCookies($arrayUsuario,$recordarme);
+          $usuario = $auth->loguearUsuarioCookies($arrayUsuario,$recordarme);
 
           header("Location:index.php");exit;
 
