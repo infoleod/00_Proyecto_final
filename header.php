@@ -1,4 +1,7 @@
 <?php
+  // Pagina de soporte de Objetos
+  require_once("soporte.php");
+
   // Pagina de funciones
   require_once("funciones.php");
 

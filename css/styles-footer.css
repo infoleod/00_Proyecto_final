@@ -1,50 +1,115 @@
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* -- FOOTER -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
-.footer-article-logo img{
-  display: none;
+footer {
+  clear: both;
+  background-color: rgb(30, 30, 30);
+  color: rgb(225, 225, 225);
 }
-.footer-article{
-  background-color: black;
-  color:white;
-  text-decoration: none;
+.footer-div-superior {
+  background-color: rgb(50, 50, 50);
+  padding: 10px 5px;
+}
+.footer-div-superior-boton {
+  background-color: rgb(220, 220, 220);
+  width: 98% ;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
+.footer-div-superior-mail {
+  width: 98%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
+.footer-div-medio-izq {
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+.footer-div-medio-izq-logo {
+  float: left;
+}
+.footer-div-medio-izq-leyenda {
+  float: right;
+  width: 50%;
+  font-size: 1.2em;
+  padding-top: 3.4%;
+}
+.footer-div-medio-med {
+  clear: both;
+  width: 100%;
+}
+.footer-div-medio-med ul li a {
+  padding: 10px 5px;
+  display: block;
+  border: 1px grey solid;
+}
+.footer-div-medio-der {
+  clear: both;
+}
+.footer-div-medio-der-icon {
+  float: left;
+  width: 33.33%;
+  height: 80px;
+}
+.footer-div-medio-der-icon img{
+  margin-top: 5px;
+}
+
+.footer-div-inferior {
+  clear: both;
 }
 .footer-copyright {
+  clear: both;
   background-color: black;
-  color:white;
-  font-size: 0.8em;
-}
-.footer-article-red-social-icon{
-  float: left;
-  width: 33.3%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
+  }
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* -- MEDIA QUERY's -- 640 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 @media (min-width:640px) {
-  .footer-article{
-    width:100%;
-    background-color:black;
-    display:block;
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-div-medio-der h4 {
+    margin: 0;
+    padding: 0;
+  }
+  .footer-div-superior-boton {
+    width: 30% ;
+    padding: 0;
+  }
+  .footer-div-superior-mail {
+    width: 60% ;
+    padding: 0;
+  }
+  .footer-div-medio-izq-logo {
     float: left;
-    color:white;
-    font-size: 0.8em;
+    padding-left: 22%;
   }
-  .footer-article-logo img{
-    display: none;
+  .footer-div-medio-izq-leyenda {
+    float: right;
+    padding-right: 22%;
   }
-  footer{
-    clear: both;
-    font-size: 1em;
+  .footer-div-medio-izq-leyenda span {
+    margin: 0;
   }
+  .footer-div-medio-med ul li a {
+    padding: 5px;
+    display: block;
+    border: none;
+  }
+
+
+
 }
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* -- MEDIA QUERY's -- 960 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 @media (min-width:960px) {
-  
+
 }
