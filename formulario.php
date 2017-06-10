@@ -1,10 +1,10 @@
 <?php
   /*llamo funciones.php para utilizarlas dentro del codigo del formulario*/
-  require_once("funciones.php");
+  require_once("soporte.php");
 
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False
-  $usuarioHeader = chequeaCookieUsuario();
+  $usuarioHeader = $auth->chequeaCookieUsuario();
 
   if ($usuarioHeader) {
     header("Location:index.php");exit;

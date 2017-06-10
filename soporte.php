@@ -15,7 +15,7 @@
       break;
 
     case 'json':
-      $db = new RepositorioJSON();
+      $db = new RepositorioJson();
       break;
   }
 

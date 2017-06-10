@@ -1,107 +1,138 @@
 <?php
-  class Usuario {
-    private $id;
-    private $nombre;
-    private $apellido;
-    private $usuario;
-    private $mail;
-    private $password;
-    private $telefono;
+class Usuario{
+  private $nombre;
+  private $apellido;
+  private $mail;
+  private $password;
+  private $usuario;
+  private $telefono;
+  private $id;
 
-    public function __construct($id, $nombre, $apellido, $usuario, $mail, $password, $telefono) {
-      $this->id = $id;
-      $this->nombre = $nombre;
-      $this->apellido = $apellido;
-      $this->usuario = $usuario;
-      $this->mail = $mail;
-      $this->password = $password;
-      $this->telefono = $telefono;
-    }
+ public function __construct($nombre, $apellido, $mail, $password, $usuario, $telefono, $id){
+   $this->nombre=$nombre;
+   $this->apelludo=$apellido;
+   $this->mail=$mail;
+   $this->password=$password;
+   $this->usuario=$usuario;
+   $this->telefono=$telefono;
+   $this->id=$id;
+ }
 
-    // Funcion que crea un nuevo Usuario de tipo Objeto desde un array de usuario
-    public static function crearDesdeArray(Array $datos) {
-      if (!isset($datos["id"])) {
-        $datos["id"] = NULL;
-      }
-      return new Usuario(
-        $datos["id"],
-        $datos["nombre"],
-        $datos["apellido"],
-        $datos["usuario"],
-        $datos["mail"],
-        $datos["password"],
-        $datos["telefono"]
-      );
-    }
+public static function hashPassword($password){
+    return password_hash($password,  PASSWORD_DEFAULT);
+}
+public static function crearDesdeArray(Array $informacion){
+  if(!isset($informacion["id"])){
+    $informacion["id"] = NULL;
+  }
+  if (!isset($informacion["id"])) {
+    $informacion["usuario"] = $informacion["usuario"];
+  }
+  return new Usuario(
+    $informacion["nombre"],
+    $informacion["apellido"],
+    $informacion["mail"],
+    $informacion["telefono"],
+    $informacion["password"],
+    $informacion["usuario"],
+    $informacion["id"]
+  );
+}
+public static function crearDesdeArrays(Array $usuarios){
+  $usuariosFinal = [];
 
-    public static function crearDesdeArrays(Array $usuarios) {
-      $usuariosFinal = [];
-      foreach ($usuarios as $usuario) {
-        $usuariosFinal[] = self::crearDesdeArray($usuario);
-      }
-      return $usuariosFinal;
-    }
-
-    // Funcion que convierte un Objeto de usuario en un Array
-    // EX - toArray
-    public function crearArrayDesdeObjeto() {
-      return [
-        "id"       => $this->getId(),
-        "nombre"   => $this->getNombre(),
-        "apellido" => $this->getApellido(),
-        "usuario"  => $this->getUsuario(),
-        "mail"     => $this->getMail(),
-        "password" => $this->getPassword(),
-        "telefono" => $this->getTelefono()
-      ];
-    }
-
-    public function getId() {
-      return $this->id;
-    }
-    public function setId($id){
-      $this->id = $id;
-    }
-
-    public function setNombre($nombre) {
-      $this->nombre = $nombre;
-    }
-    public function getNombre() {
-      return $this->nombre;
-    }
-
-    public function setApellido($apellido) {
-      $this->apellido = $apellido;
-    }
-    public function getApellido() {
-      return $this->apellido;
-    }
-
-    public function setUsuario($usuario) {
-      $this->usuario = $usuario;
-    }
-    public function getUsuario() {
-      return $this->usuario;
-    }
-
-    public function setMail($mail) {
-      $this->mail = $mail;
-    }
-    public function getMail() {
-      return $this->mail;
-    }
-
-    public function setTelefono($telefono) {
-      $this->telefono = $telefono;
-    }
-    public function getTelefono() {
-      return $this->telefono;
-    }
-
-    public function getPassword() {
-      return $this->password;
-    }
-
+  foreach ($usuarios as $usuario) {
+    $usuariosFinal[] = self:: crearDesdeArray($usuario);
   }
 
-?>
+  return $usuariosFinal;
+}
+
+public function setNombre($nombre){
+  $this->nombre = $nombre;
+}
+public function getNombre(){
+  $this->nombre = $nombre;
+}
+public function setApellido($apellido){
+  $this->apellido = $apellido;
+}
+public function getApellido(){
+  $this->apellido = $apellido;
+}
+public function setMail($mail){
+  $this->mail = $mail;
+}
+public function getMail(){
+  $this->mail = $mail;
+}
+public function setTelefono($telefono){
+  $this->telefono = $telefono;
+}
+public function getTelefono(){
+  $this->telefono = $telefono;
+}
+public function setUsuario($usuario){
+  $this->usuario = $usuario;
+}
+public function getUsuario(){
+  $this->usuario = $usuario;
+}
+public function setId($id){
+  $this->id = $id;
+}
+public function getId(){
+  $this->id = $id;
+}
+public function getFoto() {
+  $file = glob('img/'. $usuario->getUsername() .'.*');
+
+  $file = $file[0];
+
+  return $file;
+}
+public function guardarImagen($imagenPerfil, $errores){
+  if ($imagenPerfil["error"] == UPLOAD_ERR_OK) {
+    $nombre=$imagenPerfil["name"];
+    $archivo=$imagenPerfil["tmp_name"];
+    $ext = pathinfo($nombre, PATHINFO_EXTENSION);
+
+    if ($ext === "jpg" || $ext === "jpeg" || $ext === "png"){
+      $miArchivo = "./img/";
+      $miArchivo = $miArchivo . $_POST["usuario"] . "." . $ext;
+      move_uploaded_file($archivo, $miArchivo);
+    } else {
+      $errores["imgPerfil"] = "Sube tu foto de perfil";
+    }
+  } else {
+    $errores["imgPerfil"] = "No se pudo subir la foto";
+  }
+  return $errores;
+}
+
+public function guardar (RepositorioUsuarios $repo){
+  $repo->guardarUsuario($this);
+}
+public function toArray(){
+return[
+  "id"=>$this->getId(),
+  "nombre"=>$this->getNombre(),
+  "apellido"=>$this->getapellido(),
+  "mail"=>$this->getMail(),
+  "password"=>$this->getPassword(),
+  "telefono"=>$this->getTelefono(),
+  "usuario"=>$this->getUsuario()
+];
+
+}
+
+public function getPassword(){
+  return $this->password;
+}
+
+}
+
+
+
+
+ ?>
