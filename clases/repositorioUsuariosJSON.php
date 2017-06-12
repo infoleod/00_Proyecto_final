@@ -77,8 +77,16 @@
       return $id + 1;
     }
 
-
-
+    /*buscar por usuario*/
+    function buscarPorUsuario($usuario) {
+      $todos = traerTodos();
+      foreach ($todos as $usuarioIndividual) {
+        if ($usuarioIndividual["usuario"] == $usuario) {
+          return $usuarioIndividual;
+        }
+      }
+      return false;
+    }
 
 
 

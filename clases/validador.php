@@ -85,27 +85,7 @@
   //   return $usuariosFinal;
   // }
 
-    /*Con esta funcion asigno nuevo ID, el cual se utiliza a la hora de la creacion del usuario*/
-    function traerNuevoId() {
-      $usuarios = traerTodos();
-      if (count($usuarios) == 0) {
-        return 1;
-      }
-      $elUltimo = array_pop($usuarios);
-      $id = $elUltimo["id"];
-      return $id + 1;
-    }
 
-    /*buscar por usuario*/
-    function buscarPorUsuario($usuario) {
-      $todos = traerTodos();
-      foreach ($todos as $usuarioIndividual) {
-        if ($usuarioIndividual["usuario"] == $usuario) {
-          return $usuarioIndividual;
-        }
-      }
-      return false;
-    }
 
   }
  ?>
