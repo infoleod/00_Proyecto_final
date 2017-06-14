@@ -13,7 +13,7 @@
         $usuario->setId($this->traerNuevoId());
       }
 
-      $json = json_encode($usuario->toArray());
+      $json = json_encode($usuario->crearArrayDesdeObjeto());
 
       $json = $json . PHP_EOL;
 

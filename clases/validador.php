@@ -24,9 +24,9 @@
       if (strlen($usuario) == 0) {
       $errores["usuario"] = "Complete un usuario";
       }
-      if(buscarYdevolverUsuario($usuario) != false){
-        $errores["usuario"] = "Este Usuario ya se encuentra en uso";
-      }
+      // if($db->getRepositorioUsuarios()->buscarYdevolverUsuario($usuario) != false){
+      //   $errores["usuario"] = "Este Usuario ya se encuentra en uso";
+      // }
       /*valido el mail, que sea mayor a uno el contenido, filtro con que sea un mail valido, luego busco el mail en la base para que ya no exista*/
       $mail = trim($informacion["mail"]);
       if (strlen($mail) == 0 ) {
@@ -52,10 +52,10 @@
       return $errores;
     }
 
-    function validarLogin($informacion, RepositorioUsuarios $repo) {
+    function validarLogin($datos, RepositorioUsuarios $repo) {
       $errores = [];
 
-      $mail = trim($informacion["mail"]);
+      $mail = trim($datos["mail"]);
 
       if (strlen($mail) == 0) {
           $errores["mail"] = "No completo el campo mail";
@@ -66,7 +66,7 @@
       } else {
         //usuario existe
         $usuario =$repo->buscarPorMail($mail);
-        if (password_verify($informacion["password"], $usuario->getPassword()) == false) {
+        if (password_verify($datos["password"], $usuario->getPassword()) == false) {
           $errores["mail"] = "Error de Login";
         }
       }

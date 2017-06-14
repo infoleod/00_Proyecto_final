@@ -10,7 +10,7 @@ class Usuario{
 
  public function __construct($nombre, $apellido, $mail, $password, $usuario, $telefono, $id){
    $this->nombre=$nombre;
-   $this->apelludo=$apellido;
+   $this->apellido=$apellido;
    $this->mail=$mail;
    $this->password=$password;
    $this->usuario=$usuario;
@@ -21,21 +21,19 @@ class Usuario{
   public static function hashPassword($password){
       return password_hash($password,  PASSWORD_DEFAULT);
   }
-  public static function crearDesdeArray(Array $informacion){
-    if(!isset($informacion["id"])){
-      $informacion["id"] = NULL;
+  public static function crearDesdeArray(Array $datos){
+    if(!isset($datos["id"])){
+      $datos["id"] = NULL;
     }
-    if (!isset($informacion["id"])) {
-      $informacion["usuario"] = $informacion["usuario"];
-    }
+
     return new Usuario(
-      $informacion["nombre"],
-      $informacion["apellido"],
-      $informacion["mail"],
-      $informacion["telefono"],
-      $informacion["password"],
-      $informacion["usuario"],
-      $informacion["id"]
+      $datos["nombre"],
+      $datos["apellido"],
+      $datos["mail"],
+      $datos["password"],
+      $datos["usuario"],
+      $datos["telefono"],
+      $datos["id"]
     );
   }
   public static function crearDesdeArrays(Array $usuarios){
@@ -49,40 +47,40 @@ class Usuario{
   }
 
   public function setNombre($nombre){
-    $this->nombre = $nombre;
+    $this->nombre=$nombre;
   }
   public function getNombre(){
-    $this->nombre = $nombre;
+    return $this->nombre;
   }
   public function setApellido($apellido){
     $this->apellido = $apellido;
   }
   public function getApellido(){
-    $this->apellido = $apellido;
+    return $this->apellido;
   }
   public function setMail($mail){
     $this->mail = $mail;
   }
   public function getMail(){
-    $this->mail = $mail;
+    return $this->mail;
   }
   public function setTelefono($telefono){
     $this->telefono = $telefono;
   }
   public function getTelefono(){
-    $this->telefono = $telefono;
+  return $this->telefono ;
   }
   public function setUsuario($usuario){
     $this->usuario = $usuario;
   }
   public function getUsuario(){
-    $this->usuario = $usuario;
+    return $this->usuario;
   }
   public function setId($id){
     $this->id = $id;
   }
   public function getId(){
-    $this->id = $id;
+  return $this->id;
   }
   public function getFoto() {
     $file = glob('img/'. $usuario->getUsername() .'.*');
@@ -92,14 +90,15 @@ class Usuario{
     return $file;
   }
   public function guardarImagen($imagenPerfil, $errores){
-    if ($imagenPerfil["error"] == UPLOAD_ERR_OK) {
-      $nombre=$imagenPerfil["name"];
-      $archivo=$imagenPerfil["tmp_name"];
+    if ($_FILES[$imagenPerfil]["error"] == UPLOAD_ERR_OK) {
+      $nombre=$_FILES[$imagenPerfil]["name"];
+      $archivo=$_FILES[$imagenPerfil]["tmp_name"];
       $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
       if ($ext === "jpg" || $ext === "jpeg" || $ext === "png"){
-        $miArchivo = "./img/";
-        $miArchivo = $miArchivo . $_POST["usuario"] . "." . $ext;
+        $miArchivo = dirname(__FILE__);
+        $miArchivo = $miArchivo . "/../img/";
+        $miArchivo = $miArchivo . $this->usuario . "." . $ext;
         move_uploaded_file($archivo, $miArchivo);
       } else {
         $errores["imgPerfil"] = "Sube tu foto de perfil";
@@ -113,15 +112,15 @@ class Usuario{
   public function guardar (RepositorioUsuarios $repo){
     $repo->guardarUsuario($this);
   }
-  public function toArray(){
+  public function crearArrayDesdeObjeto(){
   return[
-    "id"=>$this->getId(),
     "nombre"=>$this->getNombre(),
     "apellido"=>$this->getapellido(),
     "mail"=>$this->getMail(),
     "password"=>$this->getPassword(),
+    "usuario"=>$this->getUsuario(),
     "telefono"=>$this->getTelefono(),
-    "usuario"=>$this->getUsuario()
+    "id"=>$this->getId()
   ];
 
   }
