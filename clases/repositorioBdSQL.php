@@ -9,8 +9,8 @@
     public function __construct() {
 
       $dsn = "mysql:host=localhost;dbname=reglog;charset=utf8mb4;port:3306";
-      $usuario = "debian-sys-maint";
-      $password = "si3kl4VBU4MrsyXZ";
+      $usuario = "root";
+      $password = "";
 
       try {
         $this->conexion = new PDO($dsn, $usuario, $password);

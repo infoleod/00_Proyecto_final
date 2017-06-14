@@ -1,6 +1,6 @@
 <?php
-// Pagina de soporte de Objetos
-require_once("soporte.php");
+  // Pagina de soporte de Objetos
+  require_once("soporte.php");
 
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False

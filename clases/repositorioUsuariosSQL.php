@@ -1,303 +1,249 @@
 <?php
-require_once("repositorioUsuarios.php");
-require_once("usuario.php");
 
-class RepositorioUsuariosSQL extends RepositorioUsuarios {
-  protected $conexion;
+  require_once("repositorioUsuarios.php");
+  require_once("usuario.php");
 
-  public function __construct($conexion) {
-    $this->conexion = $conexion;
-  }
+  class RepositorioUsuariosJSON extends RepositorioUsuarios {
 
-  // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 12  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  // -------------------------------------- FRAN --------------------------------------------
-  // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  public function guardarUsuario(Usuario $usuario) {
-    $sql = "INSERT INTO zoomarket.usuario values(default, :nombre, :apellido, :mail, :usuario, :telefono, :password)";
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->bindValue(":nombre", $usuario->getNombre(), PDO::PARAM_STR);
-    $stmt->bindValue(":apellido", $usuario->getApellido(), PDO::PARAM_STR);
-    $stmt->bindValue(":mail", $usuario->getMail(), PDO::PARAM_STR);
-    $stmt->bindValue(":usuario", $usuario->getUsuario(), PDO::PARAM_STR);
-    $stmt->bindValue(":telefono", $usuario->getTelefono(), PDO::PARAM_INT);
-    $stmt->bindValue(":password", $usuario->getPassword(), PDO::PARAM_STR);
-
-    $stmt->execute();
-  }
-
-  function traerTodos() {
-    $sql = "Select * from zoomarket.usuario";
-
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->execute();
-
-    return Usuario::crearDesdeArrays($stmt->fetchAll(PDO::FETCH_ASSOC));
-  }
-
-  function buscarPorMail($mail) {
-    $sql = "Select * from zoomarket.usuario where mail = :mail";
-
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
-
-    $stmt->execute();
-
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($result != false) {
-      return Usuario::crearDesdeArray($result);
-    }
-    else {
-      return NULL;
-    }
-  }
-
-  function buscarPorId($id) {
-    $sql = "Select * from zoomarket.usuario where id = :id";
-
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-
-    $stmt->execute();
-
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($result != false) {
-        return Usuario::crearDesdeArray($result);
-    }
-    else {
-      return NULL;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 200  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  // --------------------------------------- LEO --------------------------------------------
-  // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-  // Busca el usuario pasado por parametro en el Archivo Json.
-  // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
-  function buscarYdevolverUsuario($usuario) {
-    // $todos = traerTodos();
-    //
-    // foreach ($todos as $arrayUsuario) {
-    //   if ($arrayUsuario["usuario"] == $usuario) {
-    //
-    //     // Devolvemos el array completo del usuario
-    //     return $arrayUsuario;
-    //   }
-    // }
-    // return false;
-  }
-
-  // Busca el email pasado por parametro en el Archivo Json.
-  // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
-  function buscarYdevolverEmail($email) {
-    $todos = traerTodos();
-
-    foreach ($todos as $arrayUsuario) {
-      if ($arrayUsuario["mail"] == $email) {
-
-        // Devolvemos el array completo del usuario
-        return $arrayUsuario;
+    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 8  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    // --------------------------------------- FRAN -------------------------------------------
+    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    public function guardarUsuario(Usuario $usuario) {
+      if ($usuario->getId() == null) {
+        $usuario->setId($this->traerNuevoId());
       }
+
+      $json = json_encode($usuario->crearArrayDesdeObjeto());
+
+      $json = $json . PHP_EOL;
+
+      file_put_contents("usuarios.json", $json, FILE_APPEND);
     }
-    return false;
+
+    public function traerTodos() {
+      // Leo el archivo
+      $archivo = file_get_contents("usuarios.json");
+
+      // Lo divido por enters
+      $usuariosJSON = explode(PHP_EOL, $archivo);
+      // Quito el enter del final
+      array_pop($usuariosJSON);
+
+      $usuariosFinal = [];
+
+      // Y CADA LINEA LA CONVIERTO DE JSON A ARRAY
+      foreach($usuariosJSON as $json) {
+        $usuariosFinal[] = Usuario::crearDesdeArray(json_decode($json, true));
+      }
+
+      return $usuariosFinal;
+    }
+
+    public function buscarPorId($id) {
+      $todos = $this->traerTodos();
+
+      foreach ($todos as $usuario) {
+        if ($usuario->getId() == $id) {
+          return $usuario;
+        }
+      }
+
+      return false;
+    }
+
+    public function buscarPorMail($mail) {
+      $todos = $this->traerTodos();
+
+      foreach ($todos as $usuario) {
+        if ($usuario->getMail() == $mail) {
+          return $usuario;
+        }
+      }
+
+      return false;
+    }
+
+    private function traerNuevoId() {
+      $usuarios = $this->traerTodos();
+
+      if (count($usuarios) == 0) {
+        return 1;
+      }
+
+      $elUltimo = array_pop($usuarios);
+
+      $id = $elUltimo->getId();
+
+      return $id + 1;
+    }
+
+    /*buscar por usuario*/
+    function buscarPorUsuario($usuario) {
+      $todos = traerTodos();
+      foreach ($todos as $usuarioIndividual) {
+        if ($usuarioIndividual["usuario"] == $usuario) {
+          return $usuarioIndividual;
+        }
+      }
+      return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 200  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    // --------------------------------------- LEO --------------------------------------------
+    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    // Busca el usuario pasado por parametro en el Archivo Json.
+    // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
+    public function buscarYdevolverUsuario($usuario) {
+      $todos = $this->traerTodos();
+
+      foreach ($todos as $objetoUsuario) {
+        if ($objetoUsuario->getUsuario() == $usuario) {
+          // Devolvemos el array completo del usuario
+          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+
+          return $arrayUsuario;
+        }
+      }
+      return false;
+    }
+
+
+    // Busca el email pasado por parametro en el Archivo Json.
+    // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
+    public function buscarYdevolverEmail($email) {
+      // Traemos un Array con los objetos de los distintos usuarios
+      $todos = $this->traerTodos();
+
+      // Recorremos los objetos
+      foreach ($todos as $objetoUsuario) {
+        if ($objetoUsuario->getMail() == $email) {
+
+          // Transformamos el objeto en un Array
+          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+
+          // Devolvemos el array completo del usuario
+          return $arrayUsuario;
+        }
+      }
+      return false;
+    }
   }
-
-// DARIO ---------------------------------------------------------------------
-//   public function guardarUsuario(Usuario $usuario) {
-//    $sql = "INSERT INTO usuario values(default, :nombre, :username, :mail, :edad, :pais, :password)";
-//    $stmt = $this->conexion->prepare($sql);
- //
-//    $stmt->bindValue(":nombre", $usuario->getNombre(), PDO::PARAM_STR);
-//    $stmt->bindValue(":username", $usuario->getUsername(), PDO::PARAM_STR);
-//    $stmt->bindValue(":mail", $usuario->getMail(), PDO::PARAM_STR);
-//    $stmt->bindValue(":edad", $usuario->getEdad(), PDO::PARAM_INT);
-//    $stmt->bindValue(":pais", $usuario->getPais(), PDO::PARAM_STR);
-//    $stmt->bindValue(":password", $usuario->getPassword(), PDO::PARAM_STR);
- //
-//    $stmt->execute();
-//  }
- //
-//  function traerTodos() {
-//     $sql = "Select * from usuario";
- //
-//     $stmt = $this->conexion->prepare($sql);
- //
-//     $stmt->execute();
- //
-//     return Usuario::crearDesdeArrays($stmt->fetchAll(PDO::FETCH_ASSOC));
-//   }
- //
-//   function buscarPorMail($mail) {
-//     $sql = "Select * from usuario where mail = :mail";
- //
-//     $stmt = $this->conexion->prepare($sql);
- //
-//     $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
- //
-//     $stmt->execute();
- //
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
- //
-//     if ($result != false) {
-//         return Usuario::crearDesdeArray($result);
-//     }
-//     else {
-//       return NULL;
-//     }
- //
- //
-//   }
- //
-//   function buscarPorId($id) {
-//     $sql = "Select * from usuario where id = :id";
- //
-//     $stmt = $this->conexion->prepare($sql);
- //
-//     $stmt->bindValue(":id", $id, PDO::PARAM_INT);
- //
-//     $stmt->execute();
- //
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
- //
-//     if ($result != false) {
-//         return Usuario::crearDesdeArray($result);
-//     }
-//     else {
-//       return NULL;
-//     }
-//   }
-// DARIO ---------------------------------------------------------------------
-}
-
-// leo
 
 ?>

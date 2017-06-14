@@ -1,8 +1,4 @@
 <?php
-  require_once("funciones.php");
-?>
-
-<?php
   require_once("header.php");
 ?>
 <!--                   El Header abre con todo el encabezado del HTML                     -->
