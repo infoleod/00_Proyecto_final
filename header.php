@@ -30,9 +30,10 @@
       // La funcion loguearUsuarioCookie dentro valida si existe ese valor en la base de datos
       $recordarme = true;
       $usuarioLogueado = $auth->loguearUsuarioCookies($arrayUsuario,$recordarme);
+      $objetoUsuarioLogueado = $db->getRepositorioUsuarios()->buscarYdevolverUsuario($usuarioLogueado);
 
-      if ($usuarioLogueado) {
-        $usuarioLogueado = "Hola " . $usuarioLogueado;
+      if ($objetoUsuarioLogueado) {
+        $usuarioLogueado = "Hola " . $objetoUsuarioLogueado->getNombre();
       };
     };
   } else {
@@ -40,8 +41,12 @@
     $usuarioLogueado = Auth::chequeaSessionUsuario();
 
     if ($usuarioLogueado) {
-      $usuarioLogueado = "Hola " . $usuarioLogueado;
-    };
+      $objetoUsuarioLogueado = $db->getRepositorioUsuarios()->buscarYdevolverUsuario(Auth::chequeaSessionUsuario());
+
+      if ($objetoUsuarioLogueado) {
+        $usuarioLogueado = "Hola " . $objetoUsuarioLogueado->getNombre();
+      };
+    }
   };
 
 ?>

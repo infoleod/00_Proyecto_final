@@ -216,9 +216,9 @@
       foreach ($todos as $objetoUsuario) {
         if ($objetoUsuario->getUsuario() == $usuario) {
           // Devolvemos el array completo del usuario
-          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+          //$arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
 
-          return $arrayUsuario;
+          return $objetoUsuario;
         }
       }
       return false;
@@ -236,10 +236,10 @@
         if ($objetoUsuario->getMail() == $email) {
 
           // Transformamos el objeto en un Array
-          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+          //$arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
 
           // Devolvemos el array completo del usuario
-          return $arrayUsuario;
+          return $objetoUsuario;
         }
       }
       return false;

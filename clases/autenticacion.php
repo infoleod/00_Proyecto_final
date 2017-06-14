@@ -24,6 +24,7 @@
       // Si existe, la utilizamos para loguear al usuario
       $return = false;
       if (isset($_COOKIE["usuario"])) {
+
         // Cambiamos la variable a True si la subfuncion loguear usuario funciono sin problemas
         $return = $_COOKIE["usuario"];
       };
@@ -63,10 +64,11 @@
 
     // Funcion que LOGUEA al usuario que se pase por parametro
     // Para esto crea una cookie con el valor del usuario, asi como tambien lo carga en la variable session
-    public function loguearUsuarioCookies($arrayUsuario,$recordarme) {
+    public function loguearUsuarioCookies($objetoUsuario,$recordarme) {
       $return = false;
       // Si devuelve algun valor es por que encontro al usuario guardado en la Cookie
-      if ($arrayUsuario) {
+      if ($objetoUsuario) {
+        $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
         // Si la informacion del usuario es correcta,
 
         // Lo logueamos a travez de la variable SESSION
@@ -74,12 +76,11 @@
           $_SESSION[$id] = $valor;
         };
         if ($recordarme) {
-
           // Guardamos el array con la informacion del usuario en las cookies
-          $this->guardarCookiesUsuario($arrayUsuario,$recordarme);
+          $this->guardarCookiesUsuario($objetoUsuario,$recordarme);
           // cambiamos la variable a True por que logueamos al usuario
         };
-        $return = $arrayUsuario["usuario"];
+        $return = $objetoUsuario->getUsuario();
       };
       // Devolvemos el estado
       return $return;
@@ -100,11 +101,13 @@
     }
 
     //Funcion que guarda las cookies del usuario en la pc
-    function guardarCookiesUsuario($arrayUsuario,$recordarme) {
+    function guardarCookiesUsuario($objetoUsuario,$recordarme) {
       // Si la variable $recordame es True guarda la cookie 1 Mes
       // sino cuando cierra el navegador la pierde.
       if ($recordarme) {
         $expira       = time() + (3600 *  24  * 30); // 1 Mes
+        $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+
         //Guardamos el array del usuario en las cookies
         foreach ($arrayUsuario as $id => $valor) {
           setcookie($id, $valor, $expira);

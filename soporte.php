@@ -7,7 +7,7 @@
   $auth = Auth::crearAutenticacion();
   $validador = new Validador();
 
-  $soporte = "json";
+  $soporte = "sql";
 
   switch ($soporte) {
     case 'sql':

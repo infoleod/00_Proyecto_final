@@ -4,7 +4,7 @@
 
   // Llamamos a la funcion que valida si existe alguna cookie con nombre usuario
   // Si lo encuentra devuelve el usuario, sino devuelve False
-  $usuarioHeader = $auth->chequeaCookieUsuario();
+  $usuarioHeader = Auth::chequeaCookieUsuario();
 
   if ($usuarioHeader) {
     header("Location:index.php");exit;

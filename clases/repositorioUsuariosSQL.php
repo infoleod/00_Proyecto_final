@@ -4,7 +4,11 @@
   require_once("usuario.php");
 
   class RepositorioUsuariosSQL extends RepositorioUsuarios {
+    protected $conexion;
 
+    public function __construct($conexion) {
+      $this->conexion = $conexion;
+    }
     // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 8  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     // --------------------------------------- FRAN -------------------------------------------
     // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -21,22 +25,10 @@
     }
 
     public function traerTodos() {
-      // Leo el archivo
-      $archivo = file_get_contents("usuarios.json");
-
-      // Lo divido por enters
-      $usuariosJSON = explode(PHP_EOL, $archivo);
-      // Quito el enter del final
-      array_pop($usuariosJSON);
-
-      $usuariosFinal = [];
-
-      // Y CADA LINEA LA CONVIERTO DE JSON A ARRAY
-      foreach($usuariosJSON as $json) {
-        $usuariosFinal[] = Usuario::crearDesdeArray(json_decode($json, true));
-      }
-
-      return $usuariosFinal;
+      $sql = "Select * from usuario";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      return Usuario::crearDesdeArrays($stmt->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function buscarPorId($id) {
@@ -211,38 +203,32 @@
     // Busca el usuario pasado por parametro en el Archivo Json.
     // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
     public function buscarYdevolverUsuario($usuario) {
-      $todos = $this->traerTodos();
-
-      foreach ($todos as $objetoUsuario) {
-        if ($objetoUsuario->getUsuario() == $usuario) {
-          // Devolvemos el array completo del usuario
-          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
-
-          return $arrayUsuario;
-        }
+      $sql = "Select * from usuario where usuario = :usuario";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":usuario", $usuario, PDO::PARAM_INT);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+      if ($result != false) {
+        return Usuario::crearDesdeArray($result);
+      } else {
+        return NULL;
       }
-      return false;
     }
 
 
     // Busca el email pasado por parametro en el Archivo Json.
     // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
     public function buscarYdevolverEmail($email) {
-      // Traemos un Array con los objetos de los distintos usuarios
-      $todos = $this->traerTodos();
-
-      // Recorremos los objetos
-      foreach ($todos as $objetoUsuario) {
-        if ($objetoUsuario->getMail() == $email) {
-
-          // Transformamos el objeto en un Array
-          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
-
-          // Devolvemos el array completo del usuario
-          return $arrayUsuario;
-        }
+      $sql = "Select * from usuario where mail = :mail";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":mail", $email, PDO::PARAM_INT);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+      if ($result != false) {
+        return Usuario::crearDesdeArray($result);
+      } else {
+        return NULL;
       }
-      return false;
     }
   }
 
