@@ -3,7 +3,7 @@
   require_once("repositorioUsuarios.php");
   require_once("usuario.php");
 
-  class RepositorioUsuariosJSON extends RepositorioUsuarios {
+  class RepositorioUsuariosSQL extends RepositorioUsuarios {
 
     // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 8  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     // --------------------------------------- FRAN -------------------------------------------
