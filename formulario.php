@@ -6,9 +6,13 @@
   // Si lo encuentra devuelve el usuario, sino devuelve False
   $usuarioHeader = $auth->chequeaCookieUsuario();
 
-    if ($usuarioHeader || isset($_SESSION["usuario"])) {
+  if ($usuarioHeader) {
+    header("Location:index.php");exit;
+  } else {
+    if (isset($_SESSION["usuario"])) {
       header("Location:index.php");exit;
-    };
+    }
+  };
 
   $nombre="";
   $apellido="";
@@ -19,16 +23,12 @@
 
   $errores=[];
   if($_POST){
-    $errores= $validador->validarInformacion($_POST, $db->getRepositorioUsuarios());
+    $errores= validarInformacion($_POST);
     if (count($errores) == 0) {
-      //no hay errores
-      $usuario = $_POST;
-      $usuario["password"] = Usuario::hashPassword($usuario["password"]);
-      $usuario = Usuario::crearDesdeArray($usuario);
-      $errores = $usuario->guardarImagen("imgPerfil",  $errores);
+      $errores = guardarImagen($imagenPerfil, $errores);
       if (count($errores)== 0) {
-        $usuario->guardar($db->getRepositorioUsuarios());
-        //guardarUsuario($usuario);
+        $usuario = crearUsuario($_POST);
+        guardarUsuario($usuario);
         header("Location:registrado.php");exit;
       }
     }

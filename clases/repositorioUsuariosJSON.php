@@ -211,12 +211,12 @@
     // Busca el usuario pasado por parametro en el Archivo Json.
     // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
     public function buscarYdevolverUsuario($usuario) {
-      $todos = traerTodos();
+      $todos = $this->traerTodos();
 
-      foreach ($todos as $arrayUsuario) {
-        if ($arrayUsuario->getUsuario() == $usuario) {
+      foreach ($todos as $objetoUsuario) {
+        if ($objetoUsuario->getUsuario() == $usuario) {
           // Devolvemos el array completo del usuario
-          $arrayUsuario = $arrayUsuario->crearArrayDesdeObjeto();
+          $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
 
           return $arrayUsuario;
         }
@@ -229,7 +229,7 @@
     // si lo encuentra devuelve el valor del Array del usuario, sino devuelve false
     public function buscarYdevolverEmail($email) {
       // Traemos un Array con los objetos de los distintos usuarios
-      $todos = traerTodos();
+      $todos = $this->traerTodos();
 
       // Recorremos los objetos
       foreach ($todos as $objetoUsuario) {

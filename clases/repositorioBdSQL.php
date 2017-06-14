@@ -1,6 +1,6 @@
 <?php
   require_once("repositorioBd.php");
-  require_once("RepositorioUsuariosSQL.php");
+  require_once("repositorioUsuariosSQL.php");
 
   class RepositorioSQL extends Repositorio {
 

@@ -8,24 +8,25 @@ class Usuario{
   private $telefono;
   private $id;
 
- public function __construct($nombre, $apellido, $mail, $password, $usuario, $telefono, $id){
-   $this->nombre=$nombre;
-   $this->apellido=$apellido;
-   $this->mail=$mail;
-   $this->password=$password;
-   $this->usuario=$usuario;
-   $this->telefono=$telefono;
-   $this->id=$id;
- }
+  public function __construct($nombre, $apellido, $mail, $password, $usuario, $telefono, $id){
+    $this->nombre=$nombre;
+    $this->apellido=$apellido;
+    $this->mail=$mail;
+    $this->password=$password;
+    $this->usuario=$usuario;
+    $this->telefono=$telefono;
+    $this->id=$id;
+  }
 
   public static function hashPassword($password){
       return password_hash($password,  PASSWORD_DEFAULT);
   }
-  public static function crearDesdeArray(Array $datos){
-    if(!isset($datos["id"])){
+
+  // Funcion que crea un nuevo Usuario de tipo Objeto desde un array de usuario
+  public static function crearDesdeArray(Array $datos) {
+    if (!isset($datos["id"])) {
       $datos["id"] = NULL;
     }
-
     return new Usuario(
       $datos["nombre"],
       $datos["apellido"],
@@ -36,18 +37,31 @@ class Usuario{
       $datos["id"]
     );
   }
-  public static function crearDesdeArrays(Array $usuarios){
+
+  public static function crearDesdeArrays(Array $usuarios) {
     $usuariosFinal = [];
-
     foreach ($usuarios as $usuario) {
-      $usuariosFinal[] = self:: crearDesdeArray($usuario);
+      $usuariosFinal[] = self::crearDesdeArray($usuario);
     }
-
     return $usuariosFinal;
   }
 
+  // Funcion que convierte un Objeto de usuario en un Array
+  // EX - toArray
+  public function crearArrayDesdeObjeto() {
+    return [
+      "nombre"   => $this->getNombre(),
+      "apellido" => $this->getApellido(),
+      "mail"     => $this->getMail(),
+      "password" => $this->getPassword(),
+      "usuario"  => $this->getUsuario(),
+      "telefono" => $this->getTelefono(),
+      "id"       => $this->getId()
+    ];
+  }
+
   public function setNombre($nombre){
-    $this->nombre=$nombre;
+    $this->nombre = $nombre;
   }
   public function getNombre(){
     return $this->nombre;
@@ -62,13 +76,13 @@ class Usuario{
     $this->mail = $mail;
   }
   public function getMail(){
-    return $this->mail;
+    return  $this->mail;
   }
   public function setTelefono($telefono){
     $this->telefono = $telefono;
   }
   public function getTelefono(){
-  return $this->telefono ;
+    return $this->telefono;
   }
   public function setUsuario($usuario){
     $this->usuario = $usuario;
@@ -80,7 +94,7 @@ class Usuario{
     $this->id = $id;
   }
   public function getId(){
-  return $this->id;
+    return $this->id;
   }
   public function getFoto() {
     $file = glob('img/'. $usuario->getUsername() .'.*');
@@ -119,7 +133,7 @@ class Usuario{
     "mail"=>$this->getMail(),
     "password"=>$this->getPassword(),
     "usuario"=>$this->getUsuario(),
-    "telefono"=>$this->getTelefono(),
+	"telefono"=>$this->getTelefono(),
     "id"=>$this->getId()
   ];
 

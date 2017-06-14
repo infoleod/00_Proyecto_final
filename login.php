@@ -32,9 +32,6 @@ require_once("soporte.php");
           $arrayUsuario = $db->getRepositorioUsuarios()->buscarYdevolverUsuario($_POST["usuario"]);
       };
 
-      // echo "<pre>";
-      // var_dump($arrayUsuario);exit;
-
       // Si lo encontramos verificamos el password
       if ($arrayUsuario) {
         $password = $arrayUsuario["password"];
