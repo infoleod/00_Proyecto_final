@@ -230,6 +230,61 @@
         return NULL;
       }
     }
+
+
+    // Funcion que crea una nueva talba de SQL de usuarios
+    public function borrarYCrearTablaUsuarios() {
+      $sql = "DROP TABLE IF EXISTS usuario;
+              CREATE TABLE usuario (
+                id int(11) NOT NULL DEFAULT '1',
+                nombre varchar(45) NOT NULL,
+                apellido varchar(45) NOT NULL,
+                usuario varchar(45) NOT NULL,
+                mail varchar(150) DEFAULT NULL,
+                password char(100) DEFAULT NULL,
+                telefono varchar(45) DEFAULT NULL,
+                PRIMARY KEY (id)
+              );";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+    }
+
+    // Funcion que crea una nueva talba de SQL de usuarios
+    public function insertarUsuarioEnTabla($arrayUsuario) {
+      $sql = "INSERT INTO zoomarket.usuario (id, nombre, apellido, usuario, mail, password, telefono)
+                   VALUES (:id, :nombre, :apellido, :usuario, :mail, :password, :telefono);";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":id", $arrayUsuario["id"], PDO::PARAM_INT);
+      $stmt->bindValue(":nombre", $arrayUsuario["nombre"], PDO::PARAM_INT);
+      $stmt->bindValue(":apellido", $arrayUsuario["apellido"], PDO::PARAM_INT);
+      $stmt->bindValue(":usuario", $arrayUsuario["usuario"], PDO::PARAM_INT);
+      $stmt->bindValue(":mail", $arrayUsuario["mail"], PDO::PARAM_INT);
+      $stmt->bindValue(":password", $arrayUsuario["password"], PDO::PARAM_INT);
+      $stmt->bindValue(":telefono", $arrayUsuario["telefono"], PDO::PARAM_INT);
+      $stmt->execute();
+    }
+
+    public function insertarUsuariosJSONEnTabla() {
+      $archivo = file_get_contents("usuarios.json");
+      $usuariosJSON = explode(PHP_EOL, $archivo);
+      array_pop($usuariosJSON);
+      $usuariosFinal = [];
+      foreach($usuariosJSON as $json) {
+        $usuariosFinal[] = Usuario::crearDesdeArray(json_decode($json, true));
+      }
+      foreach ($usuariosFinal as $objetoUsuario) {
+        $arrayUsuario = $objetoUsuario->crearArrayDesdeObjeto();
+
+        $this->insertarUsuarioEnTabla($arrayUsuario);
+      }
+    }
+
+
+
+
+
+
+
   }
 
 ?>

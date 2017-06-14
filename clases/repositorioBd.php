@@ -3,7 +3,7 @@
     protected $repositorioUsuarios;
 
     public function getRepositorioUsuarios() {
-        return $this->repositorioUsuarios;
+      return $this->repositorioUsuarios;
     }
   }
 ?>

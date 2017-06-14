@@ -36,7 +36,9 @@
           <li><a href="#">Formas de envío</a></li>
           <li><a href="#">Información y medios de contacto</a></li>
           <li><a href="preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+          <li><a href="script.php"><button type="button" name="Administrador">Administrador</button></a></li>
         </ul>
+        <br>
       </div>
       <div class="footer-div-medio-der">
         <h4>Seguinos en nuestras redes</h4>

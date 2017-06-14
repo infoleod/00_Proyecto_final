@@ -1,4 +1,3 @@
-
 <?php
   require_once("clases/autenticacion.php");
   require_once("clases/repositorioBdSQL.php");
@@ -21,5 +20,5 @@
       $dbTipo = 'json';
       break;
   }
+
 ?>
-      
