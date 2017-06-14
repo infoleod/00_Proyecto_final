@@ -23,12 +23,15 @@
 
   $errores=[];
   if($_POST){
-    $errores= validarInformacion($_POST);
+    $errores= $validador->validarInformacion($_POST, $db->getRepositorioUsuarios());
     if (count($errores) == 0) {
-      $errores = guardarImagen($imagenPerfil, $errores);
+      //no hay errores
+      $usuario = $_POST;
+      $usuario["password"] = Usuario::hashPassword($usuario["password"]);
+      $usuario = Usuario::crearDesdeArray($usuario);
+      $errores = $usuario->guardarImagen("imgPerfil",  $errores);
       if (count($errores)== 0) {
-        $usuario = crearUsuario($_POST);
-        guardarUsuario($usuario);
+        $usuario->guardar($db->getRepositorioUsuarios());
         header("Location:registrado.php");exit;
       }
     }

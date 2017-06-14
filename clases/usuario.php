@@ -126,18 +126,6 @@ class Usuario{
   public function guardar (RepositorioUsuarios $repo){
     $repo->guardarUsuario($this);
   }
-  public function crearArrayDesdeObjeto(){
-  return[
-    "nombre"=>$this->getNombre(),
-    "apellido"=>$this->getapellido(),
-    "mail"=>$this->getMail(),
-    "password"=>$this->getPassword(),
-    "usuario"=>$this->getUsuario(),
-	"telefono"=>$this->getTelefono(),
-    "id"=>$this->getId()
-  ];
-
-  }
 
   public function getPassword(){
     return $this->password;
