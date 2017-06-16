@@ -13,15 +13,18 @@
     // --------------------------------------- FRAN -------------------------------------------
     // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     public function guardarUsuario(Usuario $usuario) {
-      if ($usuario->getId() == null) {
-        $usuario->setId($this->traerNuevoId());
-      }
+      $sql = "INSERT INTO usuario value(default, :nombre, :apellido, :mail, :password, :usuario, :telefono)";
+      $stmt = $this->conexion->prepare($sql);
 
-      $json = json_encode($usuario->crearArrayDesdeObjeto());
+      $stmt->bindValue(":nombre", $usuario->getNombre(), PDO::PARAM_STR);
+      $stmt->bindValue(":apellido", $usuario->getApellido(), PDO::PARAM_STR);
+      $stmt->bindValue(":mail", $usuario->getMail(), PDO::PARAM_STR);
+      $stmt->bindValue(":password", $usuario->getPassword(), PDO::PARAM_STR);
+      $stmt->bindValue(":usuario", $usuario->getUsuario(), PDO::PARAM_STR);
+      $stmt->bindValue(":telefono", $usuario->getTelefono(), PDO::PARAM_STR);
 
-      $json = $json . PHP_EOL;
+      $stmt->execute();
 
-      file_put_contents("usuarios.json", $json, FILE_APPEND);
     }
 
     public function traerTodos() {
@@ -32,53 +35,78 @@
     }
 
     public function buscarPorId($id) {
-      $todos = $this->traerTodos();
+      $sql = "Select * from usuario Where id = :id";
 
-      foreach ($todos as $usuario) {
-        if ($usuario->getId() == $id) {
-          return $usuario;
-        }
+      $stmt = $this->conexion->prepare($sql);
+
+      $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+
+      $stmt->execute();
+
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if($result != false){
+          return Usuario::crearDesdeArray($result);
       }
-
-      return false;
+      else{
+        return NULL;
+      }
     }
+
 
     public function buscarPorMail($mail) {
-      $todos = $this->traerTodos();
+      $sql = "Select * from usuario where mail = :mail";
 
-      foreach ($todos as $usuario) {
-        if ($usuario->getMail() == $mail) {
-          return $usuario;
-        }
+      $stmt = $this->conexion->prepare($sql);
+
+      $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
+
+      $stmt->execute();
+
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if($result !=false){
+          return Usuario::crearDesdeArray($result);
       }
-
-      return false;
-    }
-
-    private function traerNuevoId() {
-      $usuarios = $this->traerTodos();
-
-      if (count($usuarios) == 0) {
-        return 1;
+      else{
+        return NULL;
       }
+}
+function buscarPorUsuario($usuario) {
 
-      $elUltimo = array_pop($usuarios);
+  $sql = "Select * from usuario Where usuario = :usuario";
 
-      $id = $elUltimo->getId();
+  $stmt = $this->conexion->prepare($sql);
 
-      return $id + 1;
-    }
+  $stmt->bindValue(":usuario", $usuario, PDO::PARAM_STR);
+
+  $stmt->execute();
+
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if($result != false){
+    return Usuario::crearDesdeArray($result);
+  }
+  else{
+    return NULL;
+  }
+}
+
+    // private function traerNuevoId() {
+    //   $usuarios = $this->traerTodos();
+    //
+    //   if (count($usuarios) == 0) {
+    //     return 1;
+    //   }
+    //
+    //   $elUltimo = array_pop($usuarios);
+    //
+    //   $id = $elUltimo->getId();
+    //
+    //   return $id + 1;
+    // }
 
     /*buscar por usuario*/
-    function buscarPorUsuario($usuario) {
-      $todos = traerTodos();
-      foreach ($todos as $usuarioIndividual) {
-        if ($usuarioIndividual["usuario"] == $usuario) {
-          return $usuarioIndividual;
-        }
-      }
-      return false;
-    }
 
 
 
