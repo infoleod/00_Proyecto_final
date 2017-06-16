@@ -53,6 +53,25 @@
       }
     }
 
+    function buscarPorUsuario($usuario) {
+
+      $sql = "Select * from usuario Where usuario = :usuario";
+
+      $stmt = $this->conexion->prepare($sql);
+
+      $stmt->bindValue(":usuario", $usuario, PDO::PARAM_STR);
+
+      $stmt->execute();
+
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if($result != false){
+        return Usuario::crearDesdeArray($result);
+      }
+      else{
+        return NULL;
+      }
+    }
 
     public function buscarPorMail($mail) {
       $sql = "Select * from usuario where mail = :mail";
@@ -72,25 +91,7 @@
         return NULL;
       }
 }
-function buscarPorUsuario($usuario) {
 
-  $sql = "Select * from usuario Where usuario = :usuario";
-
-  $stmt = $this->conexion->prepare($sql);
-
-  $stmt->bindValue(":usuario", $usuario, PDO::PARAM_STR);
-
-  $stmt->execute();
-
-  $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if($result != false){
-    return Usuario::crearDesdeArray($result);
-  }
-  else{
-    return NULL;
-  }
-}
 
     // private function traerNuevoId() {
     //   $usuarios = $this->traerTodos();

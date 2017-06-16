@@ -24,9 +24,9 @@
       if (strlen($usuario) == 0) {
       $errores["usuario"] = "Complete un usuario";
       }
-      // if($db->getRepositorioUsuarios()->buscarYdevolverUsuario($usuario) != false){
-      //   $errores["usuario"] = "Este Usuario ya se encuentra en uso";
-      // }
+      if($repo->buscarPorUsuario($usuario) != false){
+        $errores["usuario"] = "Este Usuario ya se encuentra en uso";
+      }
       /*valido el mail, que sea mayor a uno el contenido, filtro con que sea un mail valido, luego busco el mail en la base para que ya no exista*/
       $mail = trim($informacion["mail"]);
       if (strlen($mail) == 0 ) {
