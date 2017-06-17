@@ -1,6 +1,7 @@
 <?php
   // Pagina de soporte de Objetos
   require_once("soporte.php");
+  require_once("script-base.php");
 
   $ejecutado = "";
 
@@ -15,6 +16,14 @@
   };
 
   if ($_POST) {
+    // Creo la base de datos
+    if (isset($_POST["crearBD"])) {
+      if ($dbTipo == 'sql') {
+        $crearBaseDeDatos = CrearBD::crearBD();
+        $ejecutado = "crearBD";
+      };
+    };
+
     // Selecciono crear tablas
     if (isset($_POST["crearTablas"])) {
       if ($dbTipo == 'sql') {
@@ -97,6 +106,10 @@
   };
 
 
+
+  // require_once("usuario.php");
+
+
 ?>
 
 <?php
@@ -115,6 +128,14 @@
           <h2>Migración JSON a MySQL</h2>
         </div>
         <form class="body_login_princ_form" action="script.php" method="post" enctype="multipart/form-data">
+          <div class="body_login_princ_form_renglones">
+            <label></label>
+            <?php if ($ejecutado == "crearBD") { ?>
+              <h3 style="color:red; padding:10px 0; background-color: lightGreen;">Se creo la base de datos zoomarket</h3>
+            <?php } else { ?>
+              <button type="submit" name="crearBD">Crear base de datos</button>
+            <?php } ?>
+          </div>
           <div class="body_login_princ_form_renglones">
             <label></label>
             <?php if ($ejecutado == "crearTablas") { ?>

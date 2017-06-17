@@ -24,7 +24,6 @@
       $stmt->bindValue(":telefono", $usuario->getTelefono(), PDO::PARAM_STR);
 
       $stmt->execute();
-
     }
 
     public function traerTodos() {
@@ -36,15 +35,10 @@
 
     public function buscarPorId($id) {
       $sql = "Select * from usuario Where id = :id";
-
       $stmt = $this->conexion->prepare($sql);
-
       $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-
       $stmt->execute();
-
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
       if($result != false){
           return Usuario::crearDesdeArray($result);
       }
@@ -54,17 +48,11 @@
     }
 
     function buscarPorUsuario($usuario) {
-
       $sql = "Select * from usuario Where usuario = :usuario";
-
       $stmt = $this->conexion->prepare($sql);
-
       $stmt->bindValue(":usuario", $usuario, PDO::PARAM_STR);
-
       $stmt->execute();
-
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
       if($result != false){
         return Usuario::crearDesdeArray($result);
       }
@@ -75,158 +63,21 @@
 
     public function buscarPorMail($mail) {
       $sql = "Select * from usuario where mail = :mail";
-
       $stmt = $this->conexion->prepare($sql);
-
       $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
-
       $stmt->execute();
-
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
       if($result !=false){
           return Usuario::crearDesdeArray($result);
       }
       else{
         return NULL;
       }
-}
+    }
 
 
-    // private function traerNuevoId() {
-    //   $usuarios = $this->traerTodos();
-    //
-    //   if (count($usuarios) == 0) {
-    //     return 1;
-    //   }
-    //
-    //   $elUltimo = array_pop($usuarios);
-    //
-    //   $id = $elUltimo->getId();
-    //
-    //   return $id + 1;
-    // }
 
-    /*buscar por usuario*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  ACA Linea 200  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     // --------------------------------------- LEO --------------------------------------------
     // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     // Busca el usuario pasado por parametro en el Archivo Json.
@@ -263,32 +114,31 @@
 
     // Funcion que crea una nueva talba de SQL de usuarios
     public function borrarYCrearTablaUsuarios() {
-      $sql = "DROP TABLE IF EXISTS usuario;
-              CREATE TABLE usuario (
-                id int(11) NOT NULL DEFAULT '1',
-                nombre varchar(45) NOT NULL,
-                apellido varchar(45) NOT NULL,
-                usuario varchar(45) NOT NULL,
-                mail varchar(150) DEFAULT NULL,
-                password char(100) DEFAULT NULL,
-                telefono varchar(45) DEFAULT NULL,
-                PRIMARY KEY (id)
-              );";
+      $sql = "DROP TABLE IF EXISTS zoomarket.usuario;
+
+              CREATE TABLE zoomarket.usuario (
+                id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                nombre VARCHAR(45) NOT NULL,
+                apellido VARCHAR(45) NOT NULL,
+                mail VARCHAR(150) NOT NULL,
+                password VARCHAR(100) NULL,
+                usuario VARCHAR(45) NOT NULL,
+                telefono VARCHAR(45) NULL);";
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
     }
 
     // Funcion que crea una nueva talba de SQL de usuarios
     public function insertarUsuarioEnTabla($arrayUsuario) {
-      $sql = "INSERT INTO zoomarket.usuario (id, nombre, apellido, usuario, mail, password, telefono)
-                   VALUES (:id, :nombre, :apellido, :usuario, :mail, :password, :telefono);";
+      $sql = "INSERT INTO zoomarket.usuario (id, nombre, apellido, mail, password, usuario, telefono)
+                   VALUES (:id, :nombre, :apellido, :mail, :password, :usuario, :telefono);";
       $stmt = $this->conexion->prepare($sql);
       $stmt->bindValue(":id", $arrayUsuario["id"], PDO::PARAM_INT);
       $stmt->bindValue(":nombre", $arrayUsuario["nombre"], PDO::PARAM_INT);
       $stmt->bindValue(":apellido", $arrayUsuario["apellido"], PDO::PARAM_INT);
-      $stmt->bindValue(":usuario", $arrayUsuario["usuario"], PDO::PARAM_INT);
       $stmt->bindValue(":mail", $arrayUsuario["mail"], PDO::PARAM_INT);
       $stmt->bindValue(":password", $arrayUsuario["password"], PDO::PARAM_INT);
+      $stmt->bindValue(":usuario", $arrayUsuario["usuario"], PDO::PARAM_INT);
       $stmt->bindValue(":telefono", $arrayUsuario["telefono"], PDO::PARAM_INT);
       $stmt->execute();
     }
@@ -307,13 +157,6 @@
         $this->insertarUsuarioEnTabla($arrayUsuario);
       }
     }
-
-
-
-
-
-
-
   }
 
 ?>
