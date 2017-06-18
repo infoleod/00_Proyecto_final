@@ -28,7 +28,7 @@
 		+ Se colocan logos con acceso a las footer-article-red-social-icon sociales.
 		+ Acceso a las preguntas frecuentes del sitio.
 		+ footer-copyright de la web.
-		
+
 
 ##Mapa del Sitio:
 	+ Pagina principal y de presentación
@@ -41,3 +41,10 @@
 		 		+ Aparecerán los label, representando los títulos de los input
 	+ Pagina de Login
 	+ Pagina de Preguntas frecuentes
+
+	## Se agrega boton en el footer de tipo administrador:
+	+ Con este se podra realizar las siguientes gestiones:
+		++ Crear tablas de SQL
+		++ Migrar usuarios de JSON a SQL
+		++ Cambiar a base JSON
+		++ Cambiar a base SQL
