@@ -58,7 +58,7 @@
     <meta name="viewport" content="width=device-width">
     <title>ZOOMarket</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/master.css">
+    <link id="cambiarCss" rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
@@ -94,7 +94,13 @@
             </div>
           <?php }; ?>
 
-
+            <div class="header-div-login-temas">
+              <form>
+                <button id="boton-desktop-default" class="header-div-login-temas-default" type="button" name="buttonDefault"></button>
+                <button id="boton-desktop-azul" class="header-div-login-temas-azul" type="button" name="buttonAzul"></button>
+                <button id="boton-desktop-gris" class="header-div-login-temas-gris" type="button" name="buttonGris"></button>
+              </form>
+            </div>
         </div>
       </div>
       <!-- FIN Login -->
@@ -170,6 +176,14 @@
                 <li><a href="#">Top 10</a></li>
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Vender</a></li>
+                <li>
+                  <form class="boton-temas">
+                    <button class="boton-temas-default" type="button" name="buttonDefault">Default</button>
+                    <button class="boton-temas-azul" type="button" name="buttonAzul">Azul</button>
+                    <button class="boton-temas-gris" type="button" name="buttonGris">Gris</button>
+                  </form>
+                </li>
+
 
                 <?php
                 // Si el usuario esta logueado le mostramos el Logoff
@@ -188,6 +202,9 @@
       </div>
       </div>
       <!-- FIN Menu -->
+
+      <!-- JavaScript -->
+      <script src="js/funciones.js"></script>
     </header>
     <!-- FIN HEADER -->
 

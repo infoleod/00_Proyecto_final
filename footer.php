@@ -1,10 +1,15 @@
 <?php
-
+  $cantUsuarios = 5;
 ?>
 
 <!-- INICIO FOOTER -->
 <footer class="footer">
   <div class="footer-div-superior">
+    <div class="footer-container-1">
+      <div id="cantUsuariosFooter">
+        <span >¡¡¡ Ya somos <?php echo $cantUsuarios ?>!!!</span>
+      </div>
+    </div>
     <div class="footer-container">
       <form class="" action="" method="post">
         <div class="">

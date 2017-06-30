@@ -2,7 +2,7 @@
 /* -- HEADER -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 .header {
-  background: rgb(100,200,100);
+  background: rgb(142, 142, 142);
   width: 100vw;
   position: relative;
 }
@@ -87,7 +87,7 @@
   height: 100vh;
   display: none;
   z-index: 100;
-  background-color: rgb(80, 80, 80);
+  background-color: rgb(60, 179, 113);
 }
 .header-div-menu-lista-principal , .header-div-menu-lista-secundario {
   display: none;
@@ -236,7 +236,7 @@
      width: 100%;
      left: 0;
      top: auto;
-     background-color: rgb(80, 80, 80);
+     background-color: rgb(60, 179, 113);
      bottom: 0;
    }
    .header-div-menu-lista {
