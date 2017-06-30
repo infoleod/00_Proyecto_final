@@ -1,6 +1,8 @@
 window.onload = function(){
+  ajaxCall();
+
   // Intervalo de 30 segundos que actualiza la cantidad de usuarios del Footer
-  setInterval(ajaxCall, 30000);
+  setInterval(ajaxCall, 3000);
 
   // Boton colores default
   var botonCambiarFondoDefault = document.getElementById("boton-desktop-default");
@@ -48,7 +50,7 @@ function actualizarUsuarios(cantUsuarios) {
   // Insertamos la nueva etiqueta
   var elemento = document.getElementById("cantUsuariosFooter");
   var node = document.createElement("span");
-  var textnode = document.createTextNode("CON AJAX" + cantUsuarios.cantidad);
+  var textnode = document.createTextNode("¡¡¡ Ya somos " + cantUsuarios.cantidad + " usuarios !!!");
   node.appendChild(textnode);
   elemento.appendChild(node);
 }
