@@ -21,7 +21,7 @@
               </div>
         </div>
       </div>
-        <script>
+        <!-- <script>
               var slideIndex = 1;
               showDivs(slideIndex);
 
@@ -48,7 +48,7 @@
                 x[slideIndex-1].style.display = "block";
                 dots[slideIndex-1].className += " w3-white";
                   }
-        </script>
+        </script> -->
 
       <section class="body_products_grilla">
         <article class="products_body">

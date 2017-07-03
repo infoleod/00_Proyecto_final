@@ -62,11 +62,11 @@
       <div class= "registrateTitulo"><h2>Regístrate</h2>
       </div>
       <section class="partesFormulario">
-        <form action="formulario.php" class="script.php"  method="post" enctype="multipart/form-data">
+        <form action="formulario.php" class="script.php" onsubmit="validacionJava.js"  method="post" enctype="multipart/form-data">
           <div class="partesFormularioACompletar">
             <div class="parametros"><label>Nombres</label>
               <div class="nombreCuadro">
-              <input type="text" name="nombre" value="<?=$nombre?>" placeholder="Nombres">
+              <input type="text" name="nombre" id="name" value="<?=$nombre?>" placeholder="Nombres">
                 <?php if(isset($errores["nombre"])) {?>
                   <span class="erroresFormulario">Debe completar su nombre</span>
                 <?php } ?>
@@ -74,7 +74,7 @@
             </div>
             <div class="parametros"><label>Apellido</label>
               <div class="apellidoCuadro">
-                <input type="text" name="apellido" value="<?=$apellido?>" placeholder="Apellido" >
+                <input type="text" name="apellido" id="surname" value="<?=$apellido?>" placeholder="Apellido" >
                 <?php if(isset($errores["apellido"])) {?>
                   <span class="erroresFormulario">Debe completar el apellido</span>
                 <?php } ?>
@@ -82,7 +82,7 @@
             </div>
             <div class="parametros"><label>Usuario</label>
               <div class="cuadroUsuario">
-                <input type="text" name="usuario" value="<?=$usuario?>" placeholder="Usuario" >
+                <input type="text" name="usuario" id="user" value="<?=$usuario?>" placeholder="Usuario" >
                 <?php if(isset($errores["usuario"])) {?>
                   <span class="erroresFormulario"><?=$errores["usuario"]?></span>
                 <?php } ?>
@@ -99,7 +99,7 @@
             <div class="parametros">
               <label>Teléfono (fijo o móvil)</label>
               <div class="telefonoCuadro">
-                <input type="text" name="telefono" value="<?=$telefono?>" placeholder="Telefono (Fijo o móvil)">
+                <input type="text" name="telefono" id="phone" value="<?=$telefono?>" placeholder="Telefono (Fijo o móvil)">
                 <?php if(isset($errores["telefono"])) {?>
                   <span class="erroresFormulario">Telefono incorrecto</span>
                 <?php } ?>
@@ -107,7 +107,7 @@
             </div>
             <div class="parametros"><label>E-mail</label>
               <div class="emailCuadro">
-                <input type="text" name="mail" value="<?=$mail?>" placeholder="Email" >
+                <input type="text" name="mail" id="email" value="<?=$mail?>" placeholder="Email" >
                 <?php if (isset($errores["mail"])) {?>
                   <span class="erroresFormulario"><?=$errores["mail"]?></span>
                 <?php } ?>
