@@ -62,7 +62,7 @@
       <div class= "registrateTitulo"><h2>Regístrate</h2>
       </div>
       <section class="partesFormulario">
-        <form action="formulario.php" class="script.php" onsubmit="validacionJava.js"  method="post" enctype="multipart/form-data">
+        <form action="formulario.php" id="myForm" class="script.php" method="post" enctype="multipart/form-data">
           <div class="partesFormularioACompletar">
             <div class="parametros"><label>Nombres</label>
               <div class="nombreCuadro">
@@ -71,6 +71,8 @@
                   <span class="erroresFormulario">Debe completar su nombre</span>
                 <?php } ?>
               </div>
+              <p class="erroresForm" id="er1">Debe completar su nombre!</p>
+              <p class="erroresForm" id="er7">Nombre ingresado Invalido!</p>
             </div>
             <div class="parametros"><label>Apellido</label>
               <div class="apellidoCuadro">
@@ -79,6 +81,8 @@
                   <span class="erroresFormulario">Debe completar el apellido</span>
                 <?php } ?>
               </div>
+                <p class="erroresForm" id="er2">Debe completar su Apellido!</p>
+                <p class="erroresForm" id="er8">Apellido ingresado Invalido!</p>
             </div>
             <div class="parametros"><label>Usuario</label>
               <div class="cuadroUsuario">
@@ -87,6 +91,7 @@
                   <span class="erroresFormulario"><?=$errores["usuario"]?></span>
                 <?php } ?>
               </div>
+              <p class="erroresForm" id="er3">Debe completar su Usuario</p>
             </div>
             <div class="parametros"><label>Foto de Perfil</label>
               <div class="fotoPerfilCuadro">
@@ -104,6 +109,7 @@
                   <span class="erroresFormulario">Telefono incorrecto</span>
                 <?php } ?>
               </div>
+                <p class="erroresForm" id="er4" >Debe ingresar un Telefono!</p>
             </div>
             <div class="parametros"><label>E-mail</label>
               <div class="emailCuadro">
@@ -112,22 +118,26 @@
                   <span class="erroresFormulario"><?=$errores["mail"]?></span>
                 <?php } ?>
               </div>
+                <p class="erroresForm" id="er5">Debe ingresar un correo electronico!</p>
+                <p class="erroresForm" id="er9">Formato invalido de mail!</p>
             </div>
             <div class="parametros"><label>Contraseña</label>
               <div class="claveCuadro">
-                <input type="password" name="password" value="" placeholder="Contraseña" >
+                <input type="password" name="password" value="" placeholder="Contraseña" id="pass">
                 <?php if (isset($errores["password"])) {?>
                   <span class="erroresFormulario"><?php echo $errores["password"]; ?></span>
                 <?php } ?>
               </div>
+                <p class="erroresForm" id="er6">Ingrese contraseña!</p>
             </div>
             <div class="parametros"><label>Confirma contraseña</label>
               <div class="claveCuadro">
-                <input type="password" name="cpassword" value="" placeholder="Confirma contraseña" >
+                <input type="password" name="cpassword" value="" placeholder="Confirma contraseña" id="cpass" >
                 <?php if (isset($errores["password"])) {?>
                   <span class="erroresFormulario">Confirmación erronea</span>
                 <?php } ?>
               </div>
+              <p class="erroresForm" id="er10">Confirme contraseña!</p>
             </div>
           </div>
 
@@ -144,7 +154,7 @@
         </form>
       </section>
     </div>
-
+<script src="js/funcionesForm.js"></script>
 <!--                   El Footer cierra con todo el encabezado del HTML                     -->
 <?php
   require_once("footer.php");
