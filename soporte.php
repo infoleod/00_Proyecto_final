@@ -10,6 +10,8 @@
 
   $soporte = "sql";
 
+  global $db;
+
   switch ($soporte) {
     case 'sql':
       $db = new RepositorioSQL();
@@ -22,4 +24,3 @@
       break;
   }
 ?>
-      

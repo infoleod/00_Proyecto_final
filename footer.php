@@ -1,5 +1,6 @@
 <?php
-  $cantUsuarios = 5;
+  $cantUsuarios = 0;
+
 ?>
 
 <!-- INICIO FOOTER -->

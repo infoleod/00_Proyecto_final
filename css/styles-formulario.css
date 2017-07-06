@@ -83,6 +83,12 @@
 .terminos a:hover{
   color: rgb(255, 255, 255);
 }
+.erroresForm{
+  display: none;
+  font-size: 0.8em;
+  color: red;
+  font-weight: bold;
+}
 .terminos h3{
   display: block;
   font-size: 0.8em;

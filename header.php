@@ -2,6 +2,10 @@
   // Pagina de soporte de Objetos
   require_once("soporte.php");
 
+  require_once('countUser.php');
+
+  contarUsuarios();
+
   if ($_POST) {
     if (isset($_POST["logoff"])) {
 
@@ -203,8 +207,7 @@
       </div>
       <!-- FIN Menu -->
 
-      <!-- JavaScript -->
-      <script src="js/funciones.js"></script>
+
     </header>
     <!-- FIN HEADER -->
 
